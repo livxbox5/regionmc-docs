@@ -230,3 +230,45 @@ footer {
     .data-table { font-size: 0.85rem; }
     .data-table th, .data-table td { padding: 0.5rem; }
 }
+
+/* Дополнительные стили для кнопок копирования и защиты */
+.copy-btn {
+    transition: all 0.2s;
+}
+.copy-btn:hover {
+    background: #ffed4a !important;
+    transform: scale(1.02);
+}
+
+/* Защита от выделения текста */
+body {
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+
+/* Разрешаем выделение только в кодовых блоках и таблицах */
+.code-block, .code-block *,
+.data-table, .data-table *,
+.command-name, .perm-name, .flag-name {
+    user-select: text;
+    -webkit-user-select: text;
+    -moz-user-select: text;
+    -ms-user-select: text;
+}
+
+/* Защита от копирования изображений */
+img {
+    pointer-events: none;
+    user-select: none;
+    -webkit-user-drag: none;
+}
+
+/* Кнопка копирования */
+.copy-btn {
+    transition: all 0.2s;
+}
+.copy-btn:hover {
+    transform: scale(1.02);
+}
