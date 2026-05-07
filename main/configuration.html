@@ -1,0 +1,47 @@
+
+<!DOCTYPE html>
+<html lang="ru"><head><meta charset="UTF-8"><title>Конфигурация RegionMC</title><link rel="stylesheet" href="../ui/css/style.css"></head>
+<body><nav class="navbar"><div class="nav-container"><a href="../index.html" class="nav-brand">🏠 RegionMC</a>
+<div class="nav-links"><a href="commands.html">📖 Команды</a><a href="permissions.html">🔑 Права</a><a href="flags.html">🚩 Флаги</a><a href="examples.html">✨ Примеры</a><a href="features.html">⚙️ Возможности</a><a href="configuration.html">⚙️ Конфиг</a></div></div></nav>
+<main class="container"><div class="page-header"><h1>⚙️ Конфигурация</h1><p>Основные настройки плагина (файл config.yml)</p></div>
+<div class="section-card"><h2>📁 Основные настройки</h2>
+<div class="code-block">regions:
+  max-regions-per-player: 5
+  allow-overlap: false
+  default-priority: 0
+  size:
+    min-size: 5
+    max-size: 100000
+    max-height: 256
+  naming:
+    min-length: 3
+    max-length: 16
+    blocked-names: ["admin","global","world"]</div>
+</div>
+<div class="section-card"><h2>🚩 Флаги по умолчанию</h2>
+<div class="code-block">default-flags:
+  build: "deny"
+  break: "deny"
+  interact: "allow"
+  pvp: "allow"
+  mob-spawning: "allow"</div>
+</div>
+<div class="section-card"><h2>🛠️ Палочка выделения</h2>
+<div class="code-block">selection-tools:
+  selection-wand:
+    enabled: true
+    material: "WOODEN_AXE"
+    name: "&6Топор для выделения"
+    lore: ["&7ЛКМ - pos1", "&7ПКМ - pos2"]</div>
+</div>
+<div class="section-card"><h2>💾 База данных</h2>
+<div class="code-block">database:
+  type: "sqlite"  # или "mysql"
+  mysql:
+    host: "localhost"
+    database: "regionmc"
+    username: "root"
+    password: ""</div>
+</div>
+<div class="tip">📖 Полная конфигурация доступна в файле main.yml после установки плагина.</div>
+</main><footer>RegionMC Documentation</footer><script src="../ui/js/main.js"></script></body></html>

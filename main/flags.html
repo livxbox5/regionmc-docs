@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ru"><head><meta charset="UTF-8"><title>Флаги RegionMC</title><link rel="stylesheet" href="../ui/css/style.css"></head>
+<body><nav class="navbar"><div class="nav-container"><a href="../index.html" class="nav-brand">🏠 RegionMC</a>
+<div class="nav-links"><a href="commands.html">📖 Команды</a><a href="permissions.html">🔑 Права</a><a href="flags.html">🚩 Флаги</a><a href="examples.html">✨ Примеры</a><a href="features.html">⚙️ Возможности</a><a href="configuration.html">⚙️ Конфиг</a></div></div></nav>
+<main class="container"><div class="page-header"><h1>🚩 Все флаги региона</h1><p>Полный список флагов и их значений (allow/deny или специальные значения)</p></div>
+<div class="section-card"><h2>🏗️ Основные флаги защиты</h2>
+<table class="data-table"><tr><th>Флаг</th><th>Описание</th><th>Значения</th></tr>
+<tr><td class="flag-name">build</td><td class="flag-desc">Разрешить/запретить строительство (размещение блоков)</td><td>allow / deny</td></tr>
+<tr><td class="flag-name">break</td><td class="flag-desc">Разрешить/запретить разрушение блоков</td><td>allow / deny</td></tr>
+<tr><td class="flag-name">interact</td><td class="flag-desc">Взаимодействие с объектами (кнопки, рычаги, двери)</td><td>allow / deny</td></tr>
+<tr><td class="flag-name">use-items</td><td class="flag-desc">Использование предметов (ведра, лодки, эндер-жемчуг)</td><td>allow / deny</td></tr>
+<tr><td class="flag-name">pvp</td><td class="flag-desc">PvP (игрок против игрока)</td><td>allow / deny</td></tr>
+<tr><td class="flag-name">mob-spawning</td><td class="flag-desc">Спавн мобов (всех типов)</td><td>allow / deny</td></tr>
+</table></div>
+<div class="section-card"><h2>🚪 Доступ и перемещение</h2>
+<table class="data-table"><tr><th>Флаг</th><th>Описание</th></tr>
+<tr><td class="flag-name">entry</td><td class="flag-desc">Вход в регион (если deny, игрок не может войти)</td></tr>
+<tr><td class="flag-name">exit</td><td class="flag-desc">Выход из региона</td></tr>
+<tr><td class="flag-name">sleep</td><td class="flag-desc">Разрешить спать в кровати</td></tr>
+</table></div>
+<div class="section-card"><h2>💥 Взрывы и стихия</h2>
+<table class="data-table"><tr><th>Флаг</th><th>Описание</th></tr>
+<tr><td class="flag-name">explosions</td><td class="flag-desc">Все взрывы (криперы, TNT, ядра)</td></tr>
+<tr><td class="flag-name">creeper-explosion</td><td class="flag-desc">Взрывы криперов</td></tr>
+<tr><td class="flag-name">tnt-explosion</td><td class="flag-desc">Взрывы TNT</td></tr>
+<tr><td class="flag-name">fire-spread</td><td class="flag-desc">Распространение огня</td></tr>
+<tr><td class="flag-name">lava-flow</td><td class="flag-desc">Течение лавы</td></tr>
+<tr><td class="flag-name">water-flow</td><td class="flag-desc">Течение воды</td></tr>
+</table></div>
+<div class="section-card"><h2>📦 Контейнеры и сущности</h2>
+<table class="data-table"><tr><th>Флаг</th><th>Описание</th></tr>
+<tr><td class="flag-name">chest-access</td><td class="flag-desc">Доступ к сундукам</td></tr>
+<tr><td class="flag-name">enderchest</td><td class="flag-desc">Использование эндер-сундука</td></tr>
+<tr><td class="flag-name">furnace-access</td><td class="flag-desc">Доступ к печам</td></tr>
+<tr><td class="flag-name">brewing-access</td><td class="flag-desc">Доступ к зельеваркам</td></tr>
+<tr><td class="flag-name">beacon-access</td><td class="flag-desc">Взаимодействие с маяком</td></tr>
+<tr><td class="flag-name">item-drop</td><td class="flag-desc">Разрешить выброс предметов</td></tr>
+<tr><td class="flag-name">item-pickup</td><td class="flag-desc">Разрешить подбирать предметы</td></tr>
+</table></div>
+<div class="section-card"><h2>⏰ Специальные флаги</h2>
+<table class="data-table"><tr><th>Флаг</th><th>Описание</th><th>Значения</th></tr>
+<tr><td class="flag-name">time-lock</td><td class="flag-desc">Блокировка времени (визуально)</td><td>day / night / allow / deny</td></tr>
+<tr><td class="flag-name">greeting</td><td class="flag-desc">Приветственное сообщение при входе</td><td>текст</td></tr>
+<tr><td class="flag-name">farewell</td><td class="flag-desc">Прощальное сообщение при выходе</td><td>текст</td></tr>
+<tr><td class="flag-name">blockcmd</td><td class="flag-desc">Запрет команд внутри региона</td><td>true / false</td></tr>
+</table></div>
+<div class="tip">💡 Использование: <code>/rg flag &lt;регион&gt; &lt;флаг&gt; &lt;значение&gt;</code>. Пример: <code>/rg flag home pvp deny</code></div>
+</main><footer>RegionMC Documentation</footer><script src="../ui/js/main.js"></script></body></html>
