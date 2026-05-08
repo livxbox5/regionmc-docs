@@ -1,41 +1,112 @@
 <!DOCTYPE html>
-<html lang="ru"><head><meta charset="UTF-8"><title>Права RegionMC</title><link rel="stylesheet" href="../ui/css/style.css"></head>
-<body><nav class="navbar"><div class="nav-container"><a href="../index.html" class="nav-brand">🏠 RegionMC</a>
-<div class="nav-links"><a href="commands.html">📖 Команды</a><a href="permissions.html">🔑 Права</a><a href="flags.html">🚩 Флаги</a><a href="examples.html">✨ Примеры</a><a href="features.html">⚙️ Возможности</a><a href="configuration.html">⚙️ Конфиг</a></div></div></nav>
-<main class="container"><div class="page-header"><h1>🔑 Права (Permissions)</h1><p>Все разрешения для тонкой настройки доступа</p></div>
-<div class="section-card"><h2>📋 Базовые команды</h2>
-<table class="data-table"><tr><th>Право</th><th>Описание</th></tr>
-<tr><td class="perm-name">regionmc.command.region</td><td>Базовое право на использование /rg</td></tr>
-<tr><td class="perm-name">regionmc.command.help</td><td>Доступ к /rg help</td></tr>
-<tr><td class="perm-name">regionmc.command.pos</td><td>Установка позиций /rg pos1/pos2</td></tr>
-<tr><td class="perm-name">regionmc.command.claim</td><td>Создание регионов</td></tr>
-<tr><td class="perm-name">regionmc.command.delete</td><td>Удаление регионов</td></tr>
-<tr><td class="perm-name">regionmc.command.info</td><td>Просмотр информации о регионе</td></tr>
-<tr><td class="perm-name">regionmc.command.list</td><td>Список своих регионов</td></tr>
-<tr><td class="perm-name">regionmc.command.wand</td><td>Получение палочки выделения</td></tr>
-<tr><td class="perm-name">regionmc.command.limit</td><td>Просмотр лимитов</td></tr>
-</table></div>
-<div class="section-card"><h2>👥 Управление участниками</h2>
-<table class="data-table"><tr><th>Право</th><th>Описание</th></tr>
-<tr><td class="perm-name">regionmc.command.addmember</td><td>Добавление участников</td></tr>
-<tr><td class="perm-name">regionmc.command.removemember</td><td>Удаление участников</td></tr>
-<tr><td class="perm-name">regionmc.command.addowner</td><td>Добавление владельцев</td></tr>
-<tr><td class="perm-name">regionmc.command.removeowner</td><td>Удаление владельцев</td></tr>
-</table></div>
-<div class="section-card"><h2>⚙️ Флаги и настройки</h2>
-<table class="data-table"><tr><th>Право</th><th>Описание</th></tr>
-<tr><td class="perm-name">regionmc.command.flag</td><td>Изменение флагов</td></tr>
-<tr><td class="perm-name">regionmc.command.priority</td><td>Изменение приоритета</td></tr>
-<tr><td class="perm-name">regionmc.command.expand</td><td>Расширение региона</td></tr>
-<tr><td class="perm-name">regionmc.command.show</td><td>Показ/скрытие границ</td></tr>
-</table></div>
-<div class="section-card"><h2>👑 Административные</h2>
-<table class="data-table"><tr><th>Право</th><th>Описание</th></tr>
-<tr><td class="perm-name">regionmc.admin</td><td>Полный доступ ко всем командам и обход защиты</td></tr>
-<tr><td class="perm-name">regionmc.command.reload</td><td>Перезагрузка плагина</td></tr>
-<tr><td class="perm-name">regionmc.command.testplaceholders</td><td>Тестирование плейсхолдеров</td></tr>
-<tr><td class="perm-name">regionmc.bypass</td><td>Обход защиты регионов (строительство, разрушение)</td></tr>
-<tr><td class="perm-name">regionmc.flags.*</td><td>Изменение любых флагов</td></tr>
-</table></div>
-<div class="tip">💡 Все права можно назначать через LuckPerms, PermissionsEx или любой другой менеджер прав.</div>
-</main><footer>RegionMC Documentation</footer><script src="../ui/js/main.js"></script></body></html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Права RegionMC</title>
+    <link rel="stylesheet" href="../ui/css/style.css">
+    <link rel="icon" type="image/png" href="../icon.png">
+    <meta name="robots" content="noindex, nofollow">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+</head>
+<body>
+<div class="wiki-wrapper">
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <a href="../index.html" class="sidebar-logo">🏠 RegionMC</a>
+            <div class="sidebar-version">v2.0</div>
+        </div>
+        <nav class="sidebar-nav">
+            <ul>
+                <li><a href="../index.html">🏠 Главная</a></li>
+                <li><a href="commands.html">📖 Команды</a></li>
+                <li><a href="permissions.html">🔑 Права</a></li>
+                <li><a href="flags.html">🚩 Флаги</a></li>
+                <li><a href="examples.html">✨ Примеры</a></li>
+                <li><a href="features.html">⚙️ Возможности</a></li>
+                <li><a href="configuration.html">⚙️ Конфигурация</a></li>
+                <li><a href="downloads.html">📥 Скачать</a></li>
+                <li><a href="social.html">💬 Соцсети</a></li>
+            </ul>
+        </nav>
+        <div class="sidebar-footer">
+            <p>© 2024 RegionMC</p>
+        </div>
+    </aside>
+    <main class="wiki-content">
+        <div class="page-header">
+            <h1>🔑 Права (Permissions)</h1>
+            <p>Все разрешения для тонкой настройки доступа</p>
+        </div>
+
+        <div class="section-card">
+            <h2>📋 Базовые команды</h2>
+            <h2> ⚠️ нужно выдать права 1 и 2 из списка</h2>
+            <table class="data-table">
+                <tr><th>Право</th><th>Описание</th></tr>
+                <tr><td class="perm-name">regionmc.command.region</td><td>Базовое право на использование /rg</td></tr>
+                <tr><td class="perm-name">regionmc.command.help</td><td>Доступ к /rg help</td><tr>
+                <tr><td class="perm-name">regionmc.command.pos</td><td>Установка позиций /rg pos1/pos2</td></tr>
+                <tr><td class="perm-name">regionmc.command.claim</td><td>Создание регионов</td></tr>
+                <tr><td class="perm-name">regionmc.command.delete</td><td>Удаление регионов</td></tr>
+                <tr><td class="perm-name">regionmc.command.info</td><td>Просмотр информации о регионе</td></tr>
+                <tr><td class="perm-name">regionmc.command.list</td><td>Список своих регионов</td></tr>
+                <tr><td class="perm-name">regionmc.command.wand</td><td>Получение палочки выделения</td></tr>
+                <tr><td class="perm-name">regionmc.command.limit</td><td>Просмотр лимитов</td></tr>
+            </table>
+        </div>
+
+        <div class="section-card">
+            <h2>👥 Управление участниками</h2>
+            <table class="data-table">
+                <tr><th>Право</th><th>Описание</th></tr>
+                <tr><td class="perm-name">regionmc.command.addmember</td><td>Добавление участников</td></tr>
+                <tr><td class="perm-name">regionmc.command.removemember</td><td>Удаление участников</td></tr>
+                <tr><td class="perm-name">regionmc.command.addowner</td><td>Добавление владельцев</td></tr>
+                <tr><td class="perm-name">regionmc.command.removeowner</td><td>Удаление владельцев</td></tr>
+            </table>
+        </div>
+
+        <div class="section-card">
+            <h2>⚙️ Флаги и настройки</h2>
+            <table class="data-table">
+                <tr><th>Право</th><th>Описание</th></tr>
+                <tr><td class="perm-name">regionmc.command.flag</td><td>Изменение флагов</td></tr>
+                <tr><td class="perm-name">regionmc.command.priority</td><td>Изменение приоритета</td></tr>
+                <tr><td class="perm-name">regionmc.command.expand</td><td>Расширение региона</td><table>
+                <tr><td class="perm-name">regionmc.command.show</td><td>Показ/скрытие границ</td></tr>
+            </table>
+        </div>
+
+        <div class="section-card">
+            <h2>⚙️ Права Флагов </h2>
+            <table class="data-table">
+                <tr><th>Право</th><th>Описание</th></tr>
+                <tr><td class="perm-name">regionmc.flags.*</td><td>Все доступные флагов</td></tr>
+                <tr><td class="perm-name">regionmc.flags.pvp</td><td>pvp флаг</td></tr>
+                <tr><td class="perm-name">regionmc.flags.pvp</td><td>pvp флаг</td></tr>
+                <tr><td class="perm-name">regionmc.flags.pvp</td><td>pvp флаг</td></tr>
+                <tr><td class="perm-name">regionmc.flags.pvp</td><td>pvp флаг</td></tr>
+            </table>
+        </div>
+
+        <div class="section-card">
+            <h2>👑 Административные</h2>
+            <table class="data-table">
+                <tr><th>Право</th><th>Описание</th></tr>
+                <tr><td class="perm-name">regionmc.admin</td><td>Полный доступ ко всем командам и обход защиты</td></tr>
+                <tr><td class="perm-name">regionmc.command.reload</td><td>Перезагрузка плагина</td></tr>
+                <tr><td class="perm-name">regionmc.command.testplaceholders</td><td>Тестирование плейсхолдеров</td></tr>
+                <tr><td class="perm-name">regionmc.bypass</td><td>Обход защиты регионов (строительство, разрушение)</td></tr>
+                <tr><td class="perm-name">regionmc.flags.*</td><td>Изменение любых флагов</td></tr>
+            </table>
+            <div class="tip">💡 Все права можно назначать через LuckPerms, PermissionsEx или любой другой менеджер прав.</div>
+        </div>
+
+        <div class="wiki-footer">
+            <p>RegionMC Documentation © 2024 | Minecraft Plugin</p>
+        </div>
+    </main>
+</div>
+<script src="../ui/js/main.js"></script>
+</body>
+</html>

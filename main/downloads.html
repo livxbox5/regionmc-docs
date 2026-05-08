@@ -2,195 +2,102 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Скачать RegionMC | Загрузка плагина</title>
+    <title>Скачать RegionMC</title>
     <link rel="stylesheet" href="../ui/css/style.css">
-    <style>
-        .download-card {
-            background: linear-gradient(135deg, rgba(255,215,0,0.1), rgba(255,215,0,0.05));
-            border: 1px solid rgba(255,215,0,0.3);
-            transition: transform 0.2s;
-        }
-        .download-card:hover {
-            transform: translateY(-5px);
-            border-color: #ffd700;
-        }
-        .modrinth-btn {
-            background: #1bd96a;
-            color: white;
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            padding: 12px 24px;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: bold;
-            transition: 0.2s;
-        }
-        .modrinth-btn:hover {
-            background: #15b858;
-            transform: translateY(-2px);
-        }
-        .github-btn {
-            background: #333;
-            color: white;
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            padding: 12px 24px;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: bold;
-            transition: 0.2s;
-        }
-        .github-btn:hover {
-            background: #444;
-            transform: translateY(-2px);
-        }
-        .version-list {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 10px;
-            margin-top: 15px;
-        }
-        .version-item {
-            background: rgba(0,0,0,0.3);
-            padding: 8px 12px;
-            border-radius: 6px;
-            font-family: monospace;
-        }
-        .version-item span {
-            color: #ffd700;
-        }
-        .download-stats {
-            text-align: center;
-            padding: 20px;
-            background: rgba(0,0,0,0.3);
-            border-radius: 12px;
-            margin: 20px 0;
-        }
-        .stat-number {
-            font-size: 2rem;
-            font-weight: bold;
-            color: #ffd700;
-        }
-    </style>
+    <link rel="icon" type="image/png" href="../icon.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <meta name="robots" content="noindex, nofollow">
 </head>
 <body>
-    <nav class="navbar">
-        <div class="nav-container">
-            <a href="../index.html" class="nav-brand">🏠 RegionMC</a>
-            <div class="nav-links">
-                <a href="commands.html">📖 Команды</a>
-                <a href="permissions.html">🔑 Права</a>
-                <a href="flags.html">🚩 Флаги</a>
-                <a href="examples.html">✨ Примеры</a>
-                <a href="features.html">⚙️ Возможности</a>
-                <a href="configuration.html">⚙️ Конфиг</a>
-                <a href="downloads.html" class="active">📥 Скачать</a>
-                <a href="social.html">💬 Соцсети</a>
-            </div>
+<div class="wiki-wrapper">
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <a href="../index.html" class="sidebar-logo">🏠 RegionMC</a>
+            <div class="sidebar-version">v2.0</div>
         </div>
-    </nav>
-
-    <main class="container">
+        <nav class="sidebar-nav">
+            <ul>
+                <li><a href="../index.html">🏠 Главная</a></li>
+                <li><a href="commands.html">📖 Команды</a></li>
+                <li><a href="permissions.html">🔑 Права</a></li>
+                <li><a href="flags.html">🚩 Флаги</a></li>
+                <li><a href="examples.html">✨ Примеры</a></li>
+                <li><a href="features.html">⚙️ Возможности</a></li>
+                <li><a href="configuration.html">⚙️ Конфигурация</a></li>
+                <li><a href="downloads.html">📥 Скачать</a></li>
+                <li><a href="social.html">💬 Соцсети</a></li>
+            </ul>
+        </nav>
+        <div class="sidebar-footer">
+            <p>© 2024 RegionMC</p>
+        </div>
+    </aside>
+    <main class="wiki-content">
         <div class="page-header">
             <h1>📥 Скачать RegionMC</h1>
             <p>Выберите удобный способ загрузки плагина</p>
         </div>
 
-        <!-- Modrinth - основной источник -->
-        <div class="section-card download-card">
+        <div class="section-card" style="background: linear-gradient(135deg, rgba(27,217,106,0.1), rgba(27,217,106,0.05)); border-color: #1bd96a;">
             <h2>🎮 Modrinth (Рекомендуется)</h2>
             <p>Официальная страница плагина на Modrinth — самый удобный способ скачать и отслеживать обновления</p>
             <div style="margin: 20px 0;">
-                <a href="https://modrinth.com/plugin/regionmc/versions" target="_blank" class="modrinth-btn">
-                    🟢 Скачать с Modrinth
-                </a>
+                <a href="https://modrinth.com/plugin/regionmc/versions" target="_blank" class="btn btn-primary" style="background: #1bd96a; color: white;">🟢 Скачать с Modrinth</a>
             </div>
-            <div class="version-list">
-                <div class="version-item"><span>✅</span> Последняя версия</div>
-                <div class="version-item"><span>🔄</span> Авто-обновления</div>
-                <div class="version-item"><span>📊</span> Статистика загрузок</div>
-                <div class="version-item"><span>⭐</span> Отзывы и рейтинг</div>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 10px; margin-top: 15px;">
+                <div style="background: rgba(0,0,0,0.3); padding: 8px; border-radius: 6px;"><span style="color:#1bd96a;">✅</span> Последняя версия</div>
+                <div style="background: rgba(0,0,0,0.3); padding: 8px; border-radius: 6px;"><span style="color:#1bd96a;">🔄</span> Авто-обновления</div>
+                <div style="background: rgba(0,0,0,0.3); padding: 8px; border-radius: 6px;"><span style="color:#1bd96a;">📊</span> Статистика загрузок</div>
+                <div style="background: rgba(0,0,0,0.3); padding: 8px; border-radius: 6px;"><span style="color:#1bd96a;">⭐</span> Отзывы и рейтинг</div>
             </div>
         </div>
 
-        <!-- GitHub как альтернатива -->
-        <div class="section-card download-card">
+        <div class="section-card" style="background: linear-gradient(135deg, rgba(51,51,51,0.1), rgba(51,51,51,0.05));">
             <h2>🐙 GitHub</h2>
             <p>Исходный код и релизы на GitHub</p>
             <div style="margin: 20px 0;">
-                <a href="https://github.com/KillerYT/RegionMC" target="_blank" class="github-btn">
-                    🐙 GitHub Releases
-                </a>
+                <a href="https://github.com/KillerYT/RegionMC" target="_blank" class="btn btn-secondary">🐙 GitHub Releases</a>
             </div>
-            <div class="version-list">
-                <div class="version-item"><span>📁</span> Исходный код</div>
-                <div class="version-item"><span>📝</span> История изменений</div>
-                <div class="version-item"><span>🐛</span> Отчеты об ошибках</div>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 10px;">
+                <div style="background: rgba(0,0,0,0.3); padding: 8px; border-radius: 6px;"><span style="color:#ccc;">📁</span> Исходный код</div>
+                <div style="background: rgba(0,0,0,0.3); padding: 8px; border-radius: 6px;"><span style="color:#ccc;">📝</span> История изменений</div>
+                <div style="background: rgba(0,0,0,0.3); padding: 8px; border-radius: 6px;"><span style="color:#ccc;">🐛</span> Отчеты об ошибках</div>
             </div>
         </div>
 
-        <!-- Прямые ссылки на версии -->
         <div class="section-card">
-            <h2>📦 Доступные версии</h2>
-            <p>Поддерживаемые версии Minecraft серверов (Paper / Purpur / Spigot)</p>
-            <div class="version-list">
-                <div class="version-item"><span>⚡ 1.21</span> - 1.21.4 (Рекомендуется)</div>
-                <div class="version-item"><span>⚡ 1.20</span> - 1.20.6</div>
-                <div class="version-item"><span>⚡ 1.19</span> - 1.19.4</div>
-                <div class="version-item"><span>⚡ 1.18</span> - 1.18.2</div>
-                <div class="version-item"><span>⚡ 1.17</span> - 1.17.1</div>
-                <div class="version-item"><span>⚡ 1.16</span> - 1.16.5</div>
+            <h2>📦 Поддерживаемые версии</h2>
+            <p>Сервера: Paper / Purpur / Spigot</p>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 8px; margin-top: 15px;">
+                <div style="background: rgba(255,215,0,0.1); padding: 6px 10px; border-radius: 6px;"><span style="color:#ffd700;">⚡</span> 1.21 - 1.21.4</div>
+                <div style="background: rgba(255,215,0,0.1); padding: 6px 10px; border-radius: 6px;"><span style="color:#ffd700;">⚡</span> 1.20 - 1.20.6</div>
+                <div style="background: rgba(255,215,0,0.1); padding: 6px 10px; border-radius: 6px;"><span style="color:#ffd700;">⚡</span> 1.19 - 1.19.4</div>
+                <div style="background: rgba(255,215,0,0.1); padding: 6px 10px; border-radius: 6px;"><span style="color:#ffd700;">⚡</span> 1.18 - 1.18.2</div>
+                <div style="background: rgba(255,215,0,0.1); padding: 6px 10px; border-radius: 6px;"><span style="color:#ffd700;">⚡</span> 1.17 - 1.17.1</div>
+                <div style="background: rgba(255,215,0,0.1); padding: 6px 10px; border-radius: 6px;"><span style="color:#ffd700;">⚡</span> 1.16 - 1.16.5</div>
             </div>
         </div>
 
-        <!-- Системные требования -->
-        <div class="section-card">
-            <h2>📋 Системные требования</h2>
-            <div class="features-grid" style="grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));">
-                <div>
-                    <h3 style="color:#ffd700;">🎮 Сервер</h3>
-                    <ul>
-                        <li>Paper / Purpur / Spigot 1.16+</li>
-                        <li>Java 17 или выше</li>
-                        <li>PlaceholderAPI (опционально)</li>
-                        <li>Vault (опционально, для экономики)</li>
-                    </ul>
-                </div>
-                <div>
-                    <h3 style="color:#ffd700;">💾 Ресурсы</h3>
-                    <ul>
-                        <li>RAM: от 50 МБ на 100 регионов</li>
-                        <li>Диск: от 5 МБ + данные регионов</li>
-                        <li>SQLite или MySQL</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-
-        <!-- Установка -->
         <div class="section-card">
             <h2>🛠️ Установка</h2>
             <div class="code-block">
-                1. Скачайте последнюю версию .jar файла
-                2. Поместите файл в папку plugins/ вашего сервера
-                3. Перезапустите сервер
-                4. Настройте конфиг в plugins/RegionMC/config.yml
-                5. Готово! Используйте /rg help для начала работы
+1. Скачайте последнюю версию .jar файла
+2. Поместите файл в папку plugins/ вашего сервера
+3. Перезапустите сервер
+4. Настройте конфиг в plugins/RegionMC/config.yml
+5. Готово! Используйте /rg help для начала работы
             </div>
             <div class="tip">
-                💡 После установки выдайте права игрокам через LuckPerms или другой менеджер прав.<br>
+                💡 После установки выдайте права игрокам через LuckPerms.<br>
                 Пример: <code>/lp user Steve permission set regionmc.command.claim true</code>
             </div>
         </div>
+
+        <div class="wiki-footer">
+            <p>RegionMC Documentation © 2024 | <a href="https://modrinth.com/plugin/regionmc" style="color:#ffd700;">Modrinth</a> | <a href="https://github.com/KillerYT/RegionMC" style="color:#ffd700;">GitHub</a></p>
+        </div>
     </main>
-
-    <footer>
-        <p>RegionMC Documentation © 2024 | <a href="https://modrinth.com/plugin/regionmc" style="color:#ffd700;">Modrinth</a> | <a href="https://github.com/KillerYT/RegionMC" style="color:#ffd700;">GitHub</a></p>
-    </footer>
-
-    <script src="../ui/js/main.js"></script>
+</div>
+<script src="../ui/js/main.js"></script>
 </body>
 </html>

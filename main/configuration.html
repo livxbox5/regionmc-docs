@@ -1,19 +1,47 @@
-
 <!DOCTYPE html>
-<html lang="ru"><head><meta charset="UTF-8"><title>Конфигурация RegionMC</title><link rel="stylesheet" href="../ui/css/style.css"></head>
-<!-- Favicon иконка -->
-<link rel="icon" type="image/png" href="../icon.png">
-<link rel="shortcut icon" type="image/png" href="../icon.png">
-<link rel="apple-touch-icon" href="../icon.png">
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Конфигурация RegionMC</title>
+    <link rel="stylesheet" href="../ui/css/style.css">
+    <link rel="icon" type="image/png" href="../icon.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <meta name="robots" content="noindex, nofollow">
+</head>
+<body>
+<div class="wiki-wrapper">
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <a href="../index.html" class="sidebar-logo">🏠 RegionMC</a>
+            <div class="sidebar-version">v2.0</div>
+        </div>
+        <nav class="sidebar-nav">
+            <ul>
+                <li><a href="../index.html">🏠 Главная</a></li>
+                <li><a href="commands.html">📖 Команды</a></li>
+                <li><a href="permissions.html">🔑 Права</a></li>
+                <li><a href="flags.html">🚩 Флаги</a></li>
+                <li><a href="examples.html">✨ Примеры</a></li>
+                <li><a href="features.html">⚙️ Возможности</a></li>
+                <li><a href="configuration.html">⚙️ Конфигурация</a></li>
+                <li><a href="downloads.html">📥 Скачать</a></li>
+                <li><a href="social.html">💬 Соцсети</a></li>
+            </ul>
+        </nav>
+        <div class="sidebar-footer">
+            <p>© 2024 RegionMC</p>
+        </div>
+    </aside>
+    <main class="wiki-content">
+        <div class="page-header">
+            <h1>⚙️ Конфигурация</h1>
+            <p>Основные настройки плагина (файл config.yml)</p>
+        </div>
 
-<!-- Запрет индексации -->
-<meta name="robots" content="noindex, nofollow">
-
-<body><nav class="navbar"><div class="nav-container"><a href="../index.html" class="nav-brand">🏠 RegionMC</a>
-<div class="nav-links"><a href="commands.html">📖 Команды</a><a href="permissions.html">🔑 Права</a><a href="flags.html">🚩 Флаги</a><a href="examples.html">✨ Примеры</a><a href="features.html">⚙️ Возможности</a><a href="configuration.html">⚙️ Конфиг</a></div></div></nav>
-<main class="container"><div class="page-header"><h1>⚙️ Конфигурация</h1><p>Основные настройки плагина (файл config.yml)</p></div>
-<div class="section-card"><h2>📁 Основные настройки</h2>
-<div class="code-block">regions:
+        <div class="section-card">
+            <h2>📁 Основные настройки</h2>
+            <div class="code-block">
+regions:
   max-regions-per-player: 5
   allow-overlap: false
   default-priority: 0
@@ -24,32 +52,53 @@
   naming:
     min-length: 3
     max-length: 16
-    blocked-names: ["admin","global","world"]</div>
-</div>
-<div class="section-card"><h2>🚩 Флаги по умолчанию</h2>
-<div class="code-block">default-flags:
+    blocked-names: ["admin","global","world"]
+            </div>
+        </div>
+
+        <div class="section-card">
+            <h2>🚩 Флаги по умолчанию</h2>
+            <div class="code-block">
+default-flags:
   build: "deny"
   break: "deny"
   interact: "allow"
   pvp: "allow"
-  mob-spawning: "allow"</div>
-</div>
-<div class="section-card"><h2>🛠️ Палочка выделения</h2>
-<div class="code-block">selection-tools:
+  mob-spawning: "allow"
+            </div>
+        </div>
+
+        <div class="section-card">
+            <h2>🛠️ Палочка выделения</h2>
+            <div class="code-block">
+selection-tools:
   selection-wand:
     enabled: true
     material: "WOODEN_AXE"
     name: "&6Топор для выделения"
-    lore: ["&7ЛКМ - pos1", "&7ПКМ - pos2"]</div>
-</div>
-<div class="section-card"><h2>💾 База данных</h2>
-<div class="code-block">database:
+    lore: ["&7ЛКМ - pos1", "&7ПКМ - pos2"]
+            </div>
+        </div>
+
+        <div class="section-card">
+            <h2>💾 База данных</h2>
+            <div class="code-block">
+database:
   type: "sqlite"  # или "mysql"
   mysql:
     host: "localhost"
     database: "regionmc"
     username: "root"
-    password: ""</div>
+    password: ""
+            </div>
+            <div class="tip">💡 Полная конфигурация доступна в файле config.yml после установки плагина.</div>
+        </div>
+
+        <div class="wiki-footer">
+            <p>RegionMC Documentation © 2024 | Minecraft Plugin</p>
+        </div>
+    </main>
 </div>
-<div class="tip">📖 Полная конфигурация доступна в файле main.yml после установки плагина.</div>
-</main><footer>RegionMC Documentation</footer><script src="../ui/js/main.js"></script></body></html>
+<script src="../ui/js/main.js"></script>
+</body>
+</html>

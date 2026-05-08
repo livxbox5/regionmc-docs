@@ -7,97 +7,151 @@
 
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: linear-gradient(135deg, #0f0f1a 0%, #1a1a2e 100%);
-    color: #e0e0e0;
+    background: #0a0c12;
+    color: #e4e4e7;
     line-height: 1.6;
+}
+
+/* ========== WIKI LAYOUT (Sidebar + Content) ========== */
+.wiki-wrapper {
+    display: flex;
     min-height: 100vh;
 }
 
-/* ========== SCROLLBAR ========== */
-::-webkit-scrollbar { width: 8px; }
-::-webkit-scrollbar-track { background: #1a1a2e; }
-::-webkit-scrollbar-thumb { background: #ffd700; border-radius: 4px; }
-
-/* ========== NAVBAR ========== */
-.navbar {
-    background: rgba(0, 0, 0, 0.85);
-    backdrop-filter: blur(10px);
+/* --- Sidebar --- */
+.sidebar {
+    width: 280px;
+    background: rgba(10, 14, 23, 0.98);
+    backdrop-filter: blur(4px);
+    border-right: 1px solid rgba(255, 215, 0, 0.2);
     position: sticky;
     top: 0;
-    z-index: 100;
-    border-bottom: 1px solid rgba(255, 215, 0, 0.3);
-}
-
-.nav-container {
-    max-width: 1400px;
-    margin: 0 auto;
-    padding: 1rem 2rem;
+    height: 100vh;
+    overflow-y: auto;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 1rem;
+    flex-direction: column;
+    z-index: 100;
 }
 
-.nav-brand {
-    font-size: 1.6rem;
+.sidebar-header {
+    padding: 1.5rem 1rem;
+    border-bottom: 1px solid rgba(255, 215, 0, 0.2);
+    text-align: center;
+}
+
+.sidebar-logo {
+    font-size: 1.8rem;
     font-weight: bold;
     color: #ffd700;
     text-decoration: none;
-    transition: opacity 0.3s;
+    display: block;
+    margin-bottom: 0.5rem;
 }
 
-.nav-brand:hover { opacity: 0.8; }
+.sidebar-version {
+    font-size: 0.8rem;
+    color: #ffd700;
+    background: rgba(255, 215, 0, 0.15);
+    display: inline-block;
+    padding: 0.2rem 0.6rem;
+    border-radius: 20px;
+}
 
-.nav-links {
+.sidebar-nav {
+    flex: 1;
+    padding: 1rem 0;
+}
+
+.sidebar-nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.sidebar-nav li {
+    margin: 0;
+    padding: 0;
+}
+
+.sidebar-nav a {
     display: flex;
-    gap: 1.2rem;
-    flex-wrap: wrap;
-}
-
-.nav-links a {
+    align-items: center;
+    gap: 12px;
+    padding: 0.7rem 1.5rem;
     color: #ccc;
     text-decoration: none;
-    transition: color 0.3s;
+    transition: all 0.2s;
+    border-left: 3px solid transparent;
     font-weight: 500;
 }
 
-.nav-links a:hover, .nav-links a.active { color: #ffd700; }
-
-/* ========== CONTAINER ========== */
-.container {
-    max-width: 1400px;
-    margin: 0 auto;
-    padding: 2rem;
+.sidebar-nav a:hover {
+    background: rgba(255, 215, 0, 0.1);
+    color: #ffd700;
+    border-left-color: #ffd700;
 }
 
-/* ========== HERO ========== */
+.sidebar-nav a.active {
+    background: rgba(255, 215, 0, 0.15);
+    color: #ffd700;
+    border-left-color: #ffd700;
+}
+
+.sidebar-footer {
+    padding: 1rem;
+    text-align: center;
+    font-size: 0.8rem;
+    border-top: 1px solid rgba(255, 215, 0, 0.1);
+    color: #666;
+}
+
+/* --- Main Content --- */
+.wiki-content {
+    flex: 1;
+    padding: 2rem;
+    max-width: calc(100% - 280px);
+    background: linear-gradient(135deg, #0f111a 0%, #13151f 100%);
+}
+
+/* ========== TYPOGRAPHY ========== */
+h1, h2, h3 {
+    color: #ffd700;
+    font-weight: 600;
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+h2 {
+    font-size: 1.8rem;
+    margin: 1.5rem 0 1rem;
+    border-bottom: 1px solid rgba(255, 215, 0, 0.3);
+    padding-bottom: 0.5rem;
+}
+
+h3 {
+    font-size: 1.3rem;
+    margin: 1rem 0 0.5rem;
+}
+
+/* ========== HERO on main page ========== */
 .hero {
     text-align: center;
-    padding: 3rem 1rem;
+    padding: 2rem 1rem;
     background: rgba(0, 0, 0, 0.4);
     border-radius: 24px;
     margin-bottom: 2rem;
-    backdrop-filter: blur(4px);
 }
 
 .hero h1 {
     font-size: 3rem;
-    margin-bottom: 0.5rem;
     background: linear-gradient(135deg, #ffd700, #ffaa00);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
-}
-
-.version {
-    font-size: 1rem;
-    background: #ffd700;
-    color: #1a1a2e;
-    padding: 0.2rem 0.8rem;
-    border-radius: 20px;
-    margin-left: 0.5rem;
-    vertical-align: middle;
+    margin-bottom: 0.5rem;
 }
 
 .tagline {
@@ -113,25 +167,39 @@ body {
     flex-wrap: wrap;
 }
 
+/* ========== BUTTONS ========== */
 .btn {
     display: inline-block;
     padding: 0.8rem 1.5rem;
     border-radius: 8px;
     text-decoration: none;
     font-weight: bold;
-    transition: transform 0.2s, background 0.2s;
+    transition: all 0.2s;
 }
-.btn-primary { background: #ffd700; color: #1a1a2e; }
-.btn-primary:hover { background: #ffed4a; transform: translateY(-2px); }
-.btn-secondary { background: rgba(255,255,255,0.1); color: #ffd700; border: 1px solid #ffd700; }
-.btn-secondary:hover { background: rgba(255,215,0,0.2); transform: translateY(-2px); }
+.btn-primary {
+    background: #ffd700;
+    color: #1a1a2e;
+}
+.btn-primary:hover {
+    background: #ffed4a;
+    transform: translateY(-2px);
+}
+.btn-secondary {
+    background: rgba(255,255,255,0.1);
+    color: #ffd700;
+    border: 1px solid #ffd700;
+}
+.btn-secondary:hover {
+    background: rgba(255,215,0,0.2);
+    transform: translateY(-2px);
+}
 
 /* ========== CARDS & GRID ========== */
 .features-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 1.5rem;
-    margin: 3rem 0;
+    margin: 2rem 0;
 }
 
 .feature-card {
@@ -141,16 +209,28 @@ body {
     transition: 0.3s;
     border: 1px solid rgba(255,215,0,0.2);
 }
-.feature-card:hover { transform: translateY(-5px); background: rgba(255,255,255,0.1); }
-.feature-icon { font-size: 2.5rem; margin-bottom: 1rem; }
-.feature-card h3 { color: #ffd700; margin-bottom: 0.5rem; }
-.feature-card ul { margin-left: 1.2rem; color: #ccc; }
+.feature-card:hover {
+    transform: translateY(-5px);
+    background: rgba(255,255,255,0.1);
+}
+.feature-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+.feature-card h3 {
+    color: #ffd700;
+    margin-bottom: 0.5rem;
+}
+.feature-card ul {
+    margin-left: 1.2rem;
+    color: #ccc;
+}
 
-/* ========== TABLES ========== */
+/* ========== TABLES (с горизонтальной прокруткой на мобильных) ========== */
 .data-table {
     width: 100%;
     border-collapse: collapse;
-    margin: 1rem 0;
+    margin: 1.5rem 0;
     background: rgba(0,0,0,0.4);
     border-radius: 12px;
     overflow: hidden;
@@ -166,34 +246,49 @@ body {
     padding: 0.8rem;
     border-bottom: 1px solid rgba(255,255,255,0.1);
 }
-.data-table tr:hover { background: rgba(255,215,0,0.1); }
+.data-table tr:hover {
+    background: rgba(255,215,0,0.1);
+}
 .command-name, .perm-name, .flag-name {
     font-family: monospace;
     color: #ffd700;
     font-weight: bold;
 }
-.flag-desc { color: #aaa; font-size: 0.9rem; }
+.flag-desc {
+    color: #aaa;
+    font-size: 0.9rem;
+}
 
 /* ========== CODE BLOCKS ========== */
 .code-block {
-    background: #0d1117;
+    background: #0a0c15;
     padding: 1rem;
     border-radius: 8px;
     margin: 1rem 0;
     border-left: 4px solid #ffd700;
-    font-family: monospace;
+    font-family: 'Courier New', monospace;
     overflow-x: auto;
+    white-space: pre-wrap;
+    word-break: break-word;
 }
 .copy-btn {
     background: #ffd700;
     color: #1a1a2e;
     border: none;
-    border-radius: 4px;
-    padding: 0.2rem 0.5rem;
+    border-radius: 6px;
+    padding: 0.3rem 0.8rem;
     cursor: pointer;
     font-size: 0.8rem;
+    font-weight: bold;
     margin-bottom: 0.5rem;
+    transition: 0.2s;
 }
+.copy-btn:hover {
+    background: #ffed4a;
+    transform: scale(1.02);
+}
+
+/* ========== SECTION CARD ========== */
 .section-card {
     background: rgba(255,255,255,0.05);
     border-radius: 16px;
@@ -201,10 +296,7 @@ body {
     margin-bottom: 2rem;
 }
 .section-card h2 {
-    color: #ffd700;
-    border-bottom: 1px solid rgba(255,215,0,0.3);
-    padding-bottom: 0.5rem;
-    margin-bottom: 1rem;
+    margin-top: 0;
 }
 .tip {
     background: rgba(255,215,0,0.1);
@@ -214,61 +306,147 @@ body {
     color: #ffd700;
 }
 
-/* ========== FOOTER ========== */
-footer {
+/* ========== PAGE HEADER ========== */
+.page-header {
+    margin-bottom: 2rem;
+}
+.page-header h1 {
+    margin-bottom: 0.2rem;
+}
+.page-header p {
+    color: #aaa;
+}
+
+/* ========== FOOTER (inside content) ========== */
+.wiki-footer {
     text-align: center;
-    padding: 2rem;
-    border-top: 1px solid rgba(255,215,0,0.2);
+    padding: 2rem 0 1rem;
     margin-top: 2rem;
-    color: #777;
+    border-top: 1px solid rgba(255,215,0,0.2);
+    color: #666;
 }
 
-/* ========== RESPONSIVE ========== */
+/* ========== МОБИЛЬНАЯ И ПЛАНШЕТНАЯ АДАПТАЦИЯ ========== */
 @media (max-width: 768px) {
-    .nav-container { flex-direction: column; }
-    .hero h1 { font-size: 2rem; }
-    .data-table { font-size: 0.85rem; }
-    .data-table th, .data-table td { padding: 0.5rem; }
+    .wiki-wrapper {
+        flex-direction: column;
+    }
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+        border-right: none;
+        border-bottom: 1px solid rgba(255,215,0,0.2);
+    }
+    .sidebar-nav ul {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.5rem;
+        padding: 0.5rem;
+    }
+    .sidebar-nav a {
+        padding: 0.4rem 0.8rem;
+        font-size: 0.75rem;
+        border-left: none;
+        background: rgba(255,215,0,0.1);
+        border-radius: 20px;
+        gap: 6px;
+    }
+    .sidebar-nav a.active {
+        background: #ffd700;
+        color: #1a1a2e;
+    }
+    .sidebar-header {
+        padding: 0.8rem;
+    }
+    .sidebar-logo {
+        font-size: 1.3rem;
+    }
+    .wiki-content {
+        max-width: 100%;
+        padding: 1rem;
+    }
+    .page-header h1 {
+        font-size: 1.6rem;
+    }
+    .hero h1 {
+        font-size: 1.8rem;
+    }
+    .hero-buttons .btn {
+        padding: 0.5rem 1rem;
+        font-size: 0.85rem;
+    }
+    .feature-card {
+        padding: 1rem;
+    }
+    .section-card {
+        padding: 1rem;
+        margin-bottom: 1rem;
+    }
+    .code-block {
+        font-size: 0.7rem;
+        padding: 0.6rem;
+    }
+    .copy-btn {
+        font-size: 0.7rem;
+        padding: 0.2rem 0.6rem;
+    }
+    /* Таблицы - горизонтальная прокрутка */
+    .data-table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+    .data-table td,
+    .data-table th {
+        padding: 0.5rem 0.6rem;
+        font-size: 0.7rem;
+    }
+    .features-grid {
+        grid-template-columns: 1fr;
+    }
 }
 
-/* Дополнительные стили для кнопок копирования и защиты */
-.copy-btn {
-    transition: all 0.2s;
-}
-.copy-btn:hover {
-    background: #ffed4a !important;
-    transform: scale(1.02);
+@media (min-width: 769px) and (max-width: 1024px) {
+    .wiki-content {
+        padding: 1.5rem;
+    }
+    .sidebar {
+        width: 240px;
+    }
+    .data-table {
+        font-size: 0.85rem;
+    }
+    .data-table td,
+    .data-table th {
+        padding: 0.6rem;
+    }
+    .features-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 
-/* Защита от выделения текста */
+/* ========== SCROLLBAR ========== */
+::-webkit-scrollbar {
+    width: 8px;
+}
+::-webkit-scrollbar-track {
+    background: #1a1a2e;
+}
+::-webkit-scrollbar-thumb {
+    background: #ffd700;
+    border-radius: 4px;
+}
+
+/* ========== TEXT SELECTION (allow only in code/tables) ========== */
 body {
     user-select: none;
     -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
 }
-
-/* Разрешаем выделение только в кодовых блоках и таблицах */
 .code-block, .code-block *,
 .data-table, .data-table *,
 .command-name, .perm-name, .flag-name {
     user-select: text;
     -webkit-user-select: text;
-    -moz-user-select: text;
-    -ms-user-select: text;
-}
-
-/* Защита от копирования изображений */
-img {
-    pointer-events: none;
-    user-select: none;
-    -webkit-user-drag: none;
-}
-
-/* Кнопка копирования */
-.copy-btn {
-    transition: all 0.2s;
-}
-.copy-btn:hover {
-    transform: scale(1.02);
 }

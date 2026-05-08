@@ -1,55 +1,121 @@
 <!DOCTYPE html>
-<html lang="ru"><head><meta charset="UTF-8"><title>Примеры RegionMC</title><link rel="stylesheet" href="../ui/css/style.css"></head>
-<body><nav class="navbar"><div class="nav-container"><a href="../index.html" class="nav-brand">🏠 RegionMC</a>
-<div class="nav-links"><a href="commands.html">📖 Команды</a><a href="permissions.html">🔑 Права</a><a href="flags.html">🚩 Флаги</a><a href="examples.html">✨ Примеры</a><a href="features.html">⚙️ Возможности</a><a href="configuration.html">⚙️ Конфиг</a></div></div></nav>
-<main class="container"><div class="page-header"><h1>✨ Примеры использования</h1><p>Пошаговые инструкции для создания и настройки регионов</p></div>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Примеры RegionMC</title>
+    <link rel="stylesheet" href="../ui/css/style.css">
+    <link rel="icon" type="image/png" href="../icon.png">
+    <meta name="robots" content="noindex, nofollow">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+</head>
+<body>
+<div class="wiki-wrapper">
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <a href="../index.html" class="sidebar-logo">🏠 RegionMC</a>
+            <div class="sidebar-version">v2.0</div>
+        </div>
+        <nav class="sidebar-nav">
+            <ul>
+                <li><a href="../index.html">🏠 Главная</a></li>
+                <li><a href="commands.html">📖 Команды</a></li>
+                <li><a href="permissions.html">🔑 Права</a></li>
+                <li><a href="flags.html">🚩 Флаги</a></li>
+                <li><a href="examples.html">✨ Примеры</a></li>
+                <li><a href="features.html">⚙️ Возможности</a></li>
+                <li><a href="configuration.html">⚙️ Конфигурация</a></li>
+                <li><a href="downloads.html">📥 Скачать</a></li>
+                <li><a href="social.html">💬 Соцсети</a></li>
+            </ul>
+        </nav>
+        <div class="sidebar-footer">
+            <p>© 2024 RegionMC</p>
+        </div>
+    </aside>
+    <main class="wiki-content">
+        <div class="page-header">
+            <h1>✨ Примеры использования</h1>
+            <p>Пошаговые инструкции для создания и настройки регионов</p>
+        </div>
 
-<div class="section-card"><h2>🔹 Создание личного привата</h2>
-<div class="code-block">1. /rg pos1  → установить угол 1
+        <div class="section-card">
+            <h2>🔹 Создание личного привата</h2>
+            <div class="code-block">
+1. /rg pos1  → установить угол 1
 2. /rg pos2  → установить противоположный угол
 3. /rg claim home → создать регион "home"
-4. /rg addmember home Steve → добавить друга</div>
-</div>
+4. /rg addmember home Steve → добавить друга
+            </div>
+        </div>
 
-<div class="section-card"><h2>🔹 Расширение региона</h2>
-<div class="code-block">/rg expand 10 up     → расширить на 10 блоков вверх
+        <div class="section-card">
+            <h2>🔹 Расширение региона</h2>
+            <div class="code-block">
+/rg expand 10 up     → расширить на 10 блоков вверх
 /rg expand 5 south   → на 5 блоков на юг
-/rg expand 8 east    → на восток</div>
-</div>
+/rg expand 8 east    → на восток
+            </div>
+        </div>
 
-<div class="section-card"><h2>🔹 Настройка PvP арены</h2>
-<div class="code-block">/rg claim arena
+        <div class="section-card">
+            <h2>🔹 Настройка PvP арены</h2>
+            <div class="code-block">
+/rg claim arena
 /rg flag arena pvp allow
 /rg flag arena entry allow
 /rg flag arena build deny
 /rg flag arena break deny
-/rg addmember arena @p (добавить участников)</div>
-</div>
+/rg addmember arena @p
+            </div>
+        </div>
 
-<div class="section-card"><h2>🔹 Вечный день в регионе</h2>
-<div class="code-block">/rg flag mybase time-lock day</div>
-<p>Теперь внутри региона всегда будет день (визуально).</p>
-</div>
+        <div class="section-card">
+            <h2>🔹 Вечный день в регионе</h2>
+            <div class="code-block">
+/rg flag mybase time-lock day
+            </div>
+            <p>Теперь внутри региона всегда будет день (визуально).</p>
+        </div>
 
-<div class="section-card"><h2>🔹 Защита от криперов и огня</h2>
-<div class="code-block">/rg flag home creeper-explosion deny
-/rg flag home fire-spread deny</div>
-</div>
+        <div class="section-card">
+            <h2>🔹 Защита от криперов и огня</h2>
+            <div class="code-block">
+/rg flag home creeper-explosion deny
+/rg flag home fire-spread deny
+            </div>
+        </div>
 
-<div class="section-card"><h2>🔹 Получение палочки выделения</h2>
-<div class="code-block">/rg wand
-// ЛКМ – pos1, ПКМ – pos2, Shift+ПКМ – информация о выделении</div>
-</div>
+        <div class="section-card">
+            <h2>🔹 Получение палочки выделения</h2>
+            <div class="code-block">
+/rg wand
+// ЛКМ – pos1, ПКМ – pos2, Shift+ПКМ – информация о выделении
+            </div>
+        </div>
 
-<div class="section-card"><h2>🔹 Информация и список</h2>
-<div class="code-block">/rg list          → ваши регионы
+        <div class="section-card">
+            <h2>🔹 Информация и список</h2>
+            <div class="code-block">
+/rg list          → ваши регионы
 /rg info home     → подробно о регионе "home"
-/rg info          → регион под ногами</div>
-</div>
+/rg info          → регион под ногами
+            </div>
+        </div>
 
-<div class="section-card"><h2>🔹 Приоритет регионов (при пересечении)</h2>
-<div class="code-block">/rg priority vipzone 100
+        <div class="section-card">
+            <h2>🔹 Приоритет регионов (при пересечении)</h2>
+            <div class="code-block">
+/rg priority vipzone 100
 /rg priority normal 0
-// Регион с более высоким приоритетом имеет преимущество при проверке флагов</div>
+// Регион с более высоким приоритетом имеет преимущество при проверке флагов
+            </div>
+        </div>
+
+        <div class="wiki-footer">
+            <p>RegionMC Documentation | /rg example в игре</p>
+        </div>
+    </main>
 </div>
-</main><footer>RegionMC Documentation | /rg example в игре</footer><script src="../ui/js/main.js"></script></body></html>
+<script src="../ui/js/main.js"></script>
+</body>
+</html>
