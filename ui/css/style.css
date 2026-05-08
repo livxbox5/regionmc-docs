@@ -109,7 +109,6 @@ body {
 .wiki-content {
     flex: 1;
     padding: 2rem;
-    max-width: calc(100% - 280px);
     background: linear-gradient(135deg, #0f111a 0%, #13151f 100%);
 }
 
@@ -449,4 +448,76 @@ body {
 .command-name, .perm-name, .flag-name {
     user-select: text;
     -webkit-user-select: text;
+}
+/* ========== СВОРАЧИВАЕМАЯ ЛЕВАЯ ПАНЕЛЬ ДЛЯ ПК ========== */
+@media (min-width: 769px) {
+    .sidebar {
+        width: 65px;
+        transition: width 0.3s ease;
+        overflow-x: hidden;
+        white-space: nowrap;
+    }
+    .sidebar:hover {
+        width: 260px;
+    }
+    
+    /* Основной контент */
+    .wiki-content {
+        padding: 2rem;
+        max-width: none;
+    }
+    
+    /* СКРЫВАЕМ ТЕКСТ (буквы), оставляем ТОЛЬКО иконки */
+    .sidebar-nav a span {
+        display: none !important;  /* Полностью скрываем текст */
+    }
+    
+    /* При наведении показываем текст */
+    .sidebar:hover .sidebar-nav a span {
+        display: inline-block !important;
+        margin-left: 8px;
+    }
+    
+    /* Иконка остаётся всегда видимой */
+    .sidebar-nav a {
+        display: flex;
+        align-items: center;
+        gap: 0;  /* Убираем отступ, так как текст скрыт */
+        padding: 0.7rem 1rem;
+        justify-content: flex-start;
+    }
+    
+    /* При наведении добавляем отступ для текста */
+    .sidebar:hover .sidebar-nav a {
+        gap: 12px;
+    }
+    
+    /* Логотип тоже должен сворачиваться */
+    .sidebar-logo {
+        font-size: 1.8rem;
+        display: block;
+        text-align: center;
+    }
+    
+    /* При наведении показываем полный логотип */
+    .sidebar:hover .sidebar-logo {
+        font-size: 1.3rem;
+        text-align: left;
+    }
+    
+    /* Версия скрыта */
+    .sidebar-version {
+        display: none;
+    }
+    .sidebar:hover .sidebar-version {
+        display: inline-block;
+    }
+    
+    /* Футер скрыт */
+    .sidebar-footer p {
+        display: none;
+    }
+    .sidebar:hover .sidebar-footer p {
+        display: block;
+    }
 }

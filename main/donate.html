@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Поддержать автора RegionMC</title>
+    <link rel="stylesheet" href="../ui/css/style.css">
+    <link rel="icon" type="image/png" href="../icon.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <meta name="robots" content="noindex, nofollow">
+    <style>
+        .donate-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+        .donate-card {
+            background: rgba(255,255,255,0.05);
+            border-radius: 20px;
+            padding: 2rem;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255,215,0,0.2);
+        }
+        .donate-card:hover {
+            transform: translateY(-5px);
+            border-color: #ffd700;
+            background: rgba(255,215,0,0.05);
+        }
+        .donate-icon {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+        }
+        .donate-card h3 {
+            color: #ffd700;
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+        }
+        .donate-card p {
+            color: #aaa;
+            margin-bottom: 1.5rem;
+        }
+        .donate-btn {
+            display: inline-block;
+            background: #ffd700;
+            color: #1a1a2e;
+            padding: 0.8rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: all 0.2s;
+            margin-top: 0.5rem;
+        }
+        .donate-btn:hover {
+            background: #ffed4a;
+            transform: scale(1.05);
+        }
+        .donate-btn-yoomoney {
+            background: #00b4d8;
+            color: white;
+        }
+        .donate-btn-yoomoney:hover {
+            background: #0096b8;
+        }
+        .donate-btn-donationalerts {
+            background: #ff7b00;
+            color: white;
+        }
+        .donate-btn-donationalerts:hover {
+            background: #e06c00;
+        }
+        .thanks-block {
+            background: linear-gradient(135deg, rgba(255,215,0,0.1), rgba(0,180,216,0.05));
+            border-radius: 20px;
+            padding: 2rem;
+            text-align: center;
+            margin: 2rem 0;
+        }
+        .thanks-block h2 {
+            margin-top: 0;
+        }
+        .hearts {
+            font-size: 1.5rem;
+            letter-spacing: 5px;
+        }
+    </style>
+</head>
+<body>
+<div class="wiki-wrapper">
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <a href="../index.html" class="sidebar-logo">🏠 RegionMC</a>
+            <div class="sidebar-version">v2.0</div>
+        </div>
+        <nav class="sidebar-nav">
+            <ul>
+                <li><a href="../index.html">🏠 <span>Главная</span></a></li>
+                <li><a href="commands.html">📖 <span>Команды</span></a></li>
+                <li><a href="permissions.html">🔑 <span>Права</span></a></li>
+                <li><a href="flags.html">🚩 <span>Флаги</span></a></li>
+                <li><a href="examples.html">✨ <span>Примеры</span></a></li>
+                <li><a href="features.html">⚙️ <span>Возможности</span></a></li>
+                <li><a href="configuration.html">⚙️ <span>Конфигурация</span></a></li>
+                <li><a href="downloads.html">📥 <span>Скачать</span></a></li>
+                <li><a href="donate.html">💝 <span>Поддержать</span></a></li>
+                <li><a href="social.html">💬 <span>Соцсети</span></a></li>
+            </ul>
+        </nav>
+        <div class="sidebar-footer">
+            <p>© 2024 RegionMC</p>
+        </div>
+    </aside>
+    <main class="wiki-content">
+        <div class="page-header">
+            <h1>💝 Поддержать автора</h1>
+            <p>Разработка плагинов требует времени и усилий. Ваша поддержка поможет делать RegionMC ещё лучше!</p>
+        </div>
+
+        <div class="donate-grid">
+            <!-- ЮMoney -->
+            <div class="donate-card">
+                <div class="donate-icon">💰</div>
+                <h3>ЮMoney</h3>
+                <p>Поддержку Автора на примую без посредника.</p>
+                <a href="https://yoomoney.ru/to/410014256408172/0" target="_blank" class="donate-btn donate-btn-yoomoney">
+                    🟡 Поддержать через ЮMoney
+                </a>
+            </div>
+
+            <!-- DonationAlerts -->
+            <div class="donate-card">
+                <div class="donate-icon">🎁</div>
+                <h3>DonationAlerts</h3>
+                <p>Международная платформа для донатов. Поддержка через карты и другие способы.</p>
+                <a href="https://www.donationalerts.com/r/killeryt02" target="_blank" class="donate-btn donate-btn-donationalerts">
+                    🧡 Поддержать через DonationAlerts
+                </a>
+            </div>
+        </div>
+
+        <!-- Дополнительные способы поддержки -->
+        <div class="section-card">
+            <h2>🌟 Другие способы поддержки</h2>
+            <ul style="margin-left: 1.5rem; color: #ccc;">
+                <li>⭐ Поставьте звезду на <a href="https://github.com/KillerYT/RegionMC" target="_blank" style="color:#ffd700;">GitHub</a> – это бесплатно и очень помогает!</li>
+                <li>📝 Оставьте отзыв на <a href="https://modrinth.com/plugin/regionmc" target="_blank" style="color:#ffd700;">Modrinth</a></li>
+                <li>💬 Расскажите о плагине друзьям</li>
+                <li>🐛 Сообщайте об ошибках и предлагайте идеи в <a href="https://github.com/KillerYT/RegionMC/issues" target="_blank" style="color:#ffd700;">Issues на GitHub</a></li>
+            </ul>
+        </div>
+
+        <!-- Благодарность -->
+        <div class="thanks-block">
+            <h2>❤️ Спасибо, что используете RegionMC!</h2>
+            <p>Каждый донат, даже самый маленький, мотивирует меня продолжать разработку и делать плагин лучше.</p>
+            <div class="hearts">💝 💜 💙 💚 💛 🧡</div>
+            <p style="margin-top: 1rem; font-size: 0.9rem; color: #888;">
+                Все средства идут на развитие проекта, покупку кофе ☕ и поддержание серверов для тестирования.
+            </p>
+        </div>
+
+        <div class="wiki-footer">
+            <p>RegionMC Documentation © 2024 | <a href="https://yoomoney.ru/to/410014256408172/0" style="color:#ffd700;">ЮMoney</a> | <a href="https://www.donationalerts.com/r/killeryt02" style="color:#ffd700;">DonationAlerts</a> | <a href="https://github.com/KillerYT/RegionMC" style="color:#ffd700;">GitHub</a></p>
+        </div>
+    </main>
+</div>
+<script src="../ui/js/main.js"></script>
+</body>
+</html>
