@@ -9,48 +9,51 @@
     <meta name="robots" content="noindex, nofollow">
 </head>
 <body>
-    <!-- Переключатель языка -->
-    <div class="language-switcher">
-        <div class="lang-btn">🌍</div>
-        <div class="lang-dropdown">
-            <a href="#" data-lang="ru" class="active-lang">🇷🇺 Русский</a>
-            <a href="#" data-lang="en">🇬🇧 English</a>
-        </div>
+
+<!-- Переключатель языка -->
+<div class="language-switcher">
+    <div class="lang-btn">🌍</div>
+    <div class="lang-dropdown">
+        <a href="#" data-lang="ru" class="active-lang">🇷🇺 Русский</a>
+        <a href="#" data-lang="en">🇬🇧 English</a>
     </div>
+</div>
 
-    <div class="wiki-wrapper">
-        <aside class="sidebar">
-            <div class="sidebar-header">
-                <a href="../index.html" class="sidebar-logo">🏠 RegionMC</a>
-                <div class="sidebar-version">v2.0</div>
-            </div>
-            <nav class="sidebar-nav">
-                <ul>
-                    <li><a href="../index.html">🏠 <span>Главная</span></a></li>
-                    <li><a href="commands.html">📖 <span>Команды</span></a></li>
-                    <li><a href="permissions.html">🔑 <span>Права</span></a></li>
-                    <li><a href="flags.html">🚩 <span>Флаги</span></a></li>
-                    <li><a href="examples.html">✨ <span>Примеры</span></a></li>
-                    <li><a href="features.html">⚙️ <span>Возможности</span></a></li>
-                    <li><a href="configuration.html">⚙️ <span>Конфигурация</span></a></li>
-                    <li><a href="downloads.html">📥 <span>Скачать</span></a></li>
-                    <li><a href="social.html">💬 <span>Соцсети</span></a></li>
-                </ul>
-            </nav>
-            <div class="sidebar-footer">
-                <p>© 2024 RegionMC</p>
-            </div>
-        </aside>
-        <main class="wiki-content">
-            <div class="page-header">
-                <h1>⚙️ Конфигурация</h1>
-                <p>Основные настройки плагина (файл config.yml)</p>
-            </div>
+<div class="wiki-wrapper">
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <a href="../index.html" class="sidebar-logo">🏠 RegionMC</a>
+            <div class="sidebar-version">v2.0</div>
+        </div>
+        <nav class="sidebar-nav">
+            <ul>
+                <li><a href="../index.html">🏠 <span>Главная</span></a></li>
+                <li><a href="commands.html">📖 <span>Команды</span></a></li>
+                <li><a href="permissions.html">🔑 <span>Права</span></a></li>
+                <li><a href="flags.html">🚩 <span>Флаги</span></a></li>
+                <li><a href="examples.html">✨ <span>Примеры</span></a></li>
+                <li><a href="features.html">⚙️ <span>Возможности</span></a></li>
+                <li><a href="configuration.html">⚙️ <span>Конфигурация</span></a></li>
+                <li><a href="downloads.html">📥 <span>Скачать</span></a></li>
+                <li><a href="social.html">💬 <span>Соцсети</span></a></li>
+            </ul>
+        </nav>
+        <div class="sidebar-footer">
+            <p>© 2024 RegionMC</p>
+        </div>
+    </aside>
 
-            <div class="section-card">
-                <h2>📁 Основные настройки (settings)</h2>
-                <div class="code-block">
-                    <pre>
+    <main class="wiki-content">
+        <div class="page-header">
+            <h1>⚙️ Конфигурация</h1>
+            <p>Основные настройки плагина (файл config.yml)</p>
+        </div>
+
+        <!-- ========== ОСНОВНЫЕ НАСТРОЙКИ ========== -->
+        <div class="section-card">
+            <h2>📁 Основные настройки (settings)</h2>
+            <div class="code-block">
+                <pre>
 settings:
   default-language: ru
   debug: false
@@ -63,25 +66,27 @@ settings:
   auto-time-sync: true
   notify-owners-on-entry: true
   notify-owners-on-exit: false</pre>
-                </div>
             </div>
+        </div>
 
-            <div class="section-card">
-                <h2>🔄 Обновления (updates)</h2>
-                <div class="code-block">
-                    <pre>
+        <!-- ========== ОБНОВЛЕНИЯ ========== -->
+        <div class="section-card">
+            <h2>🔄 Обновления (updates)</h2>
+            <div class="code-block">
+                <pre>
 updates:
   check-for-updates: true
   resource: modrinth
   check-interval: 24
   notify-admins: true</pre>
-                </div>
             </div>
+        </div>
 
-            <div class="section-card">
-                <h2>📐 Ограничения регионов</h2>
-                <div class="code-block">
-                    <pre>
+        <!-- ========== ОГРАНИЧЕНИЯ РЕГИОНОВ ========== -->
+        <div class="section-card">
+            <h2>📐 Ограничения регионов</h2>
+            <div class="code-block">
+                <pre>
 regions:
   size:
     min-size: 5
@@ -91,26 +96,28 @@ regions:
     min-length: 3
     max-length: 16
     blocked-names: ["admin","global","world"]</pre>
-                </div>
             </div>
+        </div>
 
-            <div class="section-card">
-                <h2>🚩 Флаги по умолчанию</h2>
-                <div class="code-block">
-                    <pre>
+        <!-- ========== ФЛАГИ ПО УМОЛЧАНИЮ ========== -->
+        <div class="section-card">
+            <h2>🚩 Флаги по умолчанию</h2>
+            <div class="code-block">
+                <pre>
 default-flags:
   build: "deny"
   break: "deny"
   interact: "allow"
   pvp: "allow"
   mob-spawning: "allow"</pre>
-                </div>
             </div>
+        </div>
 
-            <div class="section-card">
-                <h2>🛠️ Инструменты выделения (selection-tools)</h2>
-                <div class="code-block">
-                    <pre>
+        <!-- ========== ИНСТРУМЕНТЫ ВЫДЕЛЕНИЯ ========== -->
+        <div class="section-card">
+            <h2>🛠️ Инструменты выделения (selection-tools)</h2>
+            <div class="code-block">
+                <pre>
 selection-tools:
   selection-wand:
     enabled: true
@@ -131,14 +138,14 @@ selection-tools:
       - "&7ПКМ по блоку - показать информацию"
       - "&7Shift + ПКМ - показать границы"
     durability: -1</pre>
-                </div>
             </div>
+        </div>
 
-            <!-- ТОЛЬКО ОДИН РАЗ: БАЗА ДАННЫХ -->
-            <div class="section-card">
-                <h2>💾 База данных</h2>
-                <div class="code-block">
-                    <pre>
+        <!-- ========== БАЗА ДАННЫХ (ТОЛЬКО ОДИН РАЗ) ========== -->
+        <div class="section-card">
+            <h2>💾 База данных</h2>
+            <div class="code-block">
+                <pre>
 database:
   type: "sqlite"   # или "mysql"
   mysql:
@@ -146,15 +153,16 @@ database:
     database: "regionmc"
     username: "root"
     password: "password"</pre>
-                </div>
-                <div class="tip">💡 Полная конфигурация доступна в файле config.yml после установки плагина.</div>
             </div>
+            <div class="tip">💡 Полная конфигурация доступна в файле config.yml после установки плагина.</div>
+        </div>
 
-            <div class="wiki-footer">
-                <p>RegionMC Documentation © 2024 | Minecraft Plugin</p>
-            </div>
-        </main>
-    </div>
-    <script src="../ui/js/main.js"></script>
+        <div class="wiki-footer">
+            <p>RegionMC Documentation © 2024 | Minecraft Plugin</p>
+        </div>
+    </main>
+</div>
+
+<script src="../ui/js/main.js"></script>
 </body>
 </html>
