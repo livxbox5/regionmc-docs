@@ -9,6 +9,16 @@
     <meta name="robots" content="noindex, nofollow">
 </head>
 <body>
+
+<!-- Переключатель языка -->
+<div class="language-switcher">
+    <div class="lang-btn">🌍</div>
+    <div class="lang-dropdown">
+        <a href="#" data-lang="ru" class="active-lang">🇷🇺 Русский</a>
+        <a href="#" data-lang="en">🇬🇧 English</a>
+    </div>
+</div>
+
 <div class="wiki-wrapper">
     <aside class="sidebar">
         <div class="sidebar-header">
@@ -44,10 +54,10 @@
                 <tr><th>Флаг</th><th>Описание</th><th>Значения</th></tr>
                 <tr><td class="flag-name">build</td><td>Разрешить/запретить строительство</td><td>allow / deny</td></tr>
                 <tr><td class="flag-name">break</td><td>Разрешить/запретить разрушение блоков</td><td>allow / deny</td></tr>
-                <tr><td class="flag-name">interact</td><td>Взаимодействие с объектами</td><td>allow / deny</td></tr>
+                <tr><td class="flag-name">interact</td><td>Взаимодействие с объектами</td><td>allow / deny</td><tr>
                 <tr><td class="flag-name">use-items</td><td>Использование предметов</td><td>allow / deny</td></tr>
                 <tr><td class="flag-name">pvp</td><td>PvP (игрок против игрока)</td><td>allow / deny</td></tr>
-                <tr><td class="flag-name">mob-spawning</td><td>Спавн мобов</td><td>allow / deny</td></tr>
+                <tr><td class="flag-name">mob-spawning</td><td>Спавн мобов</td><td>allow / deny<tr></tr>
             </table>
         </div>
 
@@ -82,7 +92,7 @@
                 <tr><td class="flag-name">enderchest</td><td>Использование эндер-сундука</td></tr>
                 <tr><td class="flag-name">furnace-access</td><td>Доступ к печам</td></tr>
                 <tr><td class="flag-name">brewing-access</td><td>Доступ к зельеваркам</td></tr>
-                <tr><td class="flag-name">beacon-access</td><td>Взаимодействие с маяком</td></tr>
+                <td><td class="flag-name">beacon-access</td><td>Взаимодействие с маяком</td></tr>
                 <tr><td class="flag-name">item-drop</td><td>Разрешить выброс предметов</td></tr>
                 <tr><td class="flag-name">item-pickup</td><td>Разрешить подбирать предметы</td></tr>
             </table>
@@ -94,7 +104,7 @@
                 <tr><th>Флаг</th><th>Описание</th><th>Значения</th></tr>
                 <tr><td class="flag-name">time-lock</td><td>Блокировка времени</td><td>day / night / allow / deny</td></tr>
                 <tr><td class="flag-name">greeting</td><td>Приветственное сообщение</td><td>текст</td></tr>
-                <td><td class="flag-name">farewell</td><td>Прощальное сообщение</td><td>текст</td></tr>
+                <tr><td class="flag-name">farewell</td><td>Прощальное сообщение</td><td>текст</td></tr>
                 <tr><td class="flag-name">blockcmd</td><td>Запрет команд внутри региона</td><td>true / false</td></tr>
             </table>
             <div class="tip">💡 Использование: <code>/rg flag &lt;регион&gt; &lt;флаг&gt; &lt;значение&gt;</code>. Пример: <code>/rg flag home pvp deny</code></div>
