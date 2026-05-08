@@ -79,14 +79,46 @@
 
         <div class="section-card">
             <h2>🚩 Права Флагов</h2>
-            <table class="data-table">
-                <tr><th>Право</th><th>Описание</th></tr>
-                <tr><td class="perm-name">regionmc.flags.*</td><td>Все доступные флаги</td></tr>
-                <tr><td class="perm-name">regionmc.flags.build</td><td>Флаг build</td></tr>
-                <tr><td class="perm-name">regionmc.flags.break</td><td>Флаг break</td></tr>
-                <tr><td class="perm-name">regionmc.flags.pvp</td><td>Флаг pvp</td></tr>
-                <tr><td class="perm-name">regionmc.flags.entry</td><td>Флаг entry</td></tr>
-            </table>
+            <p>Права для изменения конкретных флагов в регионах</p>
+            <div style="overflow-x: auto;">
+                <table class="data-table" style="width: 100%;">
+                    <thead>
+                        <tr><th style="white-space: nowrap;">Право</th><th>Описание</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td class="perm-name" style="white-space: nowrap;">regionmc.flags.*</td><td>Доступ к всем флагов для RegionMC</td></tr>
+                        <tr><td class="perm-name" style="white-space: nowrap;">regionmc.flags.build</td><td>Флаг build — разрешить/запретить строительство</td></tr>
+                        <tr><td class="perm-name" style="white-space: nowrap;">regionmc.flags.break</td><td>Флаг break — разрешить/запретить разрушение</td></tr>
+                        <tr><td class="perm-name" style="white-space: nowrap;">regionmc.flags.interact</td><td>Флаг interact — взаимодействие с объектами</td></tr>
+                        <tr><td class="perm-name" style="white-space: nowrap;">regionmc.flags.use</td><td>Флаг use — использование предметов</td></tr>
+                        <tr><td class="perm-name" style="white-space: nowrap;">regionmc.flags.use-items</td><td>Флаг use-items — использование расходников</td></tr>
+                        <tr><td class="perm-name" style="white-space: nowrap;">regionmc.flags.pvp</td><td>Флаг pvp — разрешить/запретить PvP</td></tr>
+                        <tr><td class="perm-name" style="white-space: nowrap;">regionmc.flags.mob-spawning</td><td>Флаг mob-spawning — спавн мобов</td></tr>
+                        <tr><td class="perm-name" style="white-space: nowrap;">regionmc.flags.mob-damage</td><td>Флаг mob-damage — урон от мобов</td></tr>
+                        <tr><td class="perm-name" style="white-space: nowrap;">regionmc.flags.ender-dragon-damage</td><td>Флаг ender-dragon-damage — урон от дракона</td></tr>
+                        <tr><td class="perm-name" style="white-space: nowrap;">regionmc.flags.fall-damage</td><td>Флаг fall-damage — урон от падения</td></tr>
+                        <tr><td class="perm-name" style="white-space: nowrap;">regionmc.flags.entry</td><td>Флаг entry — вход в регион</td></tr>
+                        <tr><td class="perm-name" style="white-space: nowrap;">regionmc.flags.exit</td><td>Флаг exit — выход из региона</td></tr>
+                        <tr><td class="perm-name" style="white-space: nowrap;">regionmc.flags.sleep</td><td>Флаг sleep — разрешить сон в кровати</td></tr>
+                        <tr><td class="perm-name" style="white-space: nowrap;">regionmc.flags.time-lock</td><td>Флаг time-lock — блокировка времени</td></tr>
+                        <tr><td class="perm-name" style="white-space: nowrap;">regionmc.flags.explosions</td><td>Флаг explosions — все взрывы</td></tr>
+                        <tr><td class="perm-name" style="white-space: nowrap;">regionmc.flags.creeper-explosion</td><td>Флаг creeper-explosion — взрывы криперов</td></tr>
+                        <tr><td class="perm-name" style="white-space: nowrap;">regionmc.flags.fire-spread</td><td>Флаг fire-spread — распространение огня</td></tr>
+                        <tr><td class="perm-name" style="white-space: nowrap;">regionmc.flags.enderman-grief</td><td>Флаг enderman-grief — кража блоков эндерменом</td></tr>
+                        <tr><td class="perm-name" style="white-space: nowrap;">regionmc.flags.grass-growth</td><td>Флаг grass-growth — рост травы</td></tr>
+                        <tr><td class="perm-name" style="white-space: nowrap;">regionmc.flags.leaf-decay</td><td>Флаг leaf-decay — исчезновение листвы</td></tr>
+                        <tr><td class="perm-name" style="white-space: nowrap;">regionmc.flags.pistons</td><td>Флаг pistons — работа поршней</td></tr>
+                        <tr><td class="perm-name" style="white-space: nowrap;">regionmc.flags.chest-access</td><td>Флаг chest-access — доступ к сундукам</td></tr>
+                        <tr><td class="perm-name" style="white-space: nowrap;">regionmc.flags.enderchest</td><td>Флаг enderchest — доступ к эндер-сундуку</td></tr>
+                        <tr><td class="perm-name" style="white-space: nowrap;">regionmc.flags.item-drop</td><td>Флаг item-drop — выброс предметов</td></tr>
+                        <tr><td class="perm-name" style="white-space: nowrap;">regionmc.flags.item-pickup</td><td>Флаг item-pickup — подбор предметов</td></tr>
+                        <tr><td class="perm-name" style="white-space: nowrap;">regionmc.flags.exp-drops</td><td>Флаг exp-drops — выпадение опыта</td></tr>
+                        <tr><td class="perm-name" style="white-space: nowrap;">regionmc.flags.block-chat</td><td>Флаг block-chat — блокировка чата</td></tr>
+                        <tr><td class="perm-name" style="white-space: nowrap;">regionmc.flags.blockcmd</td><td>Флаг blockcmd — запрет команд</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="tip">💡 Права выдаются через LuckPerms: <code>/lp user игрок permission set regionmc.flags.pvp true</code></div>
         </div>
 
         <div class="section-card">
@@ -97,11 +129,25 @@
                 <tr><td class="perm-name">regionmc.command.reload</td><td>Перезагрузка плагина</td></tr>
                 <tr><td class="perm-name">regionmc.command.testplaceholders</td><td>Тестирование плейсхолдеров</td></tr>
                 <tr><td class="perm-name">regionmc.bypass</td><td>Обход защиты регионов (строительство, разрушение)</td></tr>
+                <tr><td class="perm-name">regionmc.bypass."Название региона"</td><td>Обход защиты регионов (строительство, разрушение)</td></tr>
                 <tr><td class="perm-name">regionmc.flags.*</td><td>Изменение любых флагов</td></tr>
             </table>
             <div class="tip">💡 Все права можно назначать через LuckPerms, PermissionsEx или любой другой менеджер прав.</div>
         </div>
 
+        <div class="section-card">
+            <h2>👑 пример</h2>
+            <table class="data-table">
+                <tr><th>Право</th><th>Описание</th></tr>
+                <tr><td class="perm-name">lp user ник permission set </td><td>Полный доступ ко всем командам и обход защиты</td></tr>
+                <tr><td class="perm-name">regionmc.command.reload</td><td>Перезагрузка плагина</td></tr>
+                <tr><td class="perm-name">regionmc.command.testplaceholders</td><td>Тестирование плейсхолдеров</td></tr>
+                <tr><td class="perm-name">regionmc.bypass</td><td>Обход защиты регионов (строительство, разрушение)</td></tr>
+                <tr><td class="perm-name">regionmc.bypass."Название региона"</td><td>Обход защиты регионов (строительство, разрушение)</td></tr>
+                <tr><td class="perm-name">regionmc.flags.*</td><td>Изменение любых флагов</td></tr>
+            </table>
+            <div class="tip">💡 Все права можно назначать через LuckPerms, PermissionsEx или любой другой менеджер прав.</div>
+        </div>
         <div class="wiki-footer">
             <p>RegionMC Documentation © 2024 | Minecraft Plugin</p>
         </div>
