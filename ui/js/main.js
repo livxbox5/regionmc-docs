@@ -1,10 +1,11 @@
 // ============================================================
 // RegionMC Documentation - Основной JavaScript файл
+// Версия: 2.0 - Полная документация
 // ============================================================
 
 document.addEventListener('DOMContentLoaded', () => {
     
-    // ---------- ПОДСВЕТКА ТЕКУЩЕЙ СТРАНИЦЫ ----------
+    // ========== ПОДСВЕТКА ТЕКУЩЕЙ СТРАНИЦЫ ==========
     const currentPath = window.location.pathname;
     const currentFile = currentPath.split('/').pop() || 'index.html';
     
@@ -19,7 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // ---------- КНОПКИ КОПИРОВАНИЯ ----------
+    // ========== КНОПКИ КОПИРОВАНИЯ ==========
     document.querySelectorAll('.code-block').forEach(block => {
         if (block.parentNode.querySelector('.copy-btn')) return;
         
@@ -66,8 +67,8 @@ document.addEventListener('DOMContentLoaded', () => {
             'hero_btn_flags': 'Флаги',
             'feature_protection': 'Защита региона',
             'feature_protection_desc': 'Блоки / сущности / контейнеры • Взрывы, огонь, PvP',
-            'feature_flags': '30+ флагов',
-            'feature_flags_desc': 'build, break, interact • mob-spawning, time-lock',
+            'feature_flags': '36+ флагов',
+            'feature_flags_desc': 'build, break, interact • mob-spawning, time-lock, blockcmd',
             'feature_members': 'Участники и владельцы',
             'feature_members_desc': 'Добавление/удаление • Полный контроль доступа',
             'feature_time': 'Блокировка времени',
@@ -96,8 +97,8 @@ document.addEventListener('DOMContentLoaded', () => {
             'hero_btn_flags': 'Flags',
             'feature_protection': 'Region Protection',
             'feature_protection_desc': 'Blocks / entities / containers • Explosions, fire, PvP',
-            'feature_flags': '30+ Flags',
-            'feature_flags_desc': 'build, break, interact • mob-spawning, time-lock',
+            'feature_flags': '36+ Flags',
+            'feature_flags_desc': 'build, break, interact • mob-spawning, time-lock, blockcmd',
             'feature_members': 'Members & Owners',
             'feature_members_desc': 'Add/remove • Full access control',
             'feature_time': 'Time Lock',
@@ -189,3 +190,5 @@ document.addEventListener('DOMContentLoaded', () => {
     
     translatePage(currentLang);
 })();
+
+// ========== КОНЕЦ ФАЙЛА ==========

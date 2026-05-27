@@ -1,4 +1,7 @@
 <!DOCTYPE html>
+<!-- ============================================================ -->
+<!-- RegionMC Documentation - Права (Permissions)                  -->
+<!-- ============================================================ -->
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
@@ -49,6 +52,7 @@
             <p>Все разрешения для тонкой настройки доступа</p>
         </div>
         
+        <!-- ==================== БАЗОВЫЕ КОМАНДЫ ==================== -->
         <div class="section-card">
             <h2>📋 Базовые команды</h2>
             <div class="tip">⚠️ Нужно выдать права regionmc.command.region и regionmc.command.help</div>
@@ -68,6 +72,7 @@
             </table>
         </div>
         
+        <!-- ==================== УПРАВЛЕНИЕ УЧАСТНИКАМИ ==================== -->
         <div class="section-card">
             <h2>👥 Управление участниками</h2>
             <table class="data-table">
@@ -81,6 +86,7 @@
             </table>
         </div>
         
+        <!-- ==================== ФЛАГИ И НАСТРОЙКИ ==================== -->
         <div class="section-card">
             <h2>⚙️ Флаги и настройки</h2>
             <table class="data-table">
@@ -94,33 +100,49 @@
             </table>
         </div>
         
+        <!-- ==================== ПРАВА ДЛЯ ФЛАГОВ ==================== -->
         <div class="section-card">
-            <h2>🚩 Права флагов</h2>
+            <h2>🚩 Права для флагов</h2>
+            <div class="tip">💡 regionmc.flags.* - доступ ко всем флагам</div>
             <div style="overflow-x: auto;">
                 <table class="data-table">
-                    <thead><tr><th>Право</th><th>Описание</th></tr></thead>
+                    <thead><tr><th>Право</th><th>Флаг</th></tr></thead>
                     <tbody>
-                        <tr><td class="perm-name">regionmc.flags.*</td><td>Доступ ко всем флагам</td></tr>
-                        <tr><td class="perm-name">regionmc.flags.build</td><td>Флаг build — разрешить/запретить строительство</td></tr>
-                        <tr><td class="perm-name">regionmc.flags.break</td><td>Флаг break — разрешить/запретить разрушение</td></tr>
-                        <tr><td class="perm-name">regionmc.flags.interact</td><td>Флаг interact — взаимодействие с объектами</td></tr>
-                        <tr><td class="perm-name">regionmc.flags.pvp</td><td>Флаг pvp — разрешить/запретить PvP</td></tr>
-                        <tr><td class="perm-name">regionmc.flags.mob-spawning</td><td>Флаг mob-spawning — спавн мобов</td></tr>
-                        <tr><td class="perm-name">regionmc.flags.time-lock</td><td>Флаг time-lock — блокировка времени</td></tr>
-                        <tr><td class="perm-name">regionmc.flags.entry</td><td>Флаг entry — вход в регион</td></tr>
-                        <tr><td class="perm-name">regionmc.flags.exit</td><td>Флаг exit — выход из региона</td></tr>
-                        <tr><td class="perm-name">regionmc.flags.chest-access</td><td>Флаг chest-access — доступ к сундукам</td></tr>
-                        <tr><td class="perm-name">regionmc.flags.enderchest</td><td>Флаг enderchest — доступ к эндер-сундуку</td></tr>
-                        <tr><td class="perm-name">regionmc.flags.item-drop</td><td>Флаг item-drop — выброс предметов</td></tr>
-                        <tr><td class="perm-name">regionmc.flags.item-pickup</td><td>Флаг item-pickup — подбор предметов</td></tr>
-                        <tr><td class="perm-name">regionmc.flags.block-chat</td><td>Флаг block-chat — блокировка чата</td></tr>
-                        <tr><td class="perm-name">regionmc.flags.blockcmd</td><td>Флаг blockcmd — запрет команд</td></tr>
+                        <tr><td class="perm-name">regionmc.flags.build</td><td>build - строительство</td></tr>
+                        <tr><td class="perm-name">regionmc.flags.break</td><td>break - разрушение</td></tr>
+                        <tr><td class="perm-name">regionmc.flags.place</td><td>place - установка блоков</td></tr>
+                        <tr><td class="perm-name">regionmc.flags.interact</td><td>interact - взаимодействие</td></tr>
+                        <tr><td class="perm-name">regionmc.flags.use</td><td>use - использование предметов</td></tr>
+                        <tr><td class="perm-name">regionmc.flags.pvp</td><td>pvp - PvP</td></tr>
+                        <tr><td class="perm-name">regionmc.flags.mob-spawning</td><td>mob-spawning - спавн мобов</td></tr>
+                        <tr><td class="perm-name">regionmc.flags.mob-damage</td><td>mob-damage - урон от мобов</td></tr>
+                        <tr><td class="perm-name">regionmc.flags.time-lock</td><td>time-lock - блокировка времени</td></tr>
+                        <tr><td class="perm-name">regionmc.flags.entry</td><td>entry - вход в регион</td></tr>
+                        <tr><td class="perm-name">regionmc.flags.exit</td><td>exit - выход из региона</td></tr>
+                        <tr><td class="perm-name">regionmc.flags.chest-access</td><td>chest-access - доступ к сундукам</td></tr>
+                        <tr><td class="perm-name">regionmc.flags.enderchest</td><td>enderchest - эндер-сундук</td></tr>
+                        <tr><td class="perm-name">regionmc.flags.item-drop</td><td>item-drop - выброс предметов</td></tr>
+                        <tr><td class="perm-name">regionmc.flags.item-pickup</td><td>item-pickup - подбор предметов</td></tr>
+                        <tr><td class="perm-name">regionmc.flags.block-chat</td><td>block-chat - блокировка чата</td></tr>
+                        <tr><td class="perm-name">regionmc.flags.blockcmd</td><td>blockcmd - запрет команд</td></tr>
+                        <tr><td class="perm-name">regionmc.flags.ride</td><td>ride - посадка на транспорт</td></tr>
+                        <tr><td class="perm-name">regionmc.flags.pistons</td><td>pistons - работа поршней</td></tr>
+                        <tr><td class="perm-name">regionmc.flags.fall-damage</td><td>fall-damage - урон от падения</td></tr>
+                        <tr><td class="perm-name">regionmc.flags.explosions</td><td>explosions - взрывы</td></tr>
+                        <tr><td class="perm-name">regionmc.flags.creeper-explosion</td><td>creeper-explosion - взрывы криперов</td></tr>
+                        <tr><td class="perm-name">regionmc.flags.tnt-explosion</td><td>tnt-explosion - взрывы TNT</td></tr>
+                        <tr><td class="perm-name">regionmc.flags.fire-spread</td><td>fire-spread - распространение огня</td></tr>
+                        <tr><td class="perm-name">regionmc.flags.sleep</td><td>sleep - сон в кровати</td></tr>
+                        <tr><td class="perm-name">regionmc.flags.damage-animals</td><td>damage-animals - урон животным</td></tr>
+                        <tr><td class="perm-name">regionmc.flags.enderman-grief</td><td>enderman-grief - гриферство эндерменов</td></tr>
+                        <tr><td class="perm-name">regionmc.flags.respawn-anchors</td><td>respawn-anchors - якоря возрождения</td></tr>
+                        <tr><td class="perm-name">regionmc.flags.exp-drops</td><td>exp-drops - выпадение опыта</td></tr>
                     </tbody>
                 </table>
             </div>
-            <div class="tip">💡 Права выдаются через LuckPerms: <code>/lp user игрок permission set regionmc.flags.pvp true</code></div>
         </div>
         
+        <!-- ==================== АДМИНИСТРАТИВНЫЕ ==================== -->
         <div class="section-card">
             <h2>👑 Административные</h2>
             <table class="data-table">
@@ -129,10 +151,46 @@
                     <tr><td class="perm-name">regionmc.admin</td><td>Полный доступ ко всем командам и обход защиты</td></tr>
                     <tr><td class="perm-name">regionmc.command.reload</td><td>Перезагрузка плагина</td></tr>
                     <tr><td class="perm-name">regionmc.bypass</td><td>Обход защиты регионов</td></tr>
-                    <tr><td class="perm-name">regionmc.flags.*</td><td>Изменение любых флагов</td></tr>
+                    <tr><td class="perm-name">regionmc.bypass.chat</td><td>Обход блокировки чата</td></tr>
+                    <tr><td class="perm-name">regionmc.bypass.&lt;регион&gt;</td><td>Обход защиты в конкретном регионе</td></tr>
                 </tbody>
             </table>
-            <div class="tip">💡 Все права можно назначать через LuckPerms, PermissionsEx или любой другой менеджер прав.</div>
+        </div>
+        
+        <!-- ==================== ЛИМИТЫ ==================== -->
+        <div class="section-card">
+            <h2>📊 Лимиты размера</h2>
+            <table class="data-table">
+                <thead><tr><th>Право</th><th>Лимит</th></tr></thead>
+                <tbody>
+                    <tr><td class="perm-name">regionmc.limit.10000</td><td>10 000 блоков</td></tr>
+                    <tr><td class="perm-name">regionmc.limit.20000</td><td>20 000 блоков</td></tr>
+                    <tr><td class="perm-name">regionmc.limit.30000</td><td>30 000 блоков</td></tr>
+                    <tr><td class="perm-name">regionmc.limit.40000</td><td>40 000 блоков</td></tr>
+                    <tr><td class="perm-name">regionmc.limit.50000</td><td>50 000 блоков</td></tr>
+                    <tr><td class="perm-name">regionmc.limit.100000</td><td>100 000 блоков</td></tr>
+                    <tr><td class="perm-name">regionmc.limit.unlimited</td><td>Безлимитно</td></tr>
+                </tbody>
+            </table>
+            
+            <h2>📊 Лимиты количества регионов</h2>
+            <table class="data-table">
+                <thead><tr><th>Право</th><th>Лимит</th></tr></thead>
+                <tbody>
+                    <tr><td class="perm-name">regionmc.maxregions.1</td><td>1 регион</td></tr>
+                    <tr><td class="perm-name">regionmc.maxregions.2</td><td>2 региона</td></tr>
+                    <tr><td class="perm-name">regionmc.maxregions.3</td><td>3 региона</td></tr>
+                    <tr><td class="perm-name">regionmc.maxregions.5</td><td>5 регионов</td></tr>
+                    <tr><td class="perm-name">regionmc.maxregions.10</td><td>10 регионов</td></tr>
+                    <tr><td class="perm-name">regionmc.maxregions.15</td><td>15 регионов</td></tr>
+                    <tr><td class="perm-name">regionmc.maxregions.20</td><td>20 регионов</td></tr>
+                    <tr><td class="perm-name">regionmc.maxregions.25</td><td>25 регионов</td></tr>
+                    <tr><td class="perm-name">regionmc.maxregions.50</td><td>50 регионов</td></tr>
+                    <tr><td class="perm-name">regionmc.maxregions.100</td><td>100 регионов</td></tr>
+                    <tr><td class="perm-name">regionmc.maxregions.unlimited</td><td>Безлимитно</td></tr>
+                </tbody>
+            </table>
+            <div class="tip">💡 Права выдаются через LuckPerms: <code>/lp user игрок permission set regionmc.command.claim true</code></div>
         </div>
         
         <div class="wiki-footer">

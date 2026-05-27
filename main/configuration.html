@@ -46,110 +46,365 @@
     <main class="wiki-content">
         <div class="page-header">
             <h1>⚙️ Конфигурация</h1>
-            <p>Основные настройки плагина (файл config.yml)</p>
+            <p>Основные настройки плагина (файлы config.yml, main.yml, limit.yml)</p>
         </div>
 
+        <!-- ==================== config.yml ==================== -->
         <div class="section-card">
-            <h2>📁 Основные настройки (settings)</h2>
+            <h2>📁 Основные настройки (config.yml)</h2>
             <div class="code-block">
-                <pre>
+<pre>
 settings:
-  default-language: "ru"
-  debug: false
-  auto-update-config: true
+  default-language: "ru"        # Язык плагина (ru/en)
+  debug: false                   # Режим отладки
+  auto-update-config: true       # Автообновление конфига
   save-regions-individually: true
-  auto-save-interval: 6000
-  max-regions-per-player: 5
-  enable-global-regions: true
+  auto-save-interval: 6000       # Интервал автосохранения (тики)
+  max-regions-per-player: 5      # Лимит регионов по умолчанию
+  enable-global-regions: true    # Глобальные регионы
   creeper-cancel-effects: true
   auto-time-sync: true
   notify-owners-on-entry: true
-  notify-owners-on-exit: false</pre>
-            </div>
-        </div>
+  notify-owners-on-exit: false
 
-        <div class="section-card">
-            <h2>🔄 Обновления (updates)</h2>
-            <div class="code-block">
-                <pre>
 updates:
   check-for-updates: true
   resource: "modrinth"
-  check-interval: 24
-  notify-admins: true</pre>
+  check-interval: 24             # Часы
+  notify-admins: true
+</pre>
             </div>
         </div>
 
-        <div class="section-card">
-            <h2>📐 Ограничения регионов</h2>
+        <!-- ==================== ГЛАВНОЕ ПРАВИЛО ==================== -->
+        <div class="section-card" style="background: linear-gradient(135deg, rgba(255,215,0,0.1), rgba(255,100,0,0.05)); border-left: 4px solid #ffd700;">
+            <h2>⭐ ГЛАВНОЕ ПРАВИЛО: main.yml vs limit.yml</h2>
+            
+            <div class="tip" style="background: rgba(0,0,0,0.5);">
+                <strong>📌 Если limit.yml → Enable: true (лимиты ВКЛЮЧЕНЫ)</strong><br>
+                Тогда <strong style="color:#ffd700;">limit.yml имеет ПРИОРИТЕТ</strong> над main.yml для лимитов!
+            </div>
+            
             <div class="code-block">
-                <pre>
+<pre>
+# limit.yml
+Enable: true                    # ← ключевой переключатель
+default-max-regions: 10         # ← ЭТО значение будет использоваться
+
+# main.yml  
+max-regions-per-player: 5       # ← ИГНОРИРУЕТСЯ (так как Enable: true)
+</pre>
+            </div>
+            
+            <div class="tip" style="background: rgba(0,0,0,0.5); margin-top: 15px;">
+                <strong>📌 Если limit.yml → Enable: false (лимиты ВЫКЛЮЧЕНЫ)</strong><br>
+                Тогда <strong style="color:#ffd700;">main.yml вступает в силу</strong> как запасной вариант!
+            </div>
+            
+            <div class="code-block">
+<pre>
+# limit.yml
+Enable: false                   # ← лимиты отключены
+
+# main.yml
+max-regions-per-player: 5       # ← ЭТО значение используется
+</pre>
+            </div>
+        </div>
+
+        <!-- ==================== main.yml ==================== -->
+        <div class="section-card">
+            <h2>📁 Полная конфигурация (main.yml)</h2>
+            <div class="code-block">
+<pre>
 regions:
-  size:
-    min-size: 5
-    max-size: 100000
-    max-height: 256
+  # Основные настройки
+  max-regions-per-player: 5      # ⚠️ Используется ТОЛЬКО если limit.yml Enable: false
+  allow-overlap: false           # Запретить пересечение регионов
+  default-priority: 0            # Приоритет новых регионов
+
+  # Настройки именования
   naming:
+    blocked-names:
+      - "admin"
+      - "global"
+      - "world"
+      - "server"
+      - "owner"
+      - "region"
+      - "mine"
+      - "protected"
     min-length: 3
     max-length: 16
-    blocked-names: ["admin","global","world"]</pre>
-            </div>
-        </div>
+    allow-special-chars: true
+    allow-spaces: false
 
-        <div class="section-card">
-            <h2>🚩 Флаги по умолчанию (default-flags)</h2>
-            <div class="code-block">
-                <pre>
-default-flags:
-  build: "deny"
-  break: "deny"
-  interact: "allow"
-  pvp: "allow"
-  mob-spawning: "allow"</pre>
-            </div>
-            <div class="tip">💡 Эти флаги применяются ко всем новым регионам при их создании.</div>
-        </div>
-
-        <div class="section-card">
-            <h2>🛠️ Инструменты выделения (selection-tools)</h2>
-            <div class="code-block">
-                <pre>
-selection-tools:
-  selection-wand:
+  # =============================================
+  # НАСТРОЙКИ ПРЕДУПРЕЖДЕНИЙ (regions-warn)
+  # =============================================
+  regions-warn:
+    # Включить/выключить систему предупреждений
     enabled: true
-    material: "WOODEN_AXE"
-    name: "&6Топор для выделения"
-    lore:
-      - "&7ЛКМ - установить позицию 1"
-      - "&7ПКМ - установить позицию 2"
-      - "&7Shift + ПКМ - проверить регион"
-    durability: -1
+    
+    # Предупреждение при входе в чужой регион
+    entry-warning: true
+    entry-warning-message: "&c⚠ Вы вошли в регион &e{region}&c! У вас нет прав!"
+    
+    # Предупреждение при попытке строительства
+    build-warning: true
+    build-warning-message: "&c⚠ Вы не можете строить в регионе &e{region}&c!"
+    
+    # Предупреждение при попытке разрушения
+    break-warning: true
+    break-warning-message: "&c⚠ Вы не можете ломать блоки в регионе &e{region}&c!"
+    
+    # Предупреждение при попытке открыть сундук
+    chest-warning: true
+    chest-warning-message: "&c⚠ Вы не можете открывать контейнеры в регионе &e{region}&c!"
+    
+    # Предупреждение при попытке использовать предметы
+    use-warning: true
+    use-warning-message: "&c⚠ Вы не можете использовать предметы в регионе &e{region}&c!"
+    
+    # Предупреждение при попытке PvP
+    pvp-warning: true
+    pvp-warning-message: "&c⚠ PvP отключен в регионе &e{region}&c!"
+    
+    # Задержка между предупреждениями (в секундах)
+    warn-cooldown: 5
 
-  selection-info:
-    enabled: true
-    material: "STICK"
-    name: "&bПроверка регионов"
-    lore:
-      - "&7ЛКМ по блоку - проверить регион"
-      - "&7ПКМ по блоку - показать информацию"
-      - "&7Shift + ПКМ - показать границы"
-    durability: -1</pre>
-            </div>
-        </div>
+  # =============================================
+  # ФЛАГИ ПО УМОЛЧАНИЮ
+  # =============================================
+  default-flags:
+    build: "deny"
+    break: "deny"
+    place: "deny"
+    interact: "allow"
+    use-items: "allow"
+    pvp: "allow"
+    mob-spawning: "allow"
+    explosions: "deny"
+    creeper-explosion: "deny"
+    tnt-explosion: "deny"
+    time-lock: "allow"
+    entry: "allow"
+    exit: "allow"
+    chest-access: "allow"
+    enderchest: "allow"
 
-        <div class="section-card">
-            <h2>💾 База данных (database)</h2>
-            <div class="code-block">
-                <pre>
+  # =============================================
+  # НАСТРОЙКИ ИНСТРУМЕНТОВ
+  # =============================================
+  selection-tools:
+    selection-wand:
+      enabled: true
+      material: "WOODEN_AXE"
+      name: "&6Топор для выделения"
+      lore:
+        - "&7ЛКМ - установить позицию 1"
+        - "&7ПКМ - установить позицию 2"
+        - "&7Shift + ПКМ - проверить регион"
+    selection-info:
+      enabled: true
+      material: "STICK"
+      name: "&bПроверка регионов"
+      lore:
+        - "&7ПКМ по блоку - проверить регион"
+
+# ========== НАСТРОЙКИ ДЛЯ БАЗЫ ДАННЫХ ==========
 database:
-  type: "sqlite"   # или "mysql"
+  type: "sqlite"
+  sqlite:
+    filename: "regions.db"
   mysql:
     host: "localhost"
+    port: 3306
     database: "regionmc"
     username: "root"
-    password: "password"</pre>
+    password: ""
+
+# ========== НАСТРОЙКИ ДЛЯ API ==========
+api:
+  enable-api: true
+  rest-api:
+    enabled: false
+    port: 8080
+</pre>
             </div>
-            <div class="tip">💡 SQLite подходит для небольших серверов. MySQL — для крупных проектов.</div>
+            <div class="tip">💡 <strong>regions-warn</strong> - настройка предупреждений для игроков при нарушении прав региона</div>
+        </div>
+
+        <!-- ==================== limit.yml ==================== -->
+        <div class="section-card">
+            <h2>📊 Лимиты регионов (limit.yml)</h2>
+            <div class="tip" style="background: rgba(255,215,0,0.2);">
+                <strong>⚠️ ВАЖНО:</strong> Этот файл имеет ПРИОРИТЕТ над main.yml для лимитов!<br>
+                Если <code>Enable: true</code> - используются настройки из limit.yml.<br>
+                Если <code>Enable: false</code> - используются настройки из main.yml.
+            </div>
+            <div class="code-block">
+<pre>
+# =============================================
+# ГЛОБАЛЬНОЕ ВКЛЮЧЕНИЕ/ВЫКЛЮЧЕНИЕ
+# =============================================
+# true  - все лимиты ВКЛЮЧЕНЫ (limit.yml имеет приоритет)
+# false - все лимиты ОТКЛЮЧЕНЫ (используется main.yml)
+Enable: true
+
+# =============================================
+# НАСТРОЙКИ РАЗМЕРОВ РЕГИОНОВ
+# =============================================
+size-limits:
+  enable-size-checks: true       # Включить проверку размеров
+  min-size: 5                    # Минимальный размер (блоков)
+  max-size: 100000               # Максимальный размер (блоков)
+  max-height: 256                # Максимальная высота
+
+# =============================================
+# НАСТРОЙКИ КОЛИЧЕСТВА РЕГИОНОВ
+# =============================================
+default-max-regions: 5           # Лимит по умолчанию
+
+# =============================================
+# ПРИОРИТЕТ ПРОВЕРКИ
+# =============================================
+check-priority: permission-first  # permission-first / group-first
+
+# =============================================
+# ЛИМИТЫ ПО ПЕРМИШЕНАМ
+# =============================================
+permission-limits:
+  - permission: "regionmc.limit.10000"
+    limit: 10000
+  - permission: "regionmc.limit.20000"
+    limit: 20000
+  - permission: "regionmc.limit.50000"
+    limit: 50000
+  - permission: "regionmc.limit.100000"
+    limit: 100000
+  - permission: "regionmc.limit.unlimited"
+    limit: -1
+  
+  - permission: "regionmc.maxregions.5"
+    max-regions: 5
+  - permission: "regionmc.maxregions.10"
+    max-regions: 10
+  - permission: "regionmc.maxregions.20"
+    max-regions: 20
+  - permission: "regionmc.maxregions.unlimited"
+    max-regions: -1
+
+# =============================================
+# ЛИМИТЫ ПО ГРУППАМ
+# =============================================
+group-limits:
+  default:
+    size: 26000
+    max-regions: 5
+  vip:
+    size: 32000
+    max-regions: 10
+  premium:
+    size: 40000
+    max-regions: 20
+  elite:
+    size: 50000
+    max-regions: 30
+  admin:
+    size: -1
+    max-regions: -1
+
+# =============================================
+# ЛИМИТ РАЗМЕРА ПО УМОЛЧАНИЮ
+# =============================================
+default-limit: 100000
+
+# =============================================
+# СПЕЦИАЛЬНЫЕ ЗНАЧЕНИЯ
+# =============================================
+# limit: -1          → Безлимитно
+# limit: 0           → Безлимитно
+# max-height: -1     → Безлимитная высота
+# min-size: -1       → Безлимитный минимум
+</pre>
+            </div>
+            <div class="tip">💡 limit: -1 = безлимитно | max-height: -1 = безлимитная высота</div>
+        </div>
+
+        <!-- ==================== ПРИМЕРЫ ЛИМИТОВ ==================== -->
+        <div class="section-card">
+            <h2>📝 Примеры настройки лимитов</h2>
+            <div class="code-block">
+<pre>
+# Пример 1: Обычный игрок (без прав)
+# - Размер: до 100 000 блоков
+# - Количество: до 5 регионов
+# - Высота: до 256 блоков
+
+# Пример 2: VIP игрок (с правами)
+# Права: regionmc.maxregions.10 и regionmc.limit.50000
+# - Размер: до 50 000 блоков
+# - Количество: до 10 регионов
+# - Высота: до 256 блоков
+
+# Пример 3: Безлимитная высота
+max-height: -1
+
+# Пример 4: Безлимитный размер
+max-size: -1
+
+# Пример 5: Безлимитное количество
+default-max-regions: -1
+</pre>
+            </div>
+        </div>
+
+        <!-- ==================== ЦВЕТА ==================== -->
+        <div class="section-card">
+            <h2>🎨 Цвета и форматы (ColorUtils.yml)</h2>
+            <div class="code-block">
+<pre>
+# Стандартные цвета Minecraft
+minecraft-colors:
+  black: "&0"
+  dark-blue: "&1"
+  dark-green: "&2"
+  red: "&c"
+  green: "&a"
+  yellow: "&e"
+
+# MiniMessage форматы
+minimessage-examples:
+  basic-colors:
+    - "<red>Красный текст</red>"
+    - "<green>Зеленый текст</green>"
+    - "<blue>Синий текст</blue>"
+    - "<yellow>Желтый текст</yellow>"
+    - "<gold>Золотой текст</gold>"
+    - "<aqua>Бирюзовый текст</aqua>"
+    - "<white>Белый текст</white>"
+    - "<dark_red>Темно-красный текст</dark_red>"
+
+  formatting:
+    - "<bold>Жирный текст</bold>"
+    - "<italic>Курсивный текст</italic>"
+    - "<underlined>Подчеркнутый текст</underlined>"
+    - "<strikethrough>Зачеркнутый текст</strikethrough>"
+    - "<obfuscated>Зашифрованный текст</obfuscated>"
+
+  gradients:
+    - "<gradient:red:blue>Градиент от красного к синему</gradient>"
+    - "<gradient:gold:yellow>Золотой градиент</gradient>"
+
+  hex-colors:
+    - "<#FF0000>Красный HEX</#FF0000>"
+    - "<#00FF00>Зеленый HEX</#00FF00>"
+    - "<#0000FF>Синий HEX</#0000FF>"
+    - "<#FFA500>Оранжевый HEX</#FFA500>"
+</pre>
+            </div>
+            <div class="tip">💡 Поддерживаются HEX цвета, градиенты и MiniMessage форматы</div>
         </div>
 
         <div class="wiki-footer">

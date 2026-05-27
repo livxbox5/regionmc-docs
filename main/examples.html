@@ -65,6 +65,7 @@
 /rg expand 10 up     → расширить на 10 блоков вверх
 /rg expand 5 south   → на 5 блоков на юг
 /rg expand 8 east    → на восток
+/rg expand 10 down   → расширить на 10 блоков вниз
             </div>
         </div>
         
@@ -93,7 +94,16 @@
             <div class="code-block">
 /rg flag home creeper-explosion deny
 /rg flag home fire-spread deny
+/rg flag home tnt-explosion deny
             </div>
+        </div>
+        
+        <div class="section-card">
+            <h2>🔹 Защита сундуков от посторонних</h2>
+            <div class="code-block">
+/rg flag home chest-access deny
+            </div>
+            <p>Только владельцы и участники региона смогут открывать сундуки.</p>
         </div>
         
         <div class="section-card">
@@ -119,6 +129,15 @@
 /rg priority vipzone 100
 /rg priority normal 0
 // Регион с более высоким приоритетом имеет преимущество при проверке флагов
+            </div>
+        </div>
+        
+        <div class="section-card">
+            <h2>🔹 Показ границ региона</h2>
+            <div class="code-block">
+/rg show mybase     → показать границы цветными частицами
+/rg hide mybase     → скрыть границы
+/rg hide all        → скрыть все границы
             </div>
         </div>
         

@@ -1,4 +1,7 @@
 <!DOCTYPE html>
+<!-- ============================================================ -->
+<!-- RegionMC Documentation - Социальные сети                      -->
+<!-- ============================================================ -->
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
@@ -7,6 +10,78 @@
     <link rel="icon" type="image/png" href="../icon.png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
     <meta name="robots" content="noindex, nofollow">
+    <style>
+        .social-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        .social-card {
+            background: rgba(255,255,255,0.05);
+            border-radius: 20px;
+            padding: 2rem;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255,215,0,0.2);
+        }
+        .social-card:hover {
+            transform: translateY(-5px);
+            border-color: #ffd700;
+            background: rgba(255,215,0,0.05);
+        }
+        .social-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        .social-card h3 {
+            color: #ffd700;
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+        .social-card p {
+            color: #aaa;
+            margin-bottom: 1.5rem;
+            font-size: 0.9rem;
+        }
+        .social-btn {
+            display: inline-block;
+            padding: 0.6rem 1.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.2s;
+        }
+        .social-btn-discord { background: #5865F2; color: white; }
+        .social-btn-discord:hover { background: #4752c4; transform: scale(1.05); }
+        .social-btn-modrinth { background: #1bd96a; color: white; }
+        .social-btn-modrinth:hover { background: #15b856; transform: scale(1.05); }
+        .social-btn-github { background: #333; color: white; border: 1px solid #666; }
+        .social-btn-github:hover { background: #444; transform: scale(1.05); }
+        .help-section {
+            background: linear-gradient(135deg, rgba(88,101,242,0.1), rgba(255,215,0,0.05));
+            border-radius: 20px;
+            padding: 2rem;
+            text-align: center;
+            margin: 2rem 0;
+        }
+        .quick-links {
+            background: rgba(0,0,0,0.3);
+            border-radius: 16px;
+            padding: 1.5rem;
+            margin-top: 1rem;
+        }
+        .quick-link-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 8px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        .quick-link-item:last-child { border-bottom: none; }
+        .quick-link-item a { color: #ffd700; text-decoration: none; }
+        .quick-link-item a:hover { text-decoration: underline; }
+    </style>
 </head>
 <body>
 
@@ -49,37 +124,45 @@
             <p>Следите за обновлениями, задавайте вопросы и получайте поддержку</p>
         </div>
         
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin: 2rem 0;">
-            <div class="section-card" style="text-align: center;">
-                <div style="font-size: 3rem; margin-bottom: 1rem;">💬</div>
+        <!-- ==================== СЕТКА СОЦСЕТЕЙ ==================== -->
+        <div class="social-grid">
+            
+            <!-- Discord -->
+            <div class="social-card">
+                <div class="social-icon">💬</div>
                 <h3 style="color:#5865F2;">Discord Сервер</h3>
-                <p>Поддержка, общение, новости и помощь с плагином</p>
-                <a href="http://dsc.gg/regionmc" target="_blank" class="btn btn-primary" style="background:#5865F2; color:white;">💬 Присоединиться</a>
+                <p>Поддержка, общение, новости и помощь с плагином. Присоединяйтесь к сообществу!</p>
+                <a href="http://dsc.gg/regionmc" target="_blank" class="social-btn social-btn-discord">💬 Присоединиться</a>
             </div>
             
-            <div class="section-card" style="text-align: center;">
-                <div style="font-size: 3rem; margin-bottom: 1rem;">🎮</div>
+            <!-- Modrinth Автор -->
+            <div class="social-card">
+                <div class="social-icon">🎮</div>
                 <h3 style="color:#1bd96a;">Modrinth (Автор)</h3>
-                <p>Профиль разработчика на Modrinth</p>
-                <a href="https://modrinth.com/user/KillerYT" target="_blank" class="btn btn-primary" style="background:#1bd96a; color:white;">🟢 Профиль KillerYT</a>
+                <p>Профиль разработчика на Modrinth. Следите за новыми проектами.</p>
+                <a href="https://modrinth.com/user/KillerYT" target="_blank" class="social-btn social-btn-modrinth">🟢 Профиль KillerYT</a>
             </div>
             
-            <div class="section-card" style="text-align: center;">
-                <div style="font-size: 3rem; margin-bottom: 1rem;">📦</div>
+            <!-- RegionMC на Modrinth -->
+            <div class="social-card">
+                <div class="social-icon">📦</div>
                 <h3 style="color:#1bd96a;">RegionMC на Modrinth</h3>
-                <p>Страница плагина со всеми версиями</p>
-                <a href="https://modrinth.com/plugin/regionmc/versions" target="_blank" class="btn btn-primary" style="background:#1bd96a; color:white;">📥 Скачать</a>
+                <p>Страница плагина со всеми версиями, отзывами и статистикой.</p>
+                <a href="https://modrinth.com/plugin/regionmc/versions" target="_blank" class="social-btn social-btn-modrinth">📥 Скачать</a>
             </div>
             
-            <div class="section-card" style="text-align: center;">
-                <div style="font-size: 3rem; margin-bottom: 1rem;">🐙</div>
+            <!-- GitHub -->
+            <div class="social-card">
+                <div class="social-icon">🐙</div>
                 <h3>GitHub</h3>
-                <p>Исходный код, релизы и разработка</p>
-                <a href="https://github.com/KillerYT" target="_blank" class="btn btn-secondary">🐙 GitHub KillerYT</a>
+                <p>Исходный код, релизы, баг-трекер и возможность внести свой вклад.</p>
+                <a href="https://github.com/KillerYT" target="_blank" class="social-btn social-btn-github">🐙 GitHub KillerYT</a>
             </div>
+            
         </div>
         
-        <div class="section-card" style="background: linear-gradient(135deg, rgba(88,101,242,0.1), rgba(255,215,0,0.05)); text-align: center;">
+        <!-- ==================== БЛОК ПОМОЩИ ==================== -->
+        <div class="help-section">
             <h2>🆘 Нужна помощь?</h2>
             <p>Мы всегда рады помочь с установкой, настройкой или возникшими вопросами!</p>
             <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-top: 1rem;">
@@ -89,16 +172,26 @@
             </div>
         </div>
         
+        <!-- ==================== БЫСТРЫЕ ССЫЛКИ ==================== -->
         <div class="section-card">
             <h2>🔗 Быстрые ссылки</h2>
-            <div style="display: flex; flex-direction: column; gap: 10px;">
-                <div>💬 Discord: <a href="http://dsc.gg/regionmc" target="_blank" style="color:#ffd700;">http://dsc.gg/regionmc</a></div>
-                <div>🎮 Modrinth (автор): <a href="https://modrinth.com/user/KillerYT" target="_blank" style="color:#ffd700;">https://modrinth.com/user/KillerYT</a></div>
-                <div>📦 RegionMC на Modrinth: <a href="https://modrinth.com/plugin/regionmc/versions" target="_blank" style="color:#ffd700;">https://modrinth.com/plugin/regionmc/versions</a></div>
-                <div>🐙 GitHub: <a href="https://github.com/KillerYT" target="_blank" style="color:#ffd700;">https://github.com/KillerYT</a></div>
+            <div class="quick-links">
+                <div class="quick-link-item">
+                    <span>💬</span> Discord: <a href="http://dsc.gg/regionmc" target="_blank">http://dsc.gg/regionmc</a>
+                </div>
+                <div class="quick-link-item">
+                    <span>🎮</span> Modrinth (автор): <a href="https://modrinth.com/user/KillerYT" target="_blank">https://modrinth.com/user/KillerYT</a>
+                </div>
+                <div class="quick-link-item">
+                    <span>📦</span> RegionMC на Modrinth: <a href="https://modrinth.com/plugin/regionmc/versions" target="_blank">https://modrinth.com/plugin/regionmc/versions</a>
+                </div>
+                <div class="quick-link-item">
+                    <span>🐙</span> GitHub: <a href="https://github.com/KillerYT" target="_blank">https://github.com/KillerYT</a>
+                </div>
             </div>
         </div>
         
+        <!-- ==================== ФУТЕР ==================== -->
         <div class="wiki-footer">
             <p>RegionMC Documentation © 2024 | <a href="http://dsc.gg/regionmc" style="color:#ffd700;">Discord</a> | <a href="https://modrinth.com/plugin/regionmc" style="color:#ffd700;">Modrinth</a> | <a href="https://github.com/KillerYT/RegionMC" style="color:#ffd700;">GitHub</a></p>
         </div>
