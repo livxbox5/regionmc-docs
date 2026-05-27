@@ -34,6 +34,7 @@
                 <li><a href="features.html">⚙️ <span>Возможности</span></a></li>
                 <li><a href="configuration.html">⚙️ <span>Конфигурация</span></a></li>
                 <li><a href="downloads.html">📥 <span>Скачать</span></a></li>
+                <li><a href="donate.html">💝 <span>Поддержать</span></a></li>
                 <li><a href="social.html">💬 <span>Соцсети</span></a></li>
             </ul>
         </nav>
@@ -41,14 +42,13 @@
             <p>© 2024 RegionMC</p>
         </div>
     </aside>
-
+    
     <main class="wiki-content">
         <div class="page-header">
             <h1>⚙️ Конфигурация</h1>
             <p>Основные настройки плагина (файл config.yml)</p>
         </div>
 
-        <!-- ========== ОСНОВНЫЕ НАСТРОЙКИ (из config.yml) ========== -->
         <div class="section-card">
             <h2>📁 Основные настройки (settings)</h2>
             <div class="code-block">
@@ -68,7 +68,6 @@ settings:
             </div>
         </div>
 
-        <!-- ========== ОБНОВЛЕНИЯ (из config.yml) ========== -->
         <div class="section-card">
             <h2>🔄 Обновления (updates)</h2>
             <div class="code-block">
@@ -81,7 +80,6 @@ updates:
             </div>
         </div>
 
-        <!-- ========== ОГРАНИЧЕНИЯ РЕГИОНОВ (документация) ========== -->
         <div class="section-card">
             <h2>📐 Ограничения регионов</h2>
             <div class="code-block">
@@ -98,9 +96,8 @@ regions:
             </div>
         </div>
 
-        <!-- ========== ФЛАГИ ПО УМОЛЧАНИЮ (только флаги) ========== -->
         <div class="section-card">
-            <h2>🚩 Флаги по умолчанию</h2>
+            <h2>🚩 Флаги по умолчанию (default-flags)</h2>
             <div class="code-block">
                 <pre>
 default-flags:
@@ -110,9 +107,9 @@ default-flags:
   pvp: "allow"
   mob-spawning: "allow"</pre>
             </div>
+            <div class="tip">💡 Эти флаги применяются ко всем новым регионам при их создании.</div>
         </div>
 
-        <!-- ========== ИНСТРУМЕНТЫ ВЫДЕЛЕНИЯ (документация) ========== -->
         <div class="section-card">
             <h2>🛠️ Инструменты выделения (selection-tools)</h2>
             <div class="code-block">
@@ -140,9 +137,8 @@ selection-tools:
             </div>
         </div>
 
-        <!-- ========== БАЗА ДАННЫХ (только database) ========== -->
         <div class="section-card">
-            <h2>💾 База данных</h2>
+            <h2>💾 База данных (database)</h2>
             <div class="code-block">
                 <pre>
 database:
@@ -153,7 +149,7 @@ database:
     username: "root"
     password: "password"</pre>
             </div>
-            <div class="tip">💡 Полная конфигурация доступна в файле config.yml после установки плагина.</div>
+            <div class="tip">💡 SQLite подходит для небольших серверов. MySQL — для крупных проектов.</div>
         </div>
 
         <div class="wiki-footer">

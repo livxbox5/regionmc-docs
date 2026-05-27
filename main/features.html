@@ -1,4 +1,7 @@
 <!DOCTYPE html>
+<!-- ============================================================ -->
+<!-- RegionMC Documentation - Возможности                           -->
+<!-- ============================================================ -->
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
@@ -10,7 +13,6 @@
 </head>
 <body>
 
-<!-- Переключатель языка -->
 <div class="language-switcher">
     <div class="lang-btn">🌍</div>
     <div class="lang-dropdown">
@@ -20,6 +22,7 @@
 </div>
 
 <div class="wiki-wrapper">
+    
     <aside class="sidebar">
         <div class="sidebar-header">
             <a href="../index.html" class="sidebar-logo">🏠 RegionMC</a>
@@ -35,6 +38,7 @@
                 <li><a href="features.html">⚙️ <span>Возможности</span></a></li>
                 <li><a href="configuration.html">⚙️ <span>Конфигурация</span></a></li>
                 <li><a href="downloads.html">📥 <span>Скачать</span></a></li>
+                <li><a href="donate.html">💝 <span>Поддержать</span></a></li>
                 <li><a href="social.html">💬 <span>Соцсети</span></a></li>
             </ul>
         </nav>
@@ -42,29 +46,109 @@
             <p>© 2024 RegionMC</p>
         </div>
     </aside>
+    
     <main class="wiki-content">
+        
         <div class="page-header">
             <h1>⚙️ Возможности RegionMC</h1>
             <p>Полный обзор функционала плагина</p>
         </div>
-
+        
+        <!-- ==================== СЕТКА ВОЗМОЖНОСТЕЙ ==================== -->
         <div class="features-grid">
-            <div class="feature-card"><h3>🏰 Полная защита региона</h3><ul><li>Защита от разрушения/строительства</li><li>Защита от взрывов (криперы, TNT)</li><li>Контроль использования контейнеров, дверей</li><li>Предотвращение распространения огня и лавы</li></ul></div>
-            <div class="feature-card"><h3>👥 Управление доступом</h3><ul><li>Владельцы (полный контроль)</li><li>Участники (могут строить/разрушать)</li><li>Поддержка оффлайн-игроков по UUID</li></ul></div>
-            <div class="feature-card"><h3>🚩 30+ настраиваемых флагов</h3><ul><li>pvp, mob-spawning, entry, exit</li><li>use-items, chest-access</li><li>time-lock (день/ночь/заморозка)</li><li>greeting, farewell, blockcmd</li></ul></div>
-            <div class="feature-card"><h3>🛠️ Инструменты работы</h3><ul><li>Палочка выделения</li><li>Предмет проверки регионов</li><li>Визуализация границ (частицы)</li></ul></div>
-            <div class="feature-card"><h3>📊 Гибкие лимиты</h3><ul><li>Максимальное количество регионов на игрока</li><li>Максимальный объём региона</li><li>Настройка по группам через права</li></ul></div>
-            <div class="feature-card"><h3>💾 Производительность и хранение</h3><ul><li>SQLite (по умолчанию) или MySQL</li><li>Кэширование регионов</li><li>Автоматическое резервное копирование</li></ul></div>
-            <div class="feature-card"><h3>🌍 Поддержка миров</h3><ul><li>Работа во всех мирах</li><li>Автоматическое создание глобального региона</li><li>Возможность отключить регионы в конкретном мире</li></ul></div>
-            <div class="feature-card"><h3>🎨 Визуальные эффекты</h3><ul><li>Границы регионов (частицы)</li><li>Уведомления о входе/выходе</li><li>Цветные сообщения (HEX и градиенты)</li></ul></div>
-            <div class="feature-card"><h3>🔧 API и расширяемость</h3><ul><li>События региона</li><li>PlaceholderAPI поддержка</li><li>REST API (опционально)</li></ul></div>
+            
+            <div class="feature-card">
+                <h3>🏰 Полная защита региона</h3>
+                <ul>
+                    <li>Защита от разрушения/строительства</li>
+                    <li>Защита от взрывов (криперы, TNT)</li>
+                    <li>Контроль использования контейнеров, дверей</li>
+                    <li>Предотвращение распространения огня и лавы</li>
+                </ul>
+            </div>
+            
+            <div class="feature-card">
+                <h3>👥 Управление доступом</h3>
+                <ul>
+                    <li>Владельцы (полный контроль)</li>
+                    <li>Участники (могут строить/разрушать)</li>
+                    <li>Поддержка оффлайн-игроков по UUID</li>
+                </ul>
+            </div>
+            
+            <div class="feature-card">
+                <h3>🚩 30+ настраиваемых флагов</h3>
+                <ul>
+                    <li>pvp, mob-spawning, entry, exit</li>
+                    <li>use-items, chest-access</li>
+                    <li>time-lock (день/ночь/заморозка)</li>
+                    <li>greeting, farewell, blockcmd</li>
+                </ul>
+            </div>
+            
+            <div class="feature-card">
+                <h3>🛠️ Инструменты работы</h3>
+                <ul>
+                    <li>Палочка выделения</li>
+                    <li>Предмет проверки регионов</li>
+                    <li>Визуализация границ (частицы)</li>
+                </ul>
+            </div>
+            
+            <div class="feature-card">
+                <h3>📊 Гибкие лимиты</h3>
+                <ul>
+                    <li>Максимальное количество регионов на игрока</li>
+                    <li>Максимальный объём региона</li>
+                    <li>Настройка по группам через права</li>
+                </ul>
+            </div>
+            
+            <div class="feature-card">
+                <h3>💾 Производительность и хранение</h3>
+                <ul>
+                    <li>SQLite (по умолчанию) или MySQL</li>
+                    <li>Кэширование регионов</li>
+                    <li>Автоматическое резервное копирование</li>
+                </ul>
+            </div>
+            
+            <div class="feature-card">
+                <h3>🌍 Поддержка миров</h3>
+                <ul>
+                    <li>Работа во всех мирах</li>
+                    <li>Автоматическое создание глобального региона</li>
+                    <li>Возможность отключить регионы в конкретном мире</li>
+                </ul>
+            </div>
+            
+            <div class="feature-card">
+                <h3>🎨 Визуальные эффекты</h3>
+                <ul>
+                    <li>Границы регионов (частицы)</li>
+                    <li>Уведомления о входе/выходе</li>
+                    <li>Цветные сообщения (HEX и градиенты)</li>
+                </ul>
+            </div>
+            
+            <div class="feature-card">
+                <h3>🔧 API и расширяемость</h3>
+                <ul>
+                    <li>События региона</li>
+                    <li>PlaceholderAPI поддержка</li>
+                    <li>REST API (опционально)</li>
+                </ul>
+            </div>
+            
         </div>
-
+        
         <div class="wiki-footer">
             <p>RegionMC Documentation © 2024 | Minecraft Plugin</p>
         </div>
+        
     </main>
 </div>
+
 <script src="../ui/js/main.js"></script>
 </body>
 </html>

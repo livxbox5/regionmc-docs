@@ -10,7 +10,6 @@
 </head>
 <body>
 
-    <!-- Переключатель языка -->
 <div class="language-switcher">
     <div class="lang-btn">🌍</div>
     <div class="lang-dropdown">
@@ -35,6 +34,7 @@
                 <li><a href="features.html">⚙️ <span>Возможности</span></a></li>
                 <li><a href="configuration.html">⚙️ <span>Конфигурация</span></a></li>
                 <li><a href="downloads.html">📥 <span>Скачать</span></a></li>
+                <li><a href="donate.html">💝 <span>Поддержать</span></a></li>
                 <li><a href="social.html">💬 <span>Соцсети</span></a></li>
             </ul>
         </nav>
@@ -42,61 +42,76 @@
             <p>© 2024 RegionMC</p>
         </div>
     </aside>
+    
     <main class="wiki-content">
         <div class="page-header">
             <h1>📖 Все команды</h1>
             <p>Полный список команд RegionMC (алиасы: /region, /rg, /regionmc)</p>
         </div>
+        
         <div class="section-card">
             <h2>📍 Основные</h2>
             <table class="data-table">
-                <tr><th>Команда</th><th>Описание</th><th>Права</th></tr>
-                <tr><td class="command-name">/rg help</td><td>Показать справку</td><td>regionmc.command.help</td></tr>
-                <tr><td class="command-name">/rg pos1</td><td>Установить первую позицию</td><td>regionmc.command.pos</td></tr>
-                <tr><td class="command-name">/rg pos2</td><td>Установить вторую позицию</td><td>regionmc.command.pos</td></tr>
-                <tr><td class="command-name">/rg claim &lt;name&gt;</td><td>Создать регион</td><td>regionmc.command.claim</td></tr>
-                <tr><td class="command-name">/rg delete &lt;name&gt;</td><td>Удалить регион</td><td>regionmc.command.delete</td></tr>
-                <tr><td class="command-name">/rg info [name]</td><td>Информация о регионе</td><td>regionmc.command.info</td></tr>
-                <tr><td class="command-name">/rg list</td><td>Список ваших регионов</td><td>regionmc.command.list</td></tr>
-                <tr><td class="command-name">/rg wand</td><td>Получить палочку выделения</td><td>regionmc.command.wand</td></tr>
-                <tr><td class="command-name">/rg limit</td><td>Показать ваши лимиты</td><td>regionmc.command.limit</td></tr>
+                <thead><tr><th>Команда</th><th>Описание</th><th>Права</th></tr></thead>
+                <tbody>
+                    <tr><td class="command-name">/rg help</td><td>Показать справку</td><td>regionmc.command.help</td></tr>
+                    <tr><td class="command-name">/rg pos1</td><td>Установить первую позицию</td><td>regionmc.command.pos</td></tr>
+                    <tr><td class="command-name">/rg pos2</td><td>Установить вторую позицию</td><td>regionmc.command.pos</td></tr>
+                    <tr><td class="command-name">/rg claim &lt;name&gt;</td><td>Создать регион</td><td>regionmc.command.claim</td></tr>
+                    <tr><td class="command-name">/rg delete &lt;name&gt;</td><td>Удалить регион</td><td>regionmc.command.delete</td></tr>
+                    <tr><td class="command-name">/rg info [name]</td><td>Информация о регионе</td><td>regionmc.command.info</td></tr>
+                    <tr><td class="command-name">/rg list</td><td>Список ваших регионов</td><td>regionmc.command.list</td></tr>
+                    <tr><td class="command-name">/rg wand</td><td>Получить палочку выделения</td><td>regionmc.command.wand</td></tr>
+                    <tr><td class="command-name">/rg limit</td><td>Показать ваши лимиты</td><td>regionmc.command.limit</td></tr>
+                </tbody>
             </table>
         </div>
+        
         <div class="section-card">
             <h2>👥 Управление участниками</h2>
             <table class="data-table">
-                <tr><th>Команда</th><th>Описание</th><th>Права</th></tr>
-                <tr><td class="command-name">/rg addmember &lt;region&gt; &lt;player&gt;</td><td>Добавить участника</td><td>regionmc.command.addmember</td></tr>
-                <tr><td class="command-name">/rg removemember &lt;region&gt; &lt;player&gt;</td><td>Удалить участника</td><td>regionmc.command.removemember</td></tr>
-                <tr><td class="command-name">/rg addowner &lt;region&gt; &lt;player&gt;</td><td>Добавить владельца</td><td>regionmc.command.addowner</td></tr>
-                <tr><td class="command-name">/rg removeowner &lt;region&gt; &lt;player&gt;</td><td>Удалить владельца</td><td>regionmc.command.removeowner</td></tr>
+                <thead><tr><th>Команда</th><th>Описание</th><th>Права</th></tr></thead>
+                <tbody>
+                    <tr><td class="command-name">/rg addmember &lt;region&gt; &lt;player&gt;</td><td>Добавить участника</td><td>regionmc.command.addmember</td></tr>
+                    <tr><td class="command-name">/rg removemember &lt;region&gt; &lt;player&gt;</td><td>Удалить участника</td><td>regionmc.command.removemember</td></tr>
+                    <tr><td class="command-name">/rg addowner &lt;region&gt; &lt;player&gt;</td><td>Добавить владельца</td><td>regionmc.command.addowner</td></tr>
+                    <tr><td class="command-name">/rg removeowner &lt;region&gt; &lt;player&gt;</td><td>Удалить владельца</td><td>regionmc.command.removeowner</td></tr>
+                </tbody>
             </table>
         </div>
+        
         <div class="section-card">
             <h2>🚩 Флаги и настройки</h2>
             <table class="data-table">
-                <tr><th>Команда</th><th>Описание</th><th>Права</th></tr>
-                <tr><td class="command-name">/rg flag &lt;region&gt; &lt;flag&gt; &lt;value&gt;</td><td>Установить флаг</td><td>regionmc.command.flag</td></tr>
-                <tr><td class="command-name">/rg priority &lt;region&gt; &lt;int&gt;</td><td>Установить приоритет</td><td>regionmc.command.priority</td></tr>
-                <tr><td class="command-name">/rg expand &lt;blocks&gt; &lt;direction&gt;</td><td>Расширить регион</td><td>regionmc.command.expand</td></tr>
-                <tr><td class="command-name">/rg show &lt;region&gt;</td><td>Показать границы</td><td>regionmc.command.show</td></tr>
-                <tr><td class="command-name">/rg hide &lt;region&gt;</td><td>Скрыть границы</td><td>regionmc.command.show</td></tr>
+                <thead><tr><th>Команда</th><th>Описание</th><th>Права</th></tr></thead>
+                <tbody>
+                    <tr><td class="command-name">/rg flag &lt;region&gt; &lt;flag&gt; &lt;value&gt;</td><td>Установить флаг</td><td>regionmc.command.flag</td></tr>
+                    <tr><td class="command-name">/rg priority &lt;region&gt; &lt;int&gt;</td><td>Установить приоритет</td><td>regionmc.command.priority</td></tr>
+                    <tr><td class="command-name">/rg expand &lt;blocks&gt; &lt;direction&gt;</td><td>Расширить регион</td><td>regionmc.command.expand</td></tr>
+                    <tr><td class="command-name">/rg show &lt;region&gt;</td><td>Показать границы</td><td>regionmc.command.show</td></tr>
+                    <tr><td class="command-name">/rg hide &lt;region&gt;</td><td>Скрыть границы</td><td>regionmc.command.show</td></tr>
+                </tbody>
             </table>
         </div>
+        
         <div class="section-card">
             <h2>🛠️ Административные</h2>
             <table class="data-table">
-                <tr><th>Команда</th><th>Описание</th><th>Права</th></tr>
-                <tr><td class="command-name">/rg reload</td><td>Перезагрузить плагин</td><td>regionmc.command.reload</td></tr>
-                <tr><td class="command-name">/rg testplaceholders</td><td>Тест PlaceholderAPI</td><td>regionmc.command.testplaceholders</td></tr>
-                <tr><td class="command-name">/rg bypass</td><td>Вкл/выкл обход защиты</td><td>regionmc.bypass</td></tr>
+                <thead><tr><th>Команда</th><th>Описание</th><th>Права</th></tr></thead>
+                <tbody>
+                    <tr><td class="command-name">/rg reload</td><td>Перезагрузить плагин</td><td>regionmc.command.reload</td></tr>
+                    <tr><td class="command-name">/rg testplaceholders</td><td>Тест PlaceholderAPI</td><td>regionmc.command.testplaceholders</td></tr>
+                    <tr><td class="command-name">/rg bypass</td><td>Вкл/выкл обход защиты</td><td>regionmc.bypass</td></tr>
+                </tbody>
             </table>
         </div>
+        
         <div class="wiki-footer">
             <p>RegionMC Documentation © 2024 | Minecraft Plugin</p>
         </div>
     </main>
 </div>
+
 <script src="../ui/js/main.js"></script>
 </body>
 </html>
