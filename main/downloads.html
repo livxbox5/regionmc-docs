@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Скачать RegionMC</title>
+    <link rel="stylesheet" href="../ui/css/style.css">
+    <link rel="icon" type="image/png" href="../icon.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <meta name="robots" content="noindex, nofollow">
+    <style>
+        .version-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 10px; margin: 15px 0; }
+        .version-item { background: rgba(255,215,0,0.1); padding: 10px; border-radius: 8px; text-align: center; }
+        .version-item span { color: #ffd700; font-weight: bold; }
+        .install-steps { background: rgba(0,0,0,0.3); padding: 15px; border-radius: 8px; margin: 10px 0; }
+        .install-steps p { margin: 8px 0; }
+    </style>
+</head>
+<body>
+
+<div class="language-switcher">
+    <div class="lang-btn">🌍</div>
+    <div class="lang-dropdown">
+        <a href="#" data-lang="ru" class="active-lang">🇷🇺 Русский</a>
+        <a href="#" data-lang="en">🇬🇧 English</a>
+    </div>
+</div>
+
+<div class="wiki-wrapper">
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <a href="../index.html" class="sidebar-logo">🏠 RegionMC</a>
+            <div class="sidebar-version">v2.0</div>
+        </div>
+        <nav class="sidebar-nav">
+            <ul>
+                <li><a href="../index.html">🏠 <span>Главная</span></a></li>
+                <li><a href="commands.html">📖 <span>Команды</span></a></li>
+                <li><a href="permissions.html">🔑 <span>Права</span></a></li>
+                <li><a href="flags.html">🚩 <span>Флаги</span></a></li>
+                <li><a href="examples.html">✨ <span>Примеры</span></a></li>
+                <li><a href="features.html">⚙️ <span>Возможности</span></a></li>
+                <li><a href="configuration.html">⚙️ <span>Конфигурация</span></a></li>
+                <li><a href="downloads.html">📥 <span>Скачать</span></a></li>
+                <li><a href="donate.html">💝 <span>Поддержать</span></a></li>
+                <li><a href="social.html">💬 <span>Соцсети</span></a></li>
+            </ul>
+        </nav>
+        <div class="sidebar-footer">
+            <p>© 2024 RegionMC</p>
+        </div>
+    </aside>
+    
+    <main class="wiki-content">
+        <div class="page-header">
+            <h1>📥 Скачать RegionMC</h1>
+            <p>Выберите удобный способ загрузки плагина</p>
+        </div>
+        
+        <!-- Modrinth -->
+        <div class="section-card" style="background: linear-gradient(135deg, rgba(27,217,106,0.1), rgba(27,217,106,0.05)); border-color: #1bd96a;">
+            <h2>🎮 Modrinth (Рекомендуется)</h2>
+            <p>Официальная страница плагина на Modrinth — самый удобный способ скачать и отслеживать обновления</p>
+            <div style="margin: 20px 0;">
+                <a href="https://modrinth.com/plugin/regionmc/versions" target="_blank" class="btn btn-primary" style="background: #1bd96a; color: white;">🟢 Скачать с Modrinth</a>
+            </div>
+            <div class="version-grid">
+                <div class="version-item">✅ Последняя версия</div>
+                <div class="version-item">🔄 Авто-обновления</div>
+                <div class="version-item">📊 Статистика загрузок</div>
+                <div class="version-item">⭐ Отзывы и рейтинг</div>
+            </div>
+        </div>
+        
+        <!-- GitHub -->
+        <div class="section-card" style="background: linear-gradient(135deg, rgba(51,51,51,0.1), rgba(51,51,51,0.05));">
+            <h2>🐙 GitHub</h2>
+            <p>Исходный код и релизы на GitHub</p>
+            <div style="margin: 20px 0;">
+                <a href="https://github.com/KillerYT/RegionMC" target="_blank" class="btn btn-secondary">🐙 GitHub Releases</a>
+            </div>
+            <div class="version-grid">
+                <div class="version-item">📁 Исходный код</div>
+                <div class="version-item">📝 История изменений</div>
+                <div class="version-item">🐛 Отчеты об ошибках</div>
+            </div>
+        </div>
+        
+        <!-- Поддерживаемые версии -->
+        <div class="section-card">
+            <h2>📦 Поддерживаемые версии</h2>
+            <p>Сервера: Paper / Purpur / Spigot</p>
+            <div class="version-grid">
+                <div class="version-item"><span>⚡</span> 26.1.2 - базавая поддержка</div>
+                <div class="version-item"><span>⚡</span> 26.1 - Надо тесты </div>
+                <div class="version-item"><span>⚡</span> 1.21.х - Надо тесты</div>
+                <div class="version-item"><span>⚡</span> 1.20.х - Надо тесты</div>
+            </div>
+        </div>
+        
+        <!-- Установка -->
+        <div class="section-card">
+            <h2>🛠️ Установка</h2>
+            <div class="install-steps">
+                <p><span style="color:#ffd700;">1.</span> Скачайте последнюю версию .jar файла</p>
+                <p><span style="color:#ffd700;">2.</span> Поместите файл в папку <code style="background:#333; padding:2px 6px; border-radius:4px;">plugins/</code> вашего сервера</p>
+                <p><span style="color:#ffd700;">3.</span> Перезапустите сервер</p>
+                <p><span style="color:#ffd700;">4.</span> Настройте конфиги в папке <code style="background:#333; padding:2px 6px; border-radius:4px;">plugins/RegionMC/</code></p>
+                <p><span style="color:#ffd700;">5.</span> Готово! Используйте <code style="background:#333; padding:2px 6px; border-radius:4px;">/rg help</code> для начала работы</p>
+            </div>
+            <div class="tip">💡 После установки выдайте права игрокам через LuckPerms.<br>Пример: <code>/lp user Steve permission set regionmc.command.claim true</code></div>
+        </div>
+        
+        <div class="wiki-footer">
+            <p>RegionMC Documentation © 2024 | <a href="https://modrinth.com/plugin/regionmc" style="color:#ffd700;">Modrinth</a> | <a href="https://github.com/KillerYT/RegionMC" style="color:#ffd700;">GitHub</a></p>
+        </div>
+    </main>
+</div>
+
+<script src="../ui/js/main.js"></script>
+</body>
+</html>

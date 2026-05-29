@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Примеры RegionMC</title>
+    <link rel="stylesheet" href="../ui/css/style.css">
+    <link rel="icon" type="image/png" href="../icon.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <meta name="robots" content="noindex, nofollow">
+</head>
+<body>
+
+<div class="language-switcher">
+    <div class="lang-btn">🌍</div>
+    <div class="lang-dropdown">
+        <a href="#" data-lang="ru" class="active-lang">🇷🇺 Русский</a>
+        <a href="#" data-lang="en">🇬🇧 English</a>
+    </div>
+</div>
+
+<div class="wiki-wrapper">
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <a href="../index.html" class="sidebar-logo">🏠 RegionMC</a>
+            <div class="sidebar-version">v2.0</div>
+        </div>
+        <nav class="sidebar-nav">
+            <ul>
+                <li><a href="../index.html">🏠 <span>Главная</span></a></li>
+                <li><a href="commands.html">📖 <span>Команды</span></a></li>
+                <li><a href="permissions.html">🔑 <span>Права</span></a></li>
+                <li><a href="flags.html">🚩 <span>Флаги</span></a></li>
+                <li><a href="examples.html">✨ <span>Примеры</span></a></li>
+                <li><a href="features.html">⚙️ <span>Возможности</span></a></li>
+                <li><a href="configuration.html">⚙️ <span>Конфигурация</span></a></li>
+                <li><a href="downloads.html">📥 <span>Скачать</span></a></li>
+                <li><a href="donate.html">💝 <span>Поддержать</span></a></li>
+                <li><a href="social.html">💬 <span>Соцсети</span></a></li>
+            </ul>
+        </nav>
+        <div class="sidebar-footer">
+            <p>© 2024 RegionMC</p>
+        </div>
+    </aside>
+    
+    <main class="wiki-content">
+        <div class="page-header">
+            <h1>✨ Примеры использования</h1>
+            <p>Пошаговые инструкции для создания и настройки регионов</p>
+        </div>
+        
+        <div class="section-card">
+            <h2>🔹 Создание личного привата</h2>
+            <div class="code-block">
+1. /rg pos1  → установить угол 1
+2. /rg pos2  → установить противоположный угол
+3. /rg claim home → создать регион "home"
+4. /rg addmember home Steve → добавить друга
+            </div>
+        </div>
+        
+        <div class="section-card">
+            <h2>🔹 Расширение региона</h2>
+            <div class="code-block">
+/rg expand 10 up     → расширить на 10 блоков вверх
+/rg expand 5 south   → на 5 блоков на юг
+/rg expand 8 east    → на восток
+/rg expand 10 down   → расширить на 10 блоков вниз
+            </div>
+        </div>
+        
+        <div class="section-card">
+            <h2>🔹 Настройка PvP арены</h2>
+            <div class="code-block">
+/rg claim arena
+/rg flag arena pvp allow
+/rg flag arena entry allow
+/rg flag arena build deny
+/rg flag arena break deny
+/rg addmember arena @p
+            </div>
+        </div>
+        
+        <div class="section-card">
+            <h2>🔹 Вечный день в регионе</h2>
+            <div class="code-block">
+/rg flag mybase time-lock day
+            </div>
+            <p>Теперь внутри региона всегда будет день (визуально).</p>
+        </div>
+        
+        <div class="section-card">
+            <h2>🔹 Защита от криперов и огня</h2>
+            <div class="code-block">
+/rg flag home creeper-explosion deny
+/rg flag home fire-spread deny
+/rg flag home tnt-explosion deny
+            </div>
+        </div>
+        
+        <div class="section-card">
+            <h2>🔹 Защита сундуков от посторонних</h2>
+            <div class="code-block">
+/rg flag home chest-access deny
+            </div>
+            <p>Только владельцы и участники региона смогут открывать сундуки.</p>
+        </div>
+        
+        <div class="section-card">
+            <h2>🔹 Получение палочки выделения</h2>
+            <div class="code-block">
+/rg wand
+// ЛКМ – pos1, ПКМ – pos2, Shift+ПКМ – информация о выделении
+            </div>
+        </div>
+        
+        <div class="section-card">
+            <h2>🔹 Информация и список</h2>
+            <div class="code-block">
+/rg list          → ваши регионы
+/rg info home     → подробно о регионе "home"
+/rg info          → регион под ногами
+            </div>
+        </div>
+        
+        <div class="section-card">
+            <h2>🔹 Приоритет регионов (при пересечении)</h2>
+            <div class="code-block">
+/rg priority vipzone 100
+/rg priority normal 0
+// Регион с более высоким приоритетом имеет преимущество при проверке флагов
+            </div>
+        </div>
+        
+        <div class="section-card">
+            <h2>🔹 Показ границ региона</h2>
+            <div class="code-block">
+/rg show mybase     → показать границы цветными частицами
+/rg hide mybase     → скрыть границы
+/rg hide all        → скрыть все границы
+            </div>
+        </div>
+        
+        <div class="wiki-footer">
+            <p>RegionMC Documentation | /rg example в игре</p>
+        </div>
+    </main>
+</div>
+
+<script src="../ui/js/main.js"></script>
+</body>
+</html>
