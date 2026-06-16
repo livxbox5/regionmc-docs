@@ -13,6 +13,52 @@
         .version-item span { color: #ffd700; font-weight: bold; }
         .install-steps { background: rgba(0,0,0,0.3); padding: 15px; border-radius: 8px; margin: 10px 0; }
         .install-steps p { margin: 8px 0; }
+
+        /* --- Стили для блока статистики --- */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+        .stat-card {
+            background: rgba(255,215,0,0.08);
+            border: 1px solid rgba(255,215,0,0.2);
+            border-radius: 12px;
+            padding: 16px 12px;
+            text-align: center;
+            transition: 0.2s;
+        }
+        .stat-card:hover {
+            background: rgba(255,215,0,0.15);
+            border-color: #ffd700;
+        }
+        .stat-number {
+            font-size: 28px;
+            font-weight: bold;
+            color: #ffd700;
+            display: block;
+        }
+        .stat-label {
+            font-size: 13px;
+            color: #aaa;
+            margin-top: 4px;
+            display: block;
+        }
+        .stat-update {
+            font-size: 12px;
+            color: #666;
+            text-align: right;
+            margin-top: 6px;
+        }
+        .stat-loading {
+            color: #ffd700;
+            animation: pulse 1.2s ease-in-out infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.3; }
+        }
     </style>
 </head>
 <body>
@@ -55,7 +101,40 @@
             <h1>📥 Скачать RegionMC</h1>
             <p>Выберите удобный способ загрузки плагина</p>
         </div>
-        
+
+        <!-- ===== НОВЫЙ БЛОК СТАТИСТИКИ ===== -->
+        <div class="section-card" style="background: linear-gradient(135deg, rgba(255,215,0,0.06), rgba(255,215,0,0.02));">
+            <h2>📊 Статистика проекта</h2>
+            <p>Актуальные данные с Modrinth</p>
+            <div class="stats-grid" id="statsContainer">
+                <div class="stat-card">
+                    <span class="stat-number stat-loading" id="statDownloads">⋯</span>
+                    <span class="stat-label">⬇️ Всего загрузок</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number stat-loading" id="statFollowers">⋯</span>
+                    <span class="stat-label">👥 Подписчиков</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number stat-loading" id="statVersions">⋯</span>
+                    <span class="stat-label">📦 Версий</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number stat-loading" id="statStatus">⋯</span>
+                    <span class="stat-label">📌 Статус</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number stat-loading" id="statUpdated">⋯</span>
+                    <span class="stat-label">🔄 Обновлён</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number stat-loading" id="statGameVersions">⋯</span>
+                    <span class="stat-label">⚡ Поддерживает</span>
+                </div>
+            </div>
+            <div class="stat-update" id="statUpdateTime">⏳ Загрузка...</div>
+        </div>
+
         <!-- Modrinth -->
         <div class="section-card" style="background: linear-gradient(135deg, rgba(27,217,106,0.1), rgba(27,217,106,0.05)); border-color: #1bd96a;">
             <h2>🎮 Modrinth (Рекомендуется)</h2>
@@ -116,6 +195,8 @@
     </main>
 </div>
 
+<!-- Подключаем наш новый скрипт -->
+<script src="../ui/js/modrinth-stats.js"></script>
 <script src="../ui/js/main.js"></script>
 </body>
 </html>

@@ -1,194 +1,660 @@
-// ============================================================
-// RegionMC Documentation - Основной JavaScript файл
-// Версия: 2.0 - Полная документация
-// ============================================================
+/* ============================================================ */
+/* RegionMC Documentation - Основные стили                        */
+/* Версия: 3.0 - Исправлена адаптивность, удалены дубли         */
+/* ============================================================ */
 
-document.addEventListener('DOMContentLoaded', () => {
-    
-    // ========== ПОДСВЕТКА ТЕКУЩЕЙ СТРАНИЦЫ ==========
-    const currentPath = window.location.pathname;
-    const currentFile = currentPath.split('/').pop() || 'index.html';
-    
-    document.querySelectorAll('.sidebar-nav a').forEach(link => {
-        const href = link.getAttribute('href');
-        if (href === currentFile || 
-            (currentFile === 'index.html' && href === 'index.html') ||
-            (currentFile === '' && href === 'index.html')) {
-            link.classList.add('active');
-        } else {
-            link.classList.remove('active');
-        }
-    });
+/* ========== RESET & BASE ========== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-    // ========== КНОПКИ КОПИРОВАНИЯ ==========
-    document.querySelectorAll('.code-block').forEach(block => {
-        if (block.parentNode.querySelector('.copy-btn')) return;
-        
-        const btn = document.createElement('button');
-        btn.textContent = '📋 Копировать';
-        btn.className = 'copy-btn';
-        
-        btn.addEventListener('click', async () => {
-            const text = block.innerText;
-            try {
-                await navigator.clipboard.writeText(text);
-                btn.textContent = '✅ Скопировано!';
-                setTimeout(() => btn.textContent = '📋 Копировать', 2000);
-            } catch(err) {
-                btn.textContent = '❌ Ошибка';
-                setTimeout(() => btn.textContent = '📋 Копировать', 2000);
-            }
-        });
-        
-        block.parentNode.insertBefore(btn, block);
-    });
-});
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #0a0c12;
+    color: #e4e4e7;
+    line-height: 1.6;
+}
 
-// ========== ПЕРЕКЛЮЧАТЕЛЬ ЯЗЫКА ==========
-(function() {
-    let currentLang = localStorage.getItem('regionmc_lang') || 'ru';
-    
-    const translations = {
-        ru: {
-            'nav_home': 'Главная',
-            'nav_commands': 'Команды',
-            'nav_permissions': 'Права',
-            'nav_flags': 'Флаги',
-            'nav_examples': 'Примеры',
-            'nav_features': 'Возможности',
-            'nav_config': 'Конфигурация',
-            'nav_downloads': 'Скачать',
-            'nav_donate': 'Поддержать',
-            'nav_social': 'Соцсети',
-            'hero_title': 'RegionMC',
-            'hero_tagline': 'Мощная, гибкая и производительная система регионов для Minecraft',
-            'hero_btn_commands': 'Все команды',
-            'hero_btn_examples': 'Примеры',
-            'hero_btn_flags': 'Флаги',
-            'feature_protection': 'Защита региона',
-            'feature_protection_desc': 'Блоки / сущности / контейнеры • Взрывы, огонь, PvP',
-            'feature_flags': '36+ флагов',
-            'feature_flags_desc': 'build, break, interact • mob-spawning, time-lock, blockcmd',
-            'feature_members': 'Участники и владельцы',
-            'feature_members_desc': 'Добавление/удаление • Полный контроль доступа',
-            'feature_time': 'Блокировка времени',
-            'feature_time_desc': 'День / ночь / заморозка • Визуальный эффект',
-            'feature_wand': 'Палочка выделения',
-            'feature_wand_desc': 'ЛКМ/ПКМ установка pos • Shift+ПКМ информация',
-            'feature_limits': 'Лимиты регионов',
-            'feature_limits_desc': 'Количество и размер • Настройка по группам',
-            'footer_copyright': 'RegionMC Documentation © 2024 | Minecraft Plugin',
-        },
-        en: {
-            'nav_home': 'Home',
-            'nav_commands': 'Commands',
-            'nav_permissions': 'Permissions',
-            'nav_flags': 'Flags',
-            'nav_examples': 'Examples',
-            'nav_features': 'Features',
-            'nav_config': 'Configuration',
-            'nav_downloads': 'Downloads',
-            'nav_donate': 'Donate',
-            'nav_social': 'Social',
-            'hero_title': 'RegionMC',
-            'hero_tagline': 'Powerful, flexible and high-performance region system for Minecraft',
-            'hero_btn_commands': 'All Commands',
-            'hero_btn_examples': 'Examples',
-            'hero_btn_flags': 'Flags',
-            'feature_protection': 'Region Protection',
-            'feature_protection_desc': 'Blocks / entities / containers • Explosions, fire, PvP',
-            'feature_flags': '36+ Flags',
-            'feature_flags_desc': 'build, break, interact • mob-spawning, time-lock, blockcmd',
-            'feature_members': 'Members & Owners',
-            'feature_members_desc': 'Add/remove • Full access control',
-            'feature_time': 'Time Lock',
-            'feature_time_desc': 'Day / night / freeze • Visual effect',
-            'feature_wand': 'Selection Wand',
-            'feature_wand_desc': 'LMB/RMB set pos • Shift+RMB info',
-            'feature_limits': 'Region Limits',
-            'feature_limits_desc': 'Count and size • Group configuration',
-            'footer_copyright': 'RegionMC Documentation © 2024 | Minecraft Plugin',
-        }
-    };
-    
-    function translatePage(lang) {
-        // Перевод навигации
-        document.querySelectorAll('.sidebar-nav a span').forEach(span => {
-            const text = span.innerText.trim();
-            const navMap = {
-                'Главная': 'nav_home', 'Home': 'nav_home',
-                'Команды': 'nav_commands', 'Commands': 'nav_commands',
-                'Права': 'nav_permissions', 'Permissions': 'nav_permissions',
-                'Флаги': 'nav_flags', 'Flags': 'nav_flags',
-                'Примеры': 'nav_examples', 'Examples': 'nav_examples',
-                'Возможности': 'nav_features', 'Features': 'nav_features',
-                'Конфигурация': 'nav_config', 'Configuration': 'nav_config',
-                'Скачать': 'nav_downloads', 'Downloads': 'nav_downloads',
-                'Поддержать': 'nav_donate', 'Donate': 'nav_donate',
-                'Соцсети': 'nav_social', 'Social': 'nav_social'
-            };
-            const key = navMap[text];
-            if (key && translations[lang][key]) {
-                span.innerText = translations[lang][key];
-            }
-        });
-        
-        // Перевод футера
-        const footer = document.querySelector('.wiki-footer p');
-        if (footer) {
-            footer.innerText = translations[lang]['footer_copyright'];
-        }
-        
-        // Перевод главной страницы
-        const heroTitle = document.querySelector('.hero h1');
-        if (heroTitle) {
-            heroTitle.innerHTML = translations[lang]['hero_title'] + ' <span class="version">v2.0</span>';
-            const tagline = document.querySelector('.tagline');
-            if (tagline) tagline.innerText = translations[lang]['hero_tagline'];
-            
-            const btns = document.querySelectorAll('.hero-buttons .btn');
-            if (btns.length >= 3) {
-                btns[0].innerText = translations[lang]['hero_btn_commands'];
-                btns[1].innerText = translations[lang]['hero_btn_examples'];
-                btns[2].innerText = translations[lang]['hero_btn_flags'];
-            }
-            
-            const cards = document.querySelectorAll('.feature-card');
-            if (cards.length >= 6) {
-                const titles = ['feature_protection', 'feature_flags', 'feature_members', 'feature_time', 'feature_wand', 'feature_limits'];
-                const descs = ['feature_protection_desc', 'feature_flags_desc', 'feature_members_desc', 'feature_time_desc', 'feature_wand_desc', 'feature_limits_desc'];
-                cards.forEach((card, i) => {
-                    const h3 = card.querySelector('h3');
-                    if (h3 && titles[i]) h3.innerText = translations[lang][titles[i]];
-                    const ul = card.querySelector('ul');
-                    if (ul && descs[i]) {
-                        const items = translations[lang][descs[i]].split(' • ');
-                        ul.innerHTML = items.map(item => `<li>${item}</li>`).join('');
-                    }
-                });
-            }
-        }
-        
-        // Обновляем активный язык в меню
-        document.querySelectorAll('.lang-dropdown a').forEach(link => {
-            if (link.getAttribute('data-lang') === lang) {
-                link.classList.add('active-lang');
-            } else {
-                link.classList.remove('active-lang');
-            }
-        });
-        
-        localStorage.setItem('regionmc_lang', lang);
+/* ========== WIKI LAYOUT ========== */
+.wiki-wrapper {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* ========== SIDEBAR ========== */
+.sidebar {
+    width: 280px;
+    background: rgba(10, 14, 23, 0.98);
+    backdrop-filter: blur(4px);
+    border-right: 1px solid rgba(255, 215, 0, 0.2);
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    z-index: 100;
+}
+
+.sidebar-header {
+    padding: 1.5rem 1rem;
+    border-bottom: 1px solid rgba(255, 215, 0, 0.2);
+    text-align: center;
+}
+
+.sidebar-logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #ffd700;
+    text-decoration: none;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.sidebar-version {
+    font-size: 0.8rem;
+    color: #ffd700;
+    background: rgba(255, 215, 0, 0.15);
+    display: inline-block;
+    padding: 0.2rem 0.6rem;
+    border-radius: 20px;
+}
+
+.sidebar-nav {
+    flex: 1;
+    padding: 1rem 0;
+}
+
+.sidebar-nav ul {
+    list-style: none;
+}
+
+.sidebar-nav li {
+    margin: 0;
+}
+
+.sidebar-nav a {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 0.7rem 1.5rem;
+    color: #ccc;
+    text-decoration: none;
+    transition: all 0.2s;
+    border-left: 3px solid transparent;
+    font-weight: 500;
+}
+
+.sidebar-nav a:hover {
+    background: rgba(255, 215, 0, 0.1);
+    color: #ffd700;
+    border-left-color: #ffd700;
+}
+
+.sidebar-nav a.active {
+    background: rgba(255, 215, 0, 0.15);
+    color: #ffd700;
+    border-left-color: #ffd700;
+}
+
+.sidebar-footer {
+    padding: 1rem;
+    text-align: center;
+    font-size: 0.8rem;
+    border-top: 1px solid rgba(255, 215, 0, 0.1);
+    color: #666;
+}
+
+/* ========== MAIN CONTENT ========== */
+.wiki-content {
+    flex: 1;
+    padding: 2rem;
+    background: linear-gradient(135deg, #0f111a 0%, #13151f 100%);
+}
+
+/* ========== TYPOGRAPHY ========== */
+h1, h2, h3 {
+    color: #ffd700;
+    font-weight: 600;
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+h2 {
+    font-size: 1.8rem;
+    margin: 1.5rem 0 1rem;
+    border-bottom: 1px solid rgba(255, 215, 0, 0.3);
+    padding-bottom: 0.5rem;
+}
+
+h3 {
+    font-size: 1.3rem;
+    margin: 1rem 0 0.5rem;
+}
+
+/* ========== HERO ========== */
+.hero {
+    text-align: center;
+    padding: 2rem 1rem;
+    background: rgba(0, 0, 0, 0.4);
+    border-radius: 24px;
+    margin-bottom: 2rem;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    background: linear-gradient(135deg, #ffd700, #ffaa00);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    margin-bottom: 0.5rem;
+}
+
+.tagline {
+    font-size: 1.2rem;
+    color: #aaa;
+    margin-bottom: 1.5rem;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* ========== BUTTONS ========== */
+.btn {
+    display: inline-block;
+    padding: 0.8rem 1.5rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.2s;
+}
+
+.btn-primary {
+    background: #ffd700;
+    color: #1a1a2e;
+}
+
+.btn-primary:hover {
+    background: #ffed4a;
+    transform: translateY(-2px);
+}
+
+.btn-secondary {
+    background: rgba(255,255,255,0.1);
+    color: #ffd700;
+    border: 1px solid #ffd700;
+}
+
+.btn-secondary:hover {
+    background: rgba(255,215,0,0.2);
+    transform: translateY(-2px);
+}
+
+/* ========== CARDS & GRID ========== */
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin: 2rem 0;
+}
+
+.feature-card {
+    background: rgba(255,255,255,0.05);
+    padding: 1.5rem;
+    border-radius: 16px;
+    transition: 0.3s;
+    border: 1px solid rgba(255,215,0,0.2);
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    background: rgba(255,255,255,0.1);
+}
+
+.feature-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.feature-card h3 {
+    color: #ffd700;
+    margin-bottom: 0.5rem;
+}
+
+.feature-card ul {
+    margin-left: 1.2rem;
+    color: #ccc;
+}
+
+/* ========== TABLES ========== */
+.data-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1.5rem 0;
+    background: rgba(0,0,0,0.4);
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.data-table th {
+    background: #ffd700;
+    color: #1a1a2e;
+    padding: 0.8rem;
+    text-align: left;
+    font-weight: bold;
+}
+
+.data-table td {
+    padding: 0.8rem;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.data-table tr:hover {
+    background: rgba(255,215,0,0.1);
+}
+
+.command-name, .perm-name, .flag-name {
+    font-family: monospace;
+    color: #ffd700;
+    font-weight: bold;
+}
+
+/* ========== CODE BLOCKS ========== */
+.code-block {
+    background: #0a0c15;
+    padding: 1rem;
+    border-radius: 8px;
+    margin: 1rem 0;
+    border-left: 4px solid #ffd700;
+    font-family: 'Courier New', monospace;
+    overflow-x: auto;
+    white-space: pre-wrap;
+    word-break: break-word;
+}
+
+.copy-btn {
+    background: #ffd700;
+    color: #1a1a2e;
+    border: none;
+    border-radius: 6px;
+    padding: 0.3rem 0.8rem;
+    cursor: pointer;
+    font-size: 0.8rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    transition: 0.2s;
+}
+
+.copy-btn:hover {
+    background: #ffed4a;
+    transform: scale(1.02);
+}
+
+/* ========== SECTION CARD ========== */
+.section-card {
+    background: rgba(255,255,255,0.05);
+    border-radius: 16px;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.section-card h2 {
+    margin-top: 0;
+}
+
+.tip {
+    background: rgba(255,215,0,0.1);
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    margin-top: 1rem;
+    color: #ffd700;
+}
+
+/* ========== PAGE HEADER ========== */
+.page-header {
+    margin-bottom: 2rem;
+}
+
+.page-header h1 {
+    margin-bottom: 0.2rem;
+}
+
+.page-header p {
+    color: #aaa;
+}
+
+/* ========== FOOTER ========== */
+.wiki-footer {
+    text-align: center;
+    padding: 2rem 0 1rem;
+    margin-top: 2rem;
+    border-top: 1px solid rgba(255,215,0,0.2);
+    color: #666;
+}
+
+/* ========== SCROLLBAR ========== */
+::-webkit-scrollbar {
+    width: 8px;
+}
+::-webkit-scrollbar-track {
+    background: #1a1a2e;
+}
+::-webkit-scrollbar-thumb {
+    background: #ffd700;
+    border-radius: 4px;
+}
+
+/* ========== TEXT SELECTION ========== */
+body {
+    user-select: none;
+}
+.code-block, .code-block *,
+.data-table, .data-table *,
+.command-name, .perm-name, .flag-name {
+    user-select: text;
+}
+
+/* ============================================================ */
+/* ПЕРЕКЛЮЧАТЕЛЬ ЯЗЫКА                                           */
+/* ============================================================ */
+.language-switcher {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1001;
+}
+
+.lang-btn {
+    background: rgba(10,14,23,0.95);
+    border: 1px solid rgba(255,215,0,0.5);
+    border-radius: 50%;
+    width: 48px;
+    height: 48px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+    backdrop-filter: blur(4px);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+    position: relative;
+    z-index: 1002;
+}
+
+.lang-btn:hover {
+    background: rgba(255,215,0,0.2);
+    transform: scale(1.05);
+}
+
+.lang-dropdown {
+    position: absolute;
+    top: 55px;
+    right: 0;
+    background: rgba(10,14,23,0.98);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255,215,0,0.3);
+    border-radius: 12px;
+    padding: 8px 0;
+    min-width: 140px;
+    flex-direction: column;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.2s ease, visibility 0.2s ease;
+    pointer-events: none;
+    z-index: 1001;
+}
+
+.language-switcher:hover .lang-dropdown {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+
+.language-switcher::after {
+    content: '';
+    position: absolute;
+    top: 38px;
+    right: 0;
+    width: 100%;
+    height: 25px;
+    background: transparent;
+    z-index: 1000;
+    pointer-events: auto;
+}
+
+.lang-dropdown:hover {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+
+.lang-dropdown a {
+    padding: 10px 20px;
+    color: #ccc;
+    text-decoration: none;
+    transition: all 0.2s;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.95rem;
+    pointer-events: auto;
+}
+
+.lang-dropdown a:hover {
+    background: rgba(255,215,0,0.15);
+    color: #ffd700;
+}
+
+.lang-dropdown a.active-lang {
+    background: rgba(255,215,0,0.25);
+    color: #ffd700;
+    font-weight: bold;
+}
+
+/* ============================================================ */
+/* ЕДИНАЯ АДАПТИВНОСТЬ (без дублирования)                       */
+/* ============================================================ */
+
+/* ---------- Планшеты и телефоны (≤1024px) ---------- */
+@media (max-width: 1024px) {
+    /* Бургер-кнопка */
+    .menu-toggle {
+        display: block;
+        background: none;
+        border: none;
+        color: #ffd700;
+        font-size: 28px;
+        cursor: pointer;
+        padding: 4px 8px;
+        line-height: 1;
+        position: fixed;
+        top: 12px;
+        left: 12px;
+        z-index: 1001;
     }
-    
-    document.querySelectorAll('.lang-dropdown a').forEach(link => {
-        link.addEventListener('click', function(e) {
-            e.preventDefault();
-            translatePage(this.getAttribute('data-lang'));
-        });
-    });
-    
-    translatePage(currentLang);
-})();
 
-// ========== КОНЕЦ ФАЙЛА ==========
+    /* Сайдбар выезжает слева */
+    .sidebar {
+        position: fixed;
+        top: 0;
+        left: -300px;
+        width: 280px;
+        height: 100vh;
+        background: #1a1a1a;
+        z-index: 1000;
+        transition: left 0.3s ease;
+        border-right: 1px solid rgba(255,215,0,0.2);
+        overflow-y: auto;
+        padding: 16px;
+        border-bottom: none;
+    }
+
+    .sidebar.open {
+        left: 0;
+    }
+
+    /* Затемнение */
+    .overlay {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0,0,0,0.6);
+        z-index: 999;
+    }
+    .overlay.active {
+        display: block;
+    }
+
+    /* Контент сдвигается вправо */
+    .wiki-content {
+        margin-left: 0;
+        padding: 16px;
+    }
+
+    .sidebar-header {
+        flex-wrap: wrap;
+        padding: 0.8rem 0.5rem;
+    }
+
+    .sidebar-nav ul {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px 12px;
+        margin-top: 8px;
+    }
+
+    .sidebar-nav li {
+        width: auto;
+    }
+
+    .sidebar-nav a {
+        padding: 6px 10px;
+        font-size: 0.9rem;
+        border-left: none;
+        background: rgba(255,215,0,0.1);
+        border-radius: 20px;
+        gap: 6px;
+    }
+
+    .sidebar-nav a.active {
+        background: #ffd700;
+        color: #1a1a2e;
+    }
+
+    .sidebar-footer {
+        display: none;
+    }
+}
+
+/* ---------- Телефоны (<768px) ---------- */
+@media (max-width: 768px) {
+    body {
+        font-size: 15px;
+    }
+
+    .wiki-content {
+        padding: 12px;
+    }
+
+    h1 {
+        font-size: 1.6rem;
+    }
+    h2 {
+        font-size: 1.3rem;
+    }
+
+    /* Сетки в 1 колонку */
+    .version-grid,
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .features-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .stat-card {
+        padding: 12px 8px;
+    }
+    .stat-number {
+        font-size: 22px;
+    }
+
+    .btn {
+        display: block;
+        width: 100%;
+        text-align: center;
+        padding: 12px;
+        font-size: 1rem;
+    }
+
+    .hero-buttons .btn {
+        margin: 6px 0;
+    }
+
+    .language-switcher {
+        top: 8px;
+        right: 8px;
+    }
+
+    .lang-btn {
+        width: 40px;
+        height: 40px;
+        font-size: 1.2rem;
+    }
+    .lang-dropdown {
+        top: 48px;
+        min-width: 120px;
+    }
+    .language-switcher::after {
+        top: 32px;
+        height: 20px;
+    }
+
+    code {
+        word-break: break-word;
+        white-space: pre-wrap;
+    }
+
+    .data-table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+    .data-table td, .data-table th {
+        padding: 0.5rem;
+        font-size: 0.7rem;
+    }
+}
+
+/* ---------- Очень маленькие экраны (<480px) ---------- */
+@media (max-width: 480px) {
+    .sidebar-nav a {
+        font-size: 0.75rem;
+        padding: 3px 6px;
+    }
+
+    .stat-number {
+        font-size: 18px;
+    }
+
+    .install-steps p {
+        font-size: 0.9rem;
+    }
+}
+
+/* ========== КОНЕЦ ФАЙЛА ========== */
