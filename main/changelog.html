@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>История изменений RegionMC</title>
+    <link rel="stylesheet" href="../ui/css/style.css">
+    <link rel="icon" type="image/png" href="../icon.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <meta name="robots" content="noindex, nofollow">
+</head>
+<body>
+
+<div class="language-switcher">
+    <div class="lang-btn">🌍</div>
+    <div class="lang-dropdown">
+        <a href="#" data-lang="ru" class="active-lang">🇷🇺 Русский</a>
+        <a href="#" data-lang="en">🇬🇧 English</a>
+    </div>
+</div>
+
+<div class="wiki-wrapper">
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <a href="../index.html" class="sidebar-logo">🏠 RegionMC</a>
+            <div class="sidebar-version">v2.1</div>
+        </div>
+        <nav class="sidebar-nav">
+            <ul>
+                <li><a href="../index.html">🏠 <span>Главная</span></a></li>
+                <li><a href="commands.html">📖 <span>Команды</span></a></li>
+                <li><a href="permissions.html">🔑 <span>Права</span></a></li>
+                <li><a href="flags.html">🚩 <span>Флаги</span></a></li>
+                <li><a href="examples.html">✨ <span>Примеры</span></a></li>
+                <li><a href="features.html">⚙️ <span>Возможности</span></a></li>
+                <li><a href="configuration.html">⚙️ <span>Конфигурация</span></a></li>
+                <li><a href="placeholder.html">🔌 <span>PlaceholderAPI</span></a></li>
+                <li><a href="changelog.html" class="active">📋 <span>История</span></a></li>
+                <li><a href="downloads.html">📥 <span>Скачать</span></a></li>
+                <li><a href="social.html">💬 <span>Соцсети</span></a></li>
+                <li><a href="donate.html">💝 <span>Поддержать</span></a></li>
+            </ul>
+        </nav>
+        <div class="sidebar-footer">
+            <p>© 2024 RegionMC</p>
+        </div>
+    </aside>
+    
+    <main class="wiki-content">
+        <div class="page-header">
+            <h1>📋 История изменений</h1>
+            <p>Список последних обновлений плагина RegionMC</p>
+        </div>
+
+        <div class="section-card">
+            <h2>v2.1 (2026-06-21)</h2>
+            <h3>✅ Добавлено</h3>
+            <ul style="color: #ccc; margin-left: 1.5rem;">
+                <li>Полная поддержка консоли — все команды доступны из консоли сервера</li>
+                <li>Система <code>admin-user</code> в <code>Settings/main.yml</code> — администраторы получают все права</li>
+                <li>Новый класс <code>PermissionUtil</code> для централизованной проверки прав</li>
+                <li>Флаги <code>enter-notify</code> и <code>exit-notify</code> для уведомлений о входе/выходе</li>
+                <li>Категория <code>ADMIN</code> в DebugUtils для отладки</li>
+                <li>Метод <code>getDefaultLimit()</code> в <code>RegionManager</code> стал публичным для консоли</li>
+            </ul>
+            <h3>🛠️ Исправлено</h3>
+            <ul style="color: #ccc; margin-left: 1.5rem;">
+                <li>Удалён дублирующийся метод <code>getDefaultLimit()</code> в <code>RegionManager</code></li>
+                <li><code>BlockChatFlag</code> теперь использует современный <code>regionManager.isAdminBypass()</code> вместо устаревшего API</li>
+                <li>Исправлены вызовы <code>LanguageManager.getMessage()</code> в <code>RegionNotifierCommand</code></li>
+                <li>Устранены все предупреждения компиляции (deprecated API, unchecked операции)</li>
+                <li>Во всех подкомандах заменены прямые <code>player.hasPermission()</code> на <code>PermissionUtil.hasPermission()</code></li>
+            </ul>
+        </div>
+
+        <div class="wiki-footer">
+            <p>RegionMC Documentation © 2024 | <a href="https://modrinth.com/plugin/regionmc" style="color:#ffd700;">Modrinth</a> | <a href="https://github.com/KillerYT/RegionMC" style="color:#ffd700;">GitHub</a></p>
+        </div>
+    </main>
+</div>
+
+<script src="../ui/js/main.js"></script>
+</body>
+</html>

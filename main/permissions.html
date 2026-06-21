@@ -25,7 +25,7 @@
     <aside class="sidebar">
         <div class="sidebar-header">
             <a href="../index.html" class="sidebar-logo">🏠 RegionMC</a>
-            <div class="sidebar-version">v2.0</div>
+            <div class="sidebar-version">v2.1</div>
         </div>
         <nav class="sidebar-nav">
             <ul>
@@ -36,9 +36,11 @@
                 <li><a href="examples.html">✨ <span>Примеры</span></a></li>
                 <li><a href="features.html">⚙️ <span>Возможности</span></a></li>
                 <li><a href="configuration.html">⚙️ <span>Конфигурация</span></a></li>
+                <li><a href="placeholder.html">🔌 <span>PlaceholderAPI</span></a></li>
+                <li><a href="changelog.html">📋 <span>История</span></a></li>
                 <li><a href="downloads.html">📥 <span>Скачать</span></a></li>
-                <li><a href="donate.html">💝 <span>Поддержать</span></a></li>
                 <li><a href="social.html">💬 <span>Соцсети</span></a></li>
+                <li><a href="donate.html">💝 <span>Поддержать</span></a></li>
             </ul>
         </nav>
         <div class="sidebar-footer">
@@ -140,6 +142,36 @@
                     </tbody>
                 </table>
             </div>
+        </div>
+
+        <!-- ==================== АДМИНИСТРАТОРЫ И КОНСОЛЬ ==================== -->
+        <div class="section-card">
+            <h2>👑 Администраторы и консоль</h2>
+            <div class="tip" style="background: rgba(255,215,0,0.2);">
+                <strong>📌 admin-user в Settings/main.yml</strong> – игроки из этого списка получают <strong>все права</strong> без выдачи отдельных разрешений.
+            </div>
+            <div class="code-block">
+        <pre>
+        # Settings/main.yml
+        admin-user:
+        - "KillerYTuber1"   # Полный доступ ко всем командам
+        - "Neonix98"        # Ещё один администратор
+        # - "player"        # Закомментировано – не действует
+        </pre>
+            </div>
+            <div class="tip" style="background: rgba(0,0,0,0.5);">
+                <strong>🖥️ Консоль</strong> – всегда имеет доступ ко всем командам без ограничений.
+            </div>
+
+            <h3>Иерархия проверки прав</h3>
+            <ol style="color: #ccc; margin-left: 1.5rem;">
+                <li>Консоль → все разрешено</li>
+                <li><code>admin-user</code> из <code>Settings/main.yml</code> → все разрешено</li>
+                <li>Право <code>regionmc.*</code> → все разрешено</li>
+                <li>Право <code>regionmc.admin</code> → все разрешено</li>
+                <li>Конкретные права (например, <code>regionmc.command.reload</code>) → только для этой команды</li>
+                <li>Без прав → команды недоступны</li>
+            </ol>
         </div>
         
         <!-- ==================== АДМИНИСТРАТИВНЫЕ ==================== -->

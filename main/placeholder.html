@@ -73,7 +73,7 @@
     <aside class="sidebar">
         <div class="sidebar-header">
             <a href="../index.html" class="sidebar-logo">🏠 RegionMC</a>
-            <div class="sidebar-version">v2.0</div>
+            <div class="sidebar-version">v2.1</div>
         </div>
         <nav class="sidebar-nav">
             <ul>
@@ -84,10 +84,11 @@
                 <li><a href="examples.html">✨ <span>Примеры</span></a></li>
                 <li><a href="features.html">⚙️ <span>Возможности</span></a></li>
                 <li><a href="configuration.html">⚙️ <span>Конфигурация</span></a></li>
-                <li><a href="downloads.html">📥 <span>Скачать</span></a></li>
                 <li><a href="placeholder.html" class="active">🔌 <span>PlaceholderAPI</span></a></li>
-                <li><a href="donate.html">💝 <span>Поддержать</span></a></li>
+                <li><a href="changelog.html">📋 <span>История</span></a></li>
+                <li><a href="downloads.html">📥 <span>Скачать</span></a></li>
                 <li><a href="social.html">💬 <span>Соцсети</span></a></li>
+                <li><a href="donate.html">💝 <span>Поддержать</span></a></li>
             </ul>
         </nav>
         <div class="sidebar-footer">
@@ -119,17 +120,26 @@
                         <li><code>%regionmc_region_priority%</code> <span class="placeholder-desc">— Приоритет региона</span></li>
                         <li><code>%regionmc_region_members_count%</code> <span class="placeholder-desc">— Количество участников региона</span></li>
                         <li><code>%regionmc_region_members_list%</code> <span class="placeholder-desc">— Список участников (через запятую)</span></li>
+                        <li><code>%regionmc_current_name%</code> <span class="placeholder-desc">— Название региона под игроком</span></li>
+                        <li><code>%regionmc_current_owner%</code> <span class="placeholder-desc">— Владелец текущего региона</span></li>
+                        <li><code>%regionmc_current_members%</code> <span class="placeholder-desc">— Список участников региона</span></li>
+                        <li><code>%regionmc_current_priority%</code> <span class="placeholder-desc">— Приоритет региона</span></li>
+                        <li><code>%regionmc_current_size%</code> <span class="placeholder-desc">— Размер региона (блоков)</span></li>
+                        <li><code>%regionmc_current_world%</code> <span class="placeholder-desc">— Мир региона</span></li>
                     </ul>
                 </div>
                 
                 <div class="placeholder-category">
-                    <h3>📌 Права доступа</h3>
+                    <h3>📌 Права доступа и статус</h3>
                     <ul class="placeholder-list">
                         <li><code>%regionmc_can_build%</code> <span class="placeholder-desc">— Может ли строить (true/false)</span></li>
                         <li><code>%regionmc_can_break%</code> <span class="placeholder-desc">— Может ли ломать (true/false)</span></li>
                         <li><code>%regionmc_can_interact%</code> <span class="placeholder-desc">— Может ли взаимодействовать</span></li>
                         <li><code>%regionmc_can_use_chest%</code> <span class="placeholder-desc">— Доступ к сундукам</span></li>
                         <li><code>%regionmc_can_pvp%</code> <span class="placeholder-desc">— Разрешён ли PvP</span></li>
+                        <li><code>%regionmc_player_can_build%</code> <span class="placeholder-desc">— Может ли игрок строить (true/false)</span></li>
+                        <li><code>%regionmc_player_is_owner%</code> <span class="placeholder-desc">— Является ли владельцем (true/false)</span></li>
+                        <li><code>%regionmc_player_is_member%</code> <span class="placeholder-desc">— Является ли участником (true/false)</span></li>
                     </ul>
                 </div>
             </div>
@@ -186,6 +196,8 @@
                         <li><code>%regionmc_player_max_regions%</code> <span class="placeholder-desc">— Максимум регионов для игрока</span></li>
                         <li><code>%regionmc_player_regions_left%</code> <span class="placeholder-desc">— Осталось свободных слотов</span></li>
                         <li><code>%regionmc_player_can_create%</code> <span class="placeholder-desc">— Может ли создать новый регион (true/false)</span></li>
+                        <li><code>%regionmc_player_regions_count%</code> <span class="placeholder-desc">— Количество регионов игрока</span></li>
+                        <li><code>%regionmc_player_regions_remaining%</code> <span class="placeholder-desc">— Осталось свободных слотов</span></li>
                     </ul>
                 </div>
                 
@@ -221,7 +233,7 @@
             <div class="tip">💡 Пример: <code>%regionmc_region_home_owner%</code> — покажет владельца региона "home"</div>
         </div>
         
-        
+    </main>
 </div>
 
 <script src="../ui/js/main.js"></script>
