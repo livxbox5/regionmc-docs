@@ -54,10 +54,28 @@
             <p>Все разрешения для тонкой настройки доступа</p>
         </div>
         
+        <!-- ==================== АДМИНИСТРАТОРЫ И КОНСОЛЬ ==================== -->
+        <div class="section-card">
+            <h2>👑 Администраторы и консоль</h2>
+            <div class="tip" style="background: rgba(255,215,0,0.2);">
+                <strong>📌 admin-user в Settings/main.yml</strong> – игроки из этого списка получают <strong>все права</strong> без выдачи отдельных разрешений.
+            </div>
+            <div class="code-block">
+        <pre>
+        # Settings/main.yml
+        admin-user:
+        - "KillerYTuber1"   # Полный доступ ко всем командам
+        - "Neonix98"        # Ещё один администратор
+        </pre>
+            </div>
+            <div class="tip" style="background: rgba(0,0,0,0.5);">
+                <strong>🖥️ Консоль</strong> – всегда имеет доступ ко всем командам без ограничений.
+            </div>
+        </div>
+        
         <!-- ==================== БАЗОВЫЕ КОМАНДЫ ==================== -->
         <div class="section-card">
             <h2>📋 Базовые команды</h2>
-            <div class="tip">⚠️ Нужно выдать права regionmc.command.region и regionmc.command.help</div>
             <table class="data-table">
                 <thead><tr><th>Право</th><th>Описание</th></tr></thead>
                 <tbody>
@@ -70,34 +88,17 @@
                     <tr><td class="perm-name">regionmc.command.list</td><td>Список своих регионов</td></tr>
                     <tr><td class="perm-name">regionmc.command.wand</td><td>Получение палочки выделения</td></tr>
                     <tr><td class="perm-name">regionmc.command.limit</td><td>Просмотр лимитов</td></tr>
-                </tbody>
-            </table>
-        </div>
-        
-        <!-- ==================== УПРАВЛЕНИЕ УЧАСТНИКАМИ ==================== -->
-        <div class="section-card">
-            <h2>👥 Управление участниками</h2>
-            <table class="data-table">
-                <thead><tr><th>Право</th><th>Описание</th></tr></thead>
-                <tbody>
-                    <tr><td class="perm-name">regionmc.command.addmember</td><td>Добавление участников</td></tr>
-                    <tr><td class="perm-name">regionmc.command.removemember</td><td>Удаление участников</td></tr>
-                    <tr><td class="perm-name">regionmc.command.addowner</td><td>Добавление владельцев</td></tr>
-                    <tr><td class="perm-name">regionmc.command.removeowner</td><td>Удаление владельцев</td></tr>
-                </tbody>
-            </table>
-        </div>
-        
-        <!-- ==================== ФЛАГИ И НАСТРОЙКИ ==================== -->
-        <div class="section-card">
-            <h2>⚙️ Флаги и настройки</h2>
-            <table class="data-table">
-                <thead><tr><th>Право</th><th>Описание</th></tr></thead>
-                <tbody>
                     <tr><td class="perm-name">regionmc.command.flag</td><td>Изменение флагов</td></tr>
                     <tr><td class="perm-name">regionmc.command.priority</td><td>Изменение приоритета</td></tr>
                     <tr><td class="perm-name">regionmc.command.expand</td><td>Расширение региона</td></tr>
                     <tr><td class="perm-name">regionmc.command.show</td><td>Показ/скрытие границ</td></tr>
+                    <tr><td class="perm-name">regionmc.command.addmember</td><td>Добавление участников</td></tr>
+                    <tr><td class="perm-name">regionmc.command.removemember</td><td>Удаление участников</td></tr>
+                    <tr><td class="perm-name">regionmc.command.addowner</td><td>Добавление владельцев</td></tr>
+                    <tr><td class="perm-name">regionmc.command.removeowner</td><td>Удаление владельцев</td></tr>
+                    <tr><td class="perm-name">regionmc.command.reload</td><td>Перезагрузка плагина</td></tr>
+                    <tr><td class="perm-name">regionmc.command.testplaceholders</td><td>Тест PlaceholderAPI</td></tr>
+                    <tr><td class="perm-name">regionmc.command.notifier</td><td>Команды notifier</td></tr>
                 </tbody>
             </table>
         </div>
@@ -115,6 +116,7 @@
                         <tr><td class="perm-name">regionmc.flags.place</td><td>place - установка блоков</td></tr>
                         <tr><td class="perm-name">regionmc.flags.interact</td><td>interact - взаимодействие</td></tr>
                         <tr><td class="perm-name">regionmc.flags.use</td><td>use - использование предметов</td></tr>
+                        <tr><td class="perm-name">regionmc.flags.use-items</td><td>use-items - использование предметов</td></tr>
                         <tr><td class="perm-name">regionmc.flags.pvp</td><td>pvp - PvP</td></tr>
                         <tr><td class="perm-name">regionmc.flags.mob-spawning</td><td>mob-spawning - спавн мобов</td></tr>
                         <tr><td class="perm-name">regionmc.flags.mob-damage</td><td>mob-damage - урон от мобов</td></tr>
@@ -143,51 +145,6 @@
                 </table>
             </div>
         </div>
-
-        <!-- ==================== АДМИНИСТРАТОРЫ И КОНСОЛЬ ==================== -->
-        <div class="section-card">
-            <h2>👑 Администраторы и консоль</h2>
-            <div class="tip" style="background: rgba(255,215,0,0.2);">
-                <strong>📌 admin-user в Settings/main.yml</strong> – игроки из этого списка получают <strong>все права</strong> без выдачи отдельных разрешений.
-            </div>
-            <div class="code-block">
-        <pre>
-        # Settings/main.yml
-        admin-user:
-        - "KillerYTuber1"   # Полный доступ ко всем командам
-        - "Neonix98"        # Ещё один администратор
-        # - "player"        # Закомментировано – не действует
-        </pre>
-            </div>
-            <div class="tip" style="background: rgba(0,0,0,0.5);">
-                <strong>🖥️ Консоль</strong> – всегда имеет доступ ко всем командам без ограничений.
-            </div>
-
-            <h3>Иерархия проверки прав</h3>
-            <ol style="color: #ccc; margin-left: 1.5rem;">
-                <li>Консоль → все разрешено</li>
-                <li><code>admin-user</code> из <code>Settings/main.yml</code> → все разрешено</li>
-                <li>Право <code>regionmc.*</code> → все разрешено</li>
-                <li>Право <code>regionmc.admin</code> → все разрешено</li>
-                <li>Конкретные права (например, <code>regionmc.command.reload</code>) → только для этой команды</li>
-                <li>Без прав → команды недоступны</li>
-            </ol>
-        </div>
-        
-        <!-- ==================== АДМИНИСТРАТИВНЫЕ ==================== -->
-        <div class="section-card">
-            <h2>👑 Административные</h2>
-            <table class="data-table">
-                <thead><tr><th>Право</th><th>Описание</th></tr></thead>
-                <tbody>
-                    <tr><td class="perm-name">regionmc.admin</td><td>Полный доступ ко всем командам и обход защиты</td></tr>
-                    <tr><td class="perm-name">regionmc.command.reload</td><td>Перезагрузка плагина</td></tr>
-                    <tr><td class="perm-name">regionmc.bypass</td><td>Обход защиты регионов</td></tr>
-                    <tr><td class="perm-name">regionmc.bypass.chat</td><td>Обход блокировки чата</td></tr>
-                    <tr><td class="perm-name">regionmc.bypass.&lt;регион&gt;</td><td>Обход защиты в конкретном регионе</td></tr>
-                </tbody>
-            </table>
-        </div>
         
         <!-- ==================== ЛИМИТЫ ==================== -->
         <div class="section-card">
@@ -204,7 +161,6 @@
                     <tr><td class="perm-name">regionmc.limit.unlimited</td><td>Безлимитно</td></tr>
                 </tbody>
             </table>
-            
             <h2>📊 Лимиты количества регионов</h2>
             <table class="data-table">
                 <thead><tr><th>Право</th><th>Лимит</th></tr></thead>

@@ -77,7 +77,7 @@
             <table class="data-table">
                 <thead><tr><th>Флаг</th><th>Описание</th><th>По умолчанию</th></tr></thead>
                 <tbody>
-                    <tr><td class="flag-name">interact</td><td>Взаимодействие с блоками</td><td>deny</td></tr>
+                    <tr><td class="flag-name">interact</td><td>Взаимодействие с блоками</td><td>allow</td></tr>
                     <tr><td class="flag-name">use</td><td>Использование предметов и блоков</td><td>deny</td></tr>
                     <tr><td class="flag-name">pistons</td><td>Работа поршней</td><td>allow</td></tr>
                     <tr><td class="flag-name">ride</td><td>Посадка на транспорт/животных</td><td>allow</td></tr>
@@ -89,19 +89,19 @@
         <div class="section-card">
             <h2>📦 Предметы (Items) - 4 флага</h2>
             <table class="data-table">
-                <thead><tr><th>Флаг</th><th>Описание</th><th>По умолчанию</th></table></thead>
+                <thead><tr><th>Флаг</th><th>Описание</th><th>По умолчанию</th></tr></thead>
                 <tbody>
                     <tr><td class="flag-name">use-items</td><td>Использование предметов</td><td>deny</td></tr>
                     <tr><td class="flag-name">item-pickup</td><td>Подбор предметов</td><td>allow</td></tr>
                     <tr><td class="flag-name">item-drop</td><td>Выбрасывание предметов</td><td>allow</td></tr>
-                    <tr><td class="flag-name">tnt-explosion</td><td>Контроль TNT</td><td>deny</td></tr>
+                    <tr><td class="flag-name">tnt-explosion</td><td>Контроль TNT (allow = разрушает блоки)</td><td>deny</td></tr>
                 </tbody>
             </table>
         </div>
         
         <!-- ==================== КАТЕГОРИЯ: ИГРОКИ ==================== -->
         <div class="section-card">
-            <h2>👤 Игроки (Players) - 5 флагов</h2>
+            <h2>👤 Игроки (Players) - 9 флагов</h2>
             <table class="data-table">
                 <thead><tr><th>Флаг</th><th>Описание</th><th>По умолчанию</th></tr></thead>
                 <tbody>
@@ -110,6 +110,10 @@
                     <tr><td class="flag-name">exp-drops</td><td>Выпадение опыта</td><td>allow</td></tr>
                     <tr><td class="flag-name">sleep</td><td>Сон в кровати</td><td>deny</td></tr>
                     <tr><td class="flag-name">blockcmd</td><td>Блокировка команд (список или true/false)</td><td>null</td></tr>
+                    <tr><td class="flag-name">greeting</td><td>Приветственное сообщение при входе</td><td>null</td></tr>
+                    <tr><td class="flag-name">farewell</td><td>Прощальное сообщение при выходе</td><td>null</td></tr>
+                    <tr><td class="flag-name">entry-deny-message</td><td>Кастомное сообщение при запрете входа</td><td>null</td></tr>
+                    <tr><td class="flag-name">exit-deny-message</td><td>Кастомное сообщение при запрете выхода</td><td>null</td></tr>
                 </tbody>
             </table>
         </div>
@@ -122,7 +126,7 @@
                 <tbody>
                     <tr><td class="flag-name">mob-spawning</td><td>Спавн мобов (поддерживает список)</td><td>allow</td></tr>
                     <tr><td class="flag-name">mob-damage</td><td>Урон от мобов</td><td>allow</td></tr>
-                    <tr><td class="flag-name">creeper-explosion</td><td>Взрывы криперов</td><td>allow</td></tr>
+                    <tr><td class="flag-name">creeper-explosion</td><td>Взрывы криперов</td><td>deny</td></tr>
                     <tr><td class="flag-name">ender-dragon-damage</td><td>Урон от эндер-дракона</td><td>allow</td></tr>
                     <tr><td class="flag-name">enderman-grief</td><td>Гриферство эндерменов</td><td>allow</td></tr>
                     <tr><td class="flag-name">damage-animals</td><td>Урон животным</td><td>allow</td></tr>
@@ -138,8 +142,8 @@
                 <tbody>
                     <tr><td class="flag-name">entry</td><td>Вход в регион</td><td>allow</td></tr>
                     <tr><td class="flag-name">exit</td><td>Выход из региона</td><td>allow</td></tr>
-                    <tr><td class="flag-name">enter-notify</td><td>Уведомлять владельцев/участников о входе игрока</td><td>deny</td></tr>
-                    <tr><td class="flag-name">exit-notify</td><td>Уведомлять владельцев/участников о выходе игрока</td><td>deny</td></tr>
+                    <tr><td class="flag-name">enter-notify</td><td>Уведомлять владельцев/участников о входе</td><td>deny</td></tr>
+                    <tr><td class="flag-name">exit-notify</td><td>Уведомлять владельцев/участников о выходе</td><td>deny</td></tr>
                 </tbody>
             </table>
         </div>
