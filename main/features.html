@@ -22,7 +22,7 @@
     <aside class="sidebar">
         <div class="sidebar-header">
             <a href="../index.html" class="sidebar-logo">🏠 RegionMC</a>
-            <div class="sidebar-version">v2.1</div>
+            <div class="sidebar-version">v2.2</div>
         </div>
         <nav class="sidebar-nav">
             <ul>
@@ -31,7 +31,7 @@
                 <li><a href="permissions.html">🔑 <span>Права</span></a></li>
                 <li><a href="flags.html">🚩 <span>Флаги</span></a></li>
                 <li><a href="examples.html">✨ <span>Примеры</span></a></li>
-                <li><a href="features.html">⚙️ <span>Возможности</span></a></li>
+                <li><a href="features.html" class="active">⚙️ <span>Возможности</span></a></li>
                 <li><a href="configuration.html">⚙️ <span>Конфигурация</span></a></li>
                 <li><a href="placeholder.html">🔌 <span>PlaceholderAPI</span></a></li>
                 <li><a href="changelog.html">📋 <span>История</span></a></li>
@@ -61,7 +61,7 @@
                 <ul><li>Владельцы (полный контроль)</li><li>Участники (могут строить/разрушать)</li><li>Поддержка оффлайн-игроков по UUID</li></ul>
             </div>
             <div class="feature-card">
-                <h3>🚩 36+ настраиваемых флагов</h3>
+                <h3>🚩 39 настраиваемых флагов</h3>
                 <ul><li>pvp, mob-spawning, entry, exit</li><li>use-items, chest-access, enderchest</li><li>time-lock (день/ночь/заморозка)</li><li>greeting, farewell, blockcmd, block-chat</li></ul>
             </div>
             <div class="feature-card">
@@ -108,8 +108,39 @@
                 <h3>👑 Администрирование через admin-user</h3>
                 <ul><li>Назначение администраторов в <code>Settings/main.yml</code></li><li>Полный доступ к командам без выдачи отдельных прав</li></ul>
             </div>
+            <div class="feature-card">
+                <div class="feature-icon">📚</div>
+                <h3>Требуется KillerCoreAPI</h3>
+                <ul>
+                    <li>Обязательная библиотека для работы RegionMC</li>
+                    <li>Содержит <code>DebugUtils</code>, <code>JsonMessageUtil</code>, <code>PermissionUtil</code></li>
+                    <li><a href="https://github.com/livxbox5/KillerCoreAPI" target="_blank" style="color:#ffd700;">Скачать KillerCoreAPI</a></li>
+                </ul>
+            </div>
         </div>
-        
+
+        <!-- ==================== KILLERCOREAPI ==================== -->
+        <div class="section-card">
+            <h2>📚 KillerCoreAPI — обязательная зависимость</h2>
+            <div class="tip" style="background: rgba(255,215,0,0.15);">
+                <strong>⚠️ Внимание:</strong> RegionMC не запустится без установленной библиотеки
+                <code>KillerCoreAPI</code>. Она должна лежать в папке <code>plugins/</code> рядом с RegionMC.
+            </div>
+            <p>Библиотека предоставляет общие утилиты, которые используются внутри плагина:</p>
+            <ul style="color:#ccc; margin-left:1.5rem;">
+                <li><code>DebugUtils</code> — единая система отладки и логирования</li>
+                <li><code>JsonMessageUtil</code> — работа с Adventure-компонентами и кликабельными сообщениями</li>
+                <li><code>PermissionUtil</code> — централизованная проверка прав (с поддержкой <code>admin-user</code>)</li>
+                <li><code>LanguageManager</code>, <code>ConfigGenerator</code>, <code>VaultUtils</code>, <code>ItemBuilder</code></li>
+            </ul>
+            <p style="margin-top:1rem;">
+                🔗 Ссылка на проект:
+                <a href="https://github.com/livxbox5/KillerCoreAPI" target="_blank" style="color:#ffd700;">
+                    github.com/livxbox5/KillerCoreAPI
+                </a>
+            </p>
+        </div>
+
         <div class="wiki-footer">
             <p>RegionMC Documentation © 2024 | Minecraft Plugin</p>
         </div>

@@ -75,7 +75,7 @@
     <aside class="sidebar">
         <div class="sidebar-header">
             <a href="../index.html" class="sidebar-logo">🏠 RegionMC</a>
-            <div class="sidebar-version">v2.1</div>
+            <div class="sidebar-version">v2.2</div>
         </div>
         <nav class="sidebar-nav">
             <ul>
@@ -86,10 +86,11 @@
                 <li><a href="examples.html">✨ <span>Примеры</span></a></li>
                 <li><a href="features.html">⚙️ <span>Возможности</span></a></li>
                 <li><a href="configuration.html">⚙️ <span>Конфигурация</span></a></li>
-                <li><a href="downloads.html">📥 <span>Скачать</span></a></li>
-                <li><a href="donate.html">💝 <span>Поддержать</span></a></li>
-                <li><a href="social.html">💬 <span>Соцсети</span></a></li>
+                <li><a href="placeholder.html">🔌 <span>PlaceholderAPI</span></a></li>
                 <li><a href="changelog.html">📋 <span>История</span></a></li>
+                <li><a href="downloads.html" class="active">📥 <span>Скачать</span></a></li>
+                <li><a href="social.html">💬 <span>Соцсети</span></a></li>
+                <li><a href="donate.html">💝 <span>Поддержать</span></a></li>
             </ul>
         </nav>
         <div class="sidebar-footer">
@@ -103,7 +104,7 @@
             <p>Выберите удобный способ загрузки плагина</p>
         </div>
 
-        <!-- ===== НОВЫЙ БЛОК СТАТИСТИКИ ===== -->
+        <!-- ===== БЛОК СТАТИСТИКИ ===== -->
         <div class="section-card" style="background: linear-gradient(135deg, rgba(255,215,0,0.06), rgba(255,215,0,0.02));">
             <h2>📊 Статистика проекта</h2>
             <p>Актуальные данные с Modrinth</p>
@@ -134,6 +135,29 @@
                 </div>
             </div>
             <div class="stat-update" id="statUpdateTime">⏳ Загрузка...</div>
+        </div>
+
+        <!-- ==================== ТРЕБОВАНИЯ ==================== -->
+        <div class="section-card" style="background: linear-gradient(135deg, rgba(255,100,0,0.08), rgba(255,100,0,0.02)); border-left: 4px solid #ff7b00;">
+            <h2>📚 Требования</h2>
+            <p>Перед установкой RegionMC убедитесь, что на сервере установлена обязательная библиотека:</p>
+            <div class="version-grid">
+                <div class="version-item">
+                    <span>📦</span> <strong>KillerCoreAPI</strong><br>
+                    <a href="https://github.com/livxbox5/KillerCoreAPI" target="_blank" style="color:#ffd700;">Скачать</a>
+                </div>
+                <div class="version-item">
+                    <span>🔌</span> PlaceholderAPI (опционально)<br>
+                    <a href="https://www.spigotmc.org/resources/6245/" target="_blank" style="color:#ffd700;">Скачать</a>
+                </div>
+                <div class="version-item">
+                    <span>💰</span> Vault (для аренды)<br>
+                    <a href="https://www.spigotmc.org/resources/vault.34315/" target="_blank" style="color:#ffd700;">Скачать</a>
+                </div>
+            </div>
+            <div class="tip" style="margin-top:1rem;">
+                ⚠️ Без <strong>KillerCoreAPI</strong> RegionMC не запустится.
+            </div>
         </div>
 
         <!-- Modrinth -->
@@ -181,11 +205,12 @@
         <div class="section-card">
             <h2>🛠️ Установка</h2>
             <div class="install-steps">
-                <p><span style="color:#ffd700;">1.</span> Скачайте последнюю версию .jar файла</p>
-                <p><span style="color:#ffd700;">2.</span> Поместите файл в папку <code style="background:#333; padding:2px 6px; border-radius:4px;">plugins/</code> вашего сервера</p>
-                <p><span style="color:#ffd700;">3.</span> Перезапустите сервер</p>
-                <p><span style="color:#ffd700;">4.</span> Настройте конфиги в папке <code style="background:#333; padding:2px 6px; border-radius:4px;">plugins/RegionMC/</code></p>
-                <p><span style="color:#ffd700;">5.</span> Готово! Используйте <code style="background:#333; padding:2px 6px; border-radius:4px;">/rg help</code> для начала работы</p>
+                <p><span style="color:#ffd700;">1.</span> Скачайте <strong>KillerCoreAPI</strong> с <a href="https://github.com/livxbox5/KillerCoreAPI" target="_blank" style="color:#ffd700;">GitHub</a> и поместите в <code>plugins/</code></p>
+                <p><span style="color:#ffd700;">2.</span> Скачайте последнюю версию RegionMC (.jar)</p>
+                <p><span style="color:#ffd700;">3.</span> Поместите оба файла в папку <code>plugins/</code> вашего сервера</p>
+                <p><span style="color:#ffd700;">4.</span> Перезапустите сервер</p>
+                <p><span style="color:#ffd700;">5.</span> Настройте конфиги в папке <code>plugins/RegionMC/</code></p>
+                <p><span style="color:#ffd700;">6.</span> Готово! Используйте <code>/rg help</code> для начала работы</p>
             </div>
             <div class="tip">💡 После установки выдайте права игрокам через LuckPerms.<br>Пример: <code>/lp user Steve permission set regionmc.command.claim true</code></div>
         </div>

@@ -22,7 +22,7 @@
     <aside class="sidebar">
         <div class="sidebar-header">
             <a href="../index.html" class="sidebar-logo">🏠 RegionMC</a>
-            <div class="sidebar-version">v2.1</div>
+            <div class="sidebar-version">v2.2</div>
         </div>
         <nav class="sidebar-nav">
             <ul>
@@ -32,7 +32,7 @@
                 <li><a href="flags.html">🚩 <span>Флаги</span></a></li>
                 <li><a href="examples.html">✨ <span>Примеры</span></a></li>
                 <li><a href="features.html">⚙️ <span>Возможности</span></a></li>
-                <li><a href="configuration.html">⚙️ <span>Конфигурация</span></a></li>
+                <li><a href="configuration.html" class="active">⚙️ <span>Конфигурация</span></a></li>
                 <li><a href="placeholder.html">🔌 <span>PlaceholderAPI</span></a></li>
                 <li><a href="changelog.html">📋 <span>История</span></a></li>
                 <li><a href="downloads.html">📥 <span>Скачать</span></a></li>
@@ -72,6 +72,42 @@ max-regions-per-player: 5       # ← ИГНОРИРУЕТСЯ (так как En
             <div class="tip" style="background: rgba(0,0,0,0.5); margin-top: 15px;">
                 <strong>📌 Если limit.yml → Enable: false (лимиты ВЫКЛЮЧЕНЫ)</strong><br>
                 Тогда <strong style="color:#ffd700;">main.yml вступает в силу</strong> как запасной вариант.
+            </div>
+        </div>
+
+        <!-- ==================== ЗАВИСИМОСТИ ==================== -->
+        <div class="section-card">
+            <h2>📚 Зависимости плагина</h2>
+            <div class="tip" style="background: rgba(255,100,0,0.1); border-left-color:#ff7b00;">
+                <strong>⚠️ Обязательная зависимость:</strong> <code>KillerCoreAPI</code>
+            </div>
+            <p>Для работы RegionMC необходим API-плагин <strong>KillerCoreAPI</strong>. Без него плагин не загрузится.</p>
+            <table class="data-table">
+                <thead><tr><th>Зависимость</th><th>Тип</th><th>Ссылка</th></tr></thead>
+                <tbody>
+                    <tr>
+                        <td class="perm-name">KillerCoreAPI</td>
+                        <td>Обязательная</td>
+                        <td><a href="https://github.com/livxbox5/KillerCoreAPI" target="_blank" style="color:#ffd700;">GitHub</a></td>
+                    </tr>
+                    <tr>
+                        <td class="perm-name">PlaceholderAPI</td>
+                        <td>Опциональная</td>
+                        <td><a href="https://www.spigotmc.org/resources/6245/" target="_blank" style="color:#ffd700;">SpigotMC</a></td>
+                    </tr>
+                    <tr>
+                        <td class="perm-name">Vault</td>
+                        <td>Опциональная (для аренды)</td>
+                        <td><a href="https://www.spigotmc.org/resources/vault.34315/" target="_blank" style="color:#ffd700;">SpigotMC</a></td>
+                    </tr>
+                </tbody>
+            </table>
+            <h3 style="margin-top:1.5rem;">Установка KillerCoreAPI</h3>
+            <div class="install-steps">
+                <p><span style="color:#ffd700;">1.</span> Скачайте последнюю версию KillerCoreAPI с <a href="https://github.com/livxbox5/KillerCoreAPI" target="_blank" style="color:#ffd700;">GitHub</a>.</p>
+                <p><span style="color:#ffd700;">2.</span> Поместите <code>.jar</code> в папку <code>plugins/</code> вашего сервера.</p>
+                <p><span style="color:#ffd700;">3.</span> Установите RegionMC в ту же папку <code>plugins/</code>.</p>
+                <p><span style="color:#ffd700;">4.</span> Перезапустите сервер.</p>
             </div>
         </div>
 
