@@ -22,7 +22,7 @@
     <aside class="sidebar">
         <div class="sidebar-header">
             <a href="../index.html" class="sidebar-logo">🏠 RegionMC</a>
-            <div class="sidebar-version">v2.1</div>
+            <div class="sidebar-version">v2.2</div>
         </div>
         <nav class="sidebar-nav">
             <ul>
@@ -52,29 +52,45 @@
         </div>
 
         <div class="section-card">
-            <h2>v2.1 (2026-06-21)</h2>
+            <h2>v2.2 (2026-09-10)</h2>
             <h3>✅ Добавлено</h3>
             <ul style="color: #ccc; margin-left: 1.5rem;">
-                <li>Полная поддержка консоли — все команды доступны из консоли сервера</li>
-                <li>Система <code>admin-user</code> в <code>Settings/main.yml</code> — администраторы получают все права</li>
-                <li>Новый класс <code>PermissionUtil</code> для централизованной проверки прав</li>
-                <li>Флаги <code>enter-notify</code> и <code>exit-notify</code> для уведомлений о входе/выходе</li>
-                <li>Категория <code>ADMIN</code> в DebugUtils для отладки</li>
-                <li>Метод <code>getDefaultLimit()</code> в <code>RegionManager</code> стал публичным для консоли</li>
+                <li>Полное дерево прав в <code>paper-plugin.yml</code>: <code>regionmc.*</code>, <code>regionmc.command.*</code>, <code>regionmc.flags.*</code>, <code>regionmc.bypass.*</code>, <code>regionmc.maxregions.*</code></li>
+                <li>Новое право <code>regionmc.command.example</code> для команды <code>/rg example</code></li>
+                <li>Wildcard-обработка в <code>PermissionUtil</code> — цепочка <code>regionmc.command.info → regionmc.command.* → regionmc.*</code></li>
+                <li>Права <code>regionmc.command.notifier</code> и <code>regionmc.command.rent</code></li>
+                <li>Полная поддержка аренды регионов через Vault</li>
             </ul>
             <h3>🛠️ Исправлено</h3>
             <ul style="color: #ccc; margin-left: 1.5rem;">
-                <li>Удалён дублирующийся метод <code>getDefaultLimit()</code> в <code>RegionManager</code></li>
-                <li><code>BlockChatFlag</code> теперь использует современный <code>regionManager.isAdminBypass()</code> вместо устаревшего API</li>
-                <li>Исправлены вызовы <code>LanguageManager.getMessage()</code> в <code>RegionNotifierCommand</code></li>
-                <li>Устранены все предупреждения компиляции (deprecated API, unchecked операции)</li>
-                <li>Во всех подкомандах заменены прямые <code>player.hasPermission()</code> на <code>PermissionUtil.hasPermission()</code></li>
+                <li><code>RegionHelpCommand</code> теперь корректно скрывает <code>info</code> и <code>list</code>, если нет прав</li>
+                <li><code>RegionCommand.showHelp()</code> удалён — используется <code>RegionHelpCommand</code></li>
+                <li>Tab-complete больше не показывает <code>example</code> без права <code>regionmc.command.example</code></li>
+                <li>Убран <code>examples</code> из tab-complete (только <code>example</code>)</li>
+                <li>В <code>paper-plugin.yml</code> короткие описания прав без подсказок по аргументам</li>
+                <li>Исправлена регистрация команды через <code>PluginCommand.setPermission()</code></li>
             </ul>
             <h3>📝 Документация</h3>
             <ul style="color: #ccc; margin-left: 1.5rem;">
-                <li>Обновлены страницы документации: команды, права, флаги, конфигурация, PlaceholderAPI</li>
-                <li>Добавлена информация о приоритете <code>limit.yml</code> над <code>main.yml</code></li>
-                <li>Уточнены значения флагов по умолчанию (из кода)</li>
+                <li>Уточнено количество флагов — <strong>39</strong> (было 36)</li>
+                <li>Актуальные значения флагов по умолчанию из кода</li>
+                <li>Дерево прав обновлено под <code>paper-plugin.yml</code></li>
+            </ul>
+        </div>
+
+        <div class="section-card">
+            <h2>v2.1 (2026-06-21)</h2>
+            <h3>✅ Добавлено</h3>
+            <ul style="color: #ccc; margin-left: 1.5rem;">
+                <li>Полная поддержка консоли</li>
+                <li>Система <code>admin-user</code> в <code>Settings/main.yml</code></li>
+                <li>Класс <code>PermissionUtil</code></li>
+                <li>Флаги <code>enter-notify</code> и <code>exit-notify</code></li>
+            </ul>
+            <h3>🛠️ Исправлено</h3>
+            <ul style="color: #ccc; margin-left: 1.5rem;">
+                <li><code>BlockChatFlag</code> использует <code>regionManager.isAdminBypass()</code></li>
+                <li>Исправлены вызовы <code>LanguageManager.getMessage()</code></li>
             </ul>
         </div>
 
