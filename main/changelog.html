@@ -52,31 +52,28 @@
         </div>
 
         <div class="section-card">
-            <h2>v2.2 (2026-09-10)</h2>
+            <h2>v2.3 (2026-09-13)</h2>
             <h3>✅ Добавлено</h3>
             <ul style="color: #ccc; margin-left: 1.5rem;">
-                <li>Полное дерево прав в <code>paper-plugin.yml</code>: <code>regionmc.*</code>, <code>regionmc.command.*</code>, <code>regionmc.flags.*</code>, <code>regionmc.bypass.*</code>, <code>regionmc.maxregions.*</code></li>
-                <li>Новое право <code>regionmc.command.example</code> для команды <code>/rg example</code></li>
-                <li>Wildcard-обработка в <code>PermissionUtil</code> — цепочка <code>regionmc.command.info → regionmc.command.* → regionmc.*</code></li>
-                <li>Права <code>regionmc.command.notifier</code> и <code>regionmc.command.rent</code></li>
-                <li>Полная поддержка аренды регионов через Vault</li>
-                <li>📚 <strong>KillerCoreAPI</strong> — обязательная библиотека. Добавлена информация на сайт.</li>
+                <li>Гибкий обход защиты регионов: <code>regionmc.bypass.&lt;region&gt;</code> — обход конкретного региона</li>
+                <li>Приоритет specific над wildcard: <code>regionmc.bypass.* = true</code> + <code>regionmc.bypass.spawn = false</code> → регион <code>spawn</code> не обходится</li>
+                <li>Новое право <code>regionmc.notify.disabled</code> — отключение уведомлений о входе/выходе для конкретного игрока</li>
+                <li>Улучшенная логика определения региона при ломании/установке/взаимодействии — регион определяется по блоку, а не по позиции игрока</li>
+                <li>Защита от дублирования уведомлений через <code>NotifyGuard</code> (cooldown 2 секунды на игрока + регион + тип события)</li>
+                <li>Снятие листенеров и задач в <code>onDisable()</code> — защита от дублирования при PlugManX/перезагрузках</li>
             </ul>
             <h3>🛠️ Исправлено</h3>
             <ul style="color: #ccc; margin-left: 1.5rem;">
-                <li><code>RegionHelpCommand</code> теперь корректно скрывает <code>info</code> и <code>list</code>, если нет прав</li>
-                <li><code>RegionCommand.showHelp()</code> удалён — используется <code>RegionHelpCommand</code></li>
-                <li>Tab-complete больше не показывает <code>example</code> без права <code>regionmc.command.example</code></li>
-                <li>Убран <code>examples</code> из tab-complete (только <code>example</code>)</li>
-                <li>В <code>paper-plugin.yml</code> короткие описания прав без подсказок по аргументам</li>
-                <li>Исправлена регистрация команды через <code>PluginCommand.setPermission()</code></li>
+                <li>Дублирование сообщений «Игрок зашёл в регион» / «вышел из региона»</li>
+                <li>Проверка <code>use-items</code> больше не срабатывает на клик по блоку — только на правый клик в воздух</li>
+                <li>Проверки <code>entry</code>/<code>exit</code> в <code>RegionListener</code> учитывают регион игрока в момент перехода</li>
+                <li>Уведомления владельцам больше не отправляются самому движущемуся игроку</li>
+                <li>Owners и members объединяются в один <code>Set</code> — один игрок получает одно сообщение, даже если он и владелец, и участник</li>
             </ul>
-            <h3>📝 Документация</h3>
+            <h3>⚠️ Изменения в правах</h3>
             <ul style="color: #ccc; margin-left: 1.5rem;">
-                <li>Уточнено количество флагов — <strong>39</strong> (было 36)</li>
-                <li>Актуальные значения флагов по умолчанию из кода</li>
-                <li>Дерево прав обновлено под <code>paper-plugin.yml</code></li>
-                <li>Добавлен раздел «Зависимости» с информацией о KillerCoreAPI</li>
+                <li>Право <code>regionmc.bypass.notify</code> <strong>устарело</strong> — используйте <code>regionmc.notify.disabled</code></li>
+                <li>Причина: <code>regionmc.bypass.notify</code> находилось под wildcard'ом <code>regionmc.bypass.*</code> и не отключалось явным <code>false</code></li>
             </ul>
         </div>
 

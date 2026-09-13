@@ -25,7 +25,7 @@
     <aside class="sidebar">
         <div class="sidebar-header">
             <a href="../index.html" class="sidebar-logo">🏠 RegionMC</a>
-            <div class="sidebar-version">v2.2</div>
+            <div class="sidebar-version">v2.3</div>
         </div>
         <nav class="sidebar-nav">
             <ul>
@@ -66,6 +66,96 @@
             </table>
             <div class="tip" style="background: rgba(255,215,0,0.2);">
                 <strong>📌 admin-user в Settings/main.yml</strong> — игроки из этого списка получают все права без выдачи разрешений.
+            </div>
+        </div>
+
+        <!-- ==================== BYPASS (обновлено) ==================== -->
+        <div class="section-card" style="background: linear-gradient(135deg, rgba(255,215,0,0.08), rgba(255,100,0,0.03)); border-left: 4px solid #ffd700;">
+            <h2>🛡️ Байпас — обход защиты регионов (v2.3)</h2>
+            <p>
+                Начиная с версии <strong>v2.3</strong> обход защиты работает по гибкой схеме:
+                можно дать игроку глобальный обход <em>всех</em> регионов и при этом
+                <strong>исключить</strong> конкретные регионы, в которых обход не должен действовать.
+            </p>
+
+            <table class="data-table">
+                <thead><tr><th>Право</th><th>Действие</th></tr></thead>
+                <tbody>
+                    <tr>
+                        <td class="perm-name">regionmc.bypass.*</td>
+                        <td>Глобальный обход <strong>всех</strong> регионов сервера</td>
+                    </tr>
+                    <tr>
+                        <td class="perm-name">regionmc.bypass</td>
+                        <td>Альтернатива без звёздочки — то же самое</td>
+                    </tr>
+                    <tr>
+                        <td class="perm-name">regionmc.bypass.&lt;region_name&gt;</td>
+                        <td>Обход <strong>конкретного</strong> региона (имя в нижнем регистре)</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3 style="color:#ffd700; margin-top:1.5rem;">⚡ Приоритет: specific &gt; wildcard</h3>
+            <div class="tip" style="background: rgba(0,0,0,0.4);">
+                Если у игрока есть <code>regionmc.bypass.* = true</code> и при этом
+                <code>regionmc.bypass.spawn = false</code> — <strong>регион spawn НЕ будет обходиться</strong>,
+                а все остальные — будут.
+            </div>
+
+            <div class="code-block">
+<pre>
+# Пример: обход везде, кроме региона spawn
+lp user Steve permission set regionmc.bypass.* true
+lp user Steve permission set regionmc.bypass.spawn false
+
+# Пример: обход только одного региона test
+lp user Steve permission set regionmc.bypass.test true
+</pre>
+            </div>
+
+            <div class="tip" style="background: rgba(255,100,0,0.15); border-left-color: #ff7b00;">
+                <strong>⚠️ Важно:</strong> имя региона в праве указывается
+                <strong>в нижнем регистре</strong>. Для региона <code>Spawn</code> пишите
+                <code>regionmc.bypass.spawn</code>, а не <code>regionmc.bypass.Spawn</code>.
+            </div>
+        </div>
+
+        <!-- ==================== УВЕДОМЛЕНИЯ ==================== -->
+        <div class="section-card" style="background: linear-gradient(135deg, rgba(0,180,216,0.08), rgba(0,180,216,0.02)); border-left: 4px solid #00b4d8;">
+            <h2>🔔 Право отключения уведомлений (v2.3)</h2>
+            <p>
+                Уведомления о входе/выходе из региона приходят владельцам и участникам.
+                Для отдельного игрока их можно <strong>полностью отключить</strong> — например,
+                чтобы администратор не спамился, пока тестирует регионы.
+            </p>
+
+            <table class="data-table">
+                <thead><tr><th>Право</th><th>Действие</th></tr></thead>
+                <tbody>
+                    <tr>
+                        <td class="perm-name">regionmc.notify.disabled</td>
+                        <td>Отключить уведомления для игрока (все регионы, все события)</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="code-block">
+<pre>
+# Отключить уведомления игроку
+lp user Steve permission set regionmc.notify.disabled true
+
+# Вернуть уведомления
+lp user Steve permission unset regionmc.notify.disabled
+</pre>
+            </div>
+
+            <div class="tip" style="background: rgba(255,0,0,0.15); border-left-color: #ff3b3b;">
+                <strong>⚠️ НЕ используйте <code>regionmc.bypass.notify</code>!</strong><br>
+                Это право сидит под wildcard'ом <code>regionmc.bypass.*</code> — оно
+                автоматически включается вместе с глобальным обходом и глушит уведомления,
+                даже если вы поставили ему <code>false</code> (в LuckPerms wildcard выигрывает
+                у явного false). Используйте только <code>regionmc.notify.disabled</code>.
             </div>
         </div>
 
@@ -158,6 +248,8 @@
                     <tr><td class="perm-name">regionmc.flags.block-chat</td><td>block-chat</td></tr>
                     <tr><td class="perm-name">regionmc.flags.blockcmd</td><td>blockcmd</td></tr>
                     <tr><td class="perm-name">regionmc.flags.sleep</td><td>sleep</td></tr>
+                    <tr><td class="perm-name">regionmc.flags.enter-notify</td><td>enter-notify</td></tr>
+                    <tr><td class="perm-name">regionmc.flags.exit-notify</td><td>exit-notify</td></tr>
                 </tbody>
             </table>
         </div>
@@ -196,20 +288,6 @@
                     <tr><td class="perm-name">regionmc.maxregions.50</td><td>50 регионов</td></tr>
                     <tr><td class="perm-name">regionmc.maxregions.100</td><td>100 регионов</td></tr>
                     <tr><td class="perm-name">regionmc.maxregions.unlimited</td><td>Безлимитно</td></tr>
-                </tbody>
-            </table>
-        </div>
-
-        <!-- БАЙПАС -->
-        <div class="section-card">
-            <h2>🛡️ Байпас (обход защиты)</h2>
-            <table class="data-table">
-                <thead><tr><th>Право</th><th>Описание</th></tr></thead>
-                <tbody>
-                    <tr><td class="perm-name">regionmc.bypass.*</td><td>Обход защиты всех регионов</td></tr>
-                    <tr><td class="perm-name">regionmc.bypass.all</td><td>Альтернатива для всех регионов</td></tr>
-                    <tr><td class="perm-name">regionmc.bypass.chat</td><td>Обход блокировки чата</td></tr>
-                    <tr><td class="perm-name">regionmc.bypass.&lt;region_name&gt;</td><td>Обход защиты конкретного региона</td></tr>
                 </tbody>
             </table>
         </div>

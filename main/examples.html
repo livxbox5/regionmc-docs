@@ -141,6 +141,31 @@
 /rg hide all        → скрыть все границы
             </div>
         </div>
+
+        <div class="section-card">
+    <h2>🔹 Обход защиты для админа (кроме одного региона)</h2>
+    <div class="code-block">
+# Дать обход всех регионов
+/lp user Steve permission set regionmc.bypass.* true
+
+# Запретить обход в регионе spawn
+/lp user Steve permission set regionmc.bypass.spawn false
+
+# Результат: Steve обходит все регионы, кроме spawn
+    </div>
+</div>
+
+<div class="section-card">
+    <h2>🔹 Отключить уведомления игроку</h2>
+    <div class="code-block">
+# Игрок не будет получать уведомления о входе/выходе из своих регионов
+/lp user Steve permission set regionmc.notify.disabled true
+
+# Вернуть обратно
+/lp user Steve permission unset regionmc.notify.disabled
+    </div>
+    <p>Полезно для администраторов, которые тестируют регионы и не хотят видеть спам в чате.</p>
+</div>
         
         <div class="wiki-footer">
             <p>RegionMC Documentation | /rg example в игре</p>
